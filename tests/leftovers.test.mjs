@@ -16,6 +16,10 @@ test('finds Airtable and Telegram ids with their line', () => {
   assert.deepEqual(f.map((x) => [x.line, x.kind]), [[2, 'airtable-id'], [3, 'airtable-id'], [3, 'telegram-group-id']]);
 });
 
+test('id-shaped words without a digit are not ids', () => {
+  assert.deepEqual(scanText('lib/x.mjs', 'const approvedSelection = recordsAreHereNow;'), []);
+});
+
 test("a buyer's own config files are not scanned, but the examples are", () => {
   assert.deepEqual(scanText('config/engine.json', fakeBase), []);
   assert.equal(scanText('config/engine.example.json', fakeBase).length, 1);

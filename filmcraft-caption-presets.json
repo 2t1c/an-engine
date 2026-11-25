@@ -1,0 +1,292 @@
+{
+  "format": "filmcraft.caption-presets",
+  "version": 1,
+  "presets": [
+    {
+      "name": "Style A",
+      "description": "X thread clips (16:9): the fleet's Style A subtitles on a dark box at the bottom",
+      "style": {
+        "font": "Montserrat ExtraBold",
+        "size": 58.0,
+        "color": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "background": true,
+        "background_color": [
+          0,
+          0,
+          0,
+          183
+        ],
+        "align": "Center",
+        "anchor": "Bottom",
+        "margin": 0.074,
+        "line_spacing": 1.25,
+        "outline": 0.0,
+        "outline_color": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "safe_area": null,
+        "offset": [
+          0.0,
+          0.0
+        ],
+        "uppercase": false
+      },
+      "rules": {
+        "maxChars": 42,
+        "lines": 2
+      }
+    },
+    {
+      "name": "IG Reel",
+      "description": "Instagram reels and podcast clips (9:16): three words a caption, white with a black outline, low in the safe zone",
+      "style": {
+        "font": "Montserrat ExtraBold",
+        "size": 66.0,
+        "color": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "background": false,
+        "background_color": [
+          0,
+          0,
+          0,
+          191
+        ],
+        "align": "Center",
+        "anchor": "Bottom",
+        "margin": 0.03,
+        "line_spacing": 1.25,
+        "outline": 6.0,
+        "outline_color": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "safe_area": {
+          "top": 0.14,
+          "bottom": 0.2,
+          "left": 0.06,
+          "right": 0.12
+        },
+        "offset": [
+          0.0,
+          0.0
+        ],
+        "uppercase": false
+      },
+      "rules": {
+        "wordsPerCue": 3,
+        "lines": 1,
+        "minSeconds": 0.0,
+        "holdSeconds": 0.5
+      }
+    },
+    {
+      "name": "IG Reel Clean",
+      "description": "Instagram health clips (9:16): owner 2026-10-19 found IG Reel 'way too big and childish' and wanted it higher, then found size 46 'still too big'. Small SemiBold sentence case (34), a thin outline, just below the face (about two thirds down). Timing (owner 2026-10-19: \"caption can improve a lil on timing when it is spoken\"): at most three words a caption, so no word shows long before it is said; a pause of 0.35 s (most sentence ends) starts a new caption, and a caption clears 0.2 s into a pause",
+      "style": {
+        "font": "Montserrat SemiBold",
+        "size": 34.0,
+        "color": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "background": false,
+        "background_color": [
+          0,
+          0,
+          0,
+          191
+        ],
+        "align": "Center",
+        "anchor": "Middle",
+        "margin": 0.08,
+        "line_spacing": 1.25,
+        "outline": 2.5,
+        "outline_color": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "safe_area": {
+          "top": 0.14,
+          "bottom": 0.2,
+          "left": 0.06,
+          "right": 0.12
+        },
+        "offset": [
+          0.0,
+          0.2
+        ],
+        "uppercase": false
+      },
+      "rules": {
+        "wordsPerCue": 3,
+        "lines": 1,
+        "minSeconds": 0.0,
+        "holdSeconds": 0.2,
+        "breakSeconds": 0.35
+      }
+    },
+    {
+      "name": "IG Reel Clean High",
+      "description": "IG Reel Clean placed higher, at mid-frame over the chest (offset 0.04 instead of 0.2), for clips whose source shows a study, chart or lower third in the bottom third (owner 2026-10-20: the sleep doctor's study covered the captions).",
+      "style": {
+        "font": "Montserrat SemiBold",
+        "size": 34.0,
+        "color": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "background": false,
+        "background_color": [
+          0,
+          0,
+          0,
+          191
+        ],
+        "align": "Center",
+        "anchor": "Middle",
+        "margin": 0.08,
+        "line_spacing": 1.25,
+        "outline": 2.5,
+        "outline_color": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "safe_area": {
+          "top": 0.14,
+          "bottom": 0.2,
+          "left": 0.06,
+          "right": 0.12
+        },
+        "offset": [
+          0.0,
+          0.04
+        ],
+        "uppercase": false
+      },
+      "rules": {
+        "wordsPerCue": 3,
+        "lines": 1,
+        "minSeconds": 0.0,
+        "holdSeconds": 0.2,
+        "breakSeconds": 0.35
+      }
+    },
+    {
+      "name": "IG Reel Pulse",
+      "description": "Instagram reels (9:16): one big word at a time in capitals, just under the middle of the safe zone",
+      "style": {
+        "font": "Montserrat ExtraBold",
+        "size": 92.0,
+        "color": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "background": false,
+        "background_color": [
+          0,
+          0,
+          0,
+          191
+        ],
+        "align": "Center",
+        "anchor": "Middle",
+        "margin": 0.08,
+        "line_spacing": 1.25,
+        "outline": 7.0,
+        "outline_color": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "safe_area": {
+          "top": 0.14,
+          "bottom": 0.2,
+          "left": 0.06,
+          "right": 0.12
+        },
+        "offset": [
+          0.0,
+          0.08
+        ],
+        "uppercase": true
+      },
+      "rules": {
+        "wordsPerCue": 1,
+        "minSeconds": 0.0,
+        "holdSeconds": 0.5
+      }
+    },
+    {
+      "name": "IG Quote",
+      "description": "B-roll quote edits (9:16): two short lines on a dark box in the middle of the safe zone",
+      "style": {
+        "font": "Montserrat ExtraBold",
+        "size": 46.0,
+        "color": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "background": true,
+        "background_color": [
+          0,
+          0,
+          0,
+          192
+        ],
+        "align": "Center",
+        "anchor": "Middle",
+        "margin": 0.08,
+        "line_spacing": 1.25,
+        "outline": 0.0,
+        "outline_color": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "safe_area": {
+          "top": 0.14,
+          "bottom": 0.2,
+          "left": 0.06,
+          "right": 0.12
+        },
+        "offset": [
+          0.0,
+          0.0
+        ],
+        "uppercase": false
+      },
+      "rules": {
+        "maxChars": 16,
+        "lines": 2
+      }
+    }
+  ]
+}

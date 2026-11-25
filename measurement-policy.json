@@ -1,0 +1,8 @@
+{
+  "schema": "project-infinity/measurement-policy/v1",
+  "contract_version": "v1",
+  "max_audit_age_hours": 24,
+  "minimum_end_to_end_coverage_percent": null,
+  "minimum_mature_rows": null,
+  "note": "Decision thresholds are open business decisions in B10 and are intentionally unset."
+}

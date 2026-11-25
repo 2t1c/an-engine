@@ -1,0 +1,6 @@
+{
+  "_": "Operator-supplied vendor deal state (deals, prices, installments, offers: 2026-09-06). Used and total are refreshed from the RT bot ledger (GET /vendor-status), last on 2026-10-03T14:07:17Z. The RT bot's counter is the source of truth for Used — other people send into these groups too, so our Fuel Log can only ever be a floor. This file is the input to vendor-credits-set.mjs and the record of what was agreed.",
+  "asOf": "2026-10-03",
+  "vendors": [],
+  "budget": {}
+}

@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "policy": "in-stock supplements, price <= $70 (the only price rule), ranked by EPC (owner 2026-11-04). Rows before 2026-11-04 came from the old commission>=30% cut.",
+    "partnered_total": 5344,
+    "kept": 293,
+    "refreshed": "2026-10-19",
+    "live_accessible": 9300,
+    "unavailable": 32,
+    "shelf_v2": "2026-11-04: +52 rows from the shelf v2 scout (best SKU per substance viral threads name, heart gaps, newly opened LifeSeasons/Naturealm/Resilia/Sunergetic brands).",
+    "sr_rates": "2026-11-11: Sports Research rates re-read live after Sean's Nov 10-11 emails (fish oil 1250mg + minis 45% through Dec 15; multivitamin/astaxanthin/some whey back to baseline); Creatine+Electrolytes added.",
+    "dr_vitamin": "2026-11-19: DR Vitamin Solutions added (owner: 'the partner every other network of pages is promoting', 55-100% commission). 9 supplement SKUs read live from Levanta; fat burners, diuretics, cleanses and boosters left out. Buy Box (Prime) not checked yet."
+  },
+  "products": [],
+  "retired": []
+}

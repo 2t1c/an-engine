@@ -1,0 +1,27 @@
+{
+  "$doc": "Copy to config/engine.json in a buyer's clone and fill it in. Every value here is the buyer's, not the operator's.",
+  "buyer": {
+    "name": "Example Buyer",
+    "timezone": "Asia/Saigon"
+  },
+  "posting": {
+    "windowStart": "10:00",
+    "windowEnd": "22:00",
+    "heavyClusterStart": "15:00",
+    "heavyClusterEnd": "19:00",
+    "threadsPerPagePerDay": 1
+  },
+  "profitShare": {
+    "operatorPct": 50,
+    "costs": ["rtVendors", "rapidapi", "typefully", "hosting", "levantaFees"],
+    "statementDay": "Mon"
+  },
+  "features": {
+    "rtLadder": true,
+    "hookClips": true
+  },
+  "swipe": {
+    "copyDaily": true,
+    "copyWindowDays": 30
+  }
+}

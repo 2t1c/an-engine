@@ -1,0 +1,15 @@
+{
+  "$doc": "Copy to config/pages.json in a buyer's clone. One entry per X page the buyer owns.",
+  "pages": [
+    {
+      "id": "example",
+      "name": "Example Page",
+      "handle": "ExampleHealth",
+      "persona": "m",
+      "typefullySocialSetId": 0,
+      "levantaSubidPrefix": "x-thread-example",
+      "rtLane": "ladder",
+      "active": false
+    }
+  ]
+}

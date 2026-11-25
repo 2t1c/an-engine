@@ -410,8 +410,8 @@ async function main() {
     // A KEPT repair is evidence, not scratch. An earlier --apply left a file republish already gated
     // clean, and the candidate below overwrites that path so the gate call can read it. Until
     // 2026-09-07 both discard branches rmSync'd the path outright, so a plain dry run — the mode
-    // that promises to touch nothing — deleted two kept repairs (recSGiNMjbrWuZX0q,
-    // rechQNoj5lKMVCyQN) and the next --harvest run shipped the unrepaired body. Remember what was
+    // that promises to touch nothing — deleted two kept repairs (two record ids,
+    // since gone) and the next --harvest run shipped the unrepaired body. Remember what was
     // there, and put it back whenever the candidate is discarded.
     const kept = existsSync(repairPath(row.id)) ? readFileSync(repairPath(row.id), 'utf8') : null;
     const discard = (why) => discardCandidate(repairPath(row.id), kept, why);

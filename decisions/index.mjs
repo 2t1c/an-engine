@@ -32,9 +32,8 @@ import * as plugFill from './plug-fill.mjs';
 import * as aieLane from './aie-lane.mjs';
 import * as aieRewrite from './aie-rewrite.mjs';
 import * as qrtTemplate from './qrt-template.mjs';
-import * as articleFormat from './article-format.mjs';
 
-const MODULES = [productFitHeavy, productSecondEarned, editorialPrescore, claimsBattery, topicStamp, ctaRecipeStamp, donorAccountFit, donorWriteability, donorScreen, replyIntent, premiseTwin, hookCandidate, singlesScreen, plugAnchor, itemSwap, ctaDepth, ruleProposal, booksCategory, hookBankCurate, donorIntent, potRead, modelRoute, plugReplacement, plugFill, aieLane, aieRewrite, qrtTemplate, articleFormat];
+const MODULES = [productFitHeavy, productSecondEarned, editorialPrescore, claimsBattery, topicStamp, ctaRecipeStamp, donorAccountFit, donorWriteability, donorScreen, replyIntent, premiseTwin, hookCandidate, singlesScreen, plugAnchor, itemSwap, ctaDepth, ruleProposal, booksCategory, hookBankCurate, donorIntent, potRead, modelRoute, plugReplacement, plugFill, aieLane, aieRewrite, qrtTemplate];
 
 export const DECISIONS = Object.freeze(Object.fromEntries(MODULES.map((m) => [validateDecision(m).name, m])));
 

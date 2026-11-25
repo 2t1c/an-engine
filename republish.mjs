@@ -20,7 +20,7 @@ import { linkGate, scheduledLinks } from './link-sentinel.mjs';
 import { resolvePlugLinks, buildLedgerIndex, loadLevantaCatalog, resolutionLine } from './link-resolve.mjs';
 import { LAWS } from './laws.mjs';
 import { farmStampRow } from './harvest-gate.mjs';
-import { getAccount } from './accounts.mjs';
+import { getAccount, defaultAccountKey } from './accounts.mjs';
 import { loadRepair } from './harvest-repair.mjs';
 import { joinNumberedHeadings } from './content/text-shape.mjs';
 import { harvestRecord, attemptsOf } from './harvest-record.mjs';
@@ -52,7 +52,7 @@ const NO_CROSS = args.includes('--no-cross');
 // not weaken the gate — an undeclared unsold substance still fails. It records the operator's call.
 const ALLOW_UNSOLD = String(flag('allow-unsold', '')).split(',').map((x) => x.trim().toLowerCase()).filter(Boolean);
 const origId = args.find((a) => /^\d{6,}$/.test(a));
-const ACCOUNT = getAccount(flag('account', 'julian'));
+const ACCOUNT = getAccount(flag('account', defaultAccountKey()));
 // --harvest <recXXXX>: this repost is a farm ATTEMPT — a heart spent on the named Harvests row.
 // The new PC row is stamped at creation (Harvest link + Attempt Verdict 'Pending' + optional
 // --batch), so the gate's 48h clock starts from a linked row instead of waiting for the ledger

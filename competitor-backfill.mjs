@@ -24,12 +24,13 @@
 //                                                      # a non-competitor, bounded by DATE not pages
 import { pathToFileURL } from 'node:url';
 import { loadEnv, requireEnv, airtable, runMain } from './lib.mjs';
+import { TBL } from './config.mjs';
 
 const RAPID_HOST = 'twitter241.p.rapidapi.com';
-const SWIPE_BASE = 'app7vXbBugWeCGctD';
-const USERS = 'tblEbIfYqCpxf1yMu';
-const THREADS = 'tblS9wU39UjUVSsvl';        // the swipe file: winners only, threshold-filtered
-const COMP = 'tblP4xywLyi2PZx3b';           // Competitor Threads: the complete record, no threshold
+const SWIPE_BASE = process.env.XDB_BASE_ID || '';
+const USERS = TBL.swipeUsers;
+const THREADS = TBL.swipe;        // the swipe file: winners only, threshold-filtered
+const COMP = TBL.competitorThreads;           // Competitor Threads: the complete record, no threshold
 
 const arg = (k, d = null) => { const i = process.argv.indexOf(`--${k}`); return i > 0 ? process.argv[i + 1] : d; };
 const DRY = process.argv.includes('--dry');

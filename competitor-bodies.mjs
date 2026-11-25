@@ -8,7 +8,8 @@
 // last D days (numbers settle for ~48h). One RapidAPI call per head; ~2 calls/s.
 import { loadEnv, requireEnv } from './lib.mjs';
 import { parseThread, bodyFields } from './competitor-thread.mjs';
-const SWIPE = 'app7vXbBugWeCGctD', USERS = 'tblEbIfYqCpxf1yMu', COMP = 'tblP4xywLyi2PZx3b';
+import { TBL } from './config.mjs';
+const SWIPE = process.env.XDB_BASE_ID || '', USERS = TBL.swipeUsers, COMP = TBL.competitorThreads;
 const args = process.argv.slice(2); const DRY = args.includes('--dry'); const flag = (n, d) => { const i = args.indexOf(`--${n}`); return i > -1 ? args[i + 1] : d; };
 const LIMIT = Number(flag('limit', 100000)); const REFRESH = Number(flag('refresh-days', 0)); const ONLY = flag('account', null);
 const env = loadEnv(); requireEnv(env, ['AIRTABLE_PAT', 'RAPIDAPI_KEY']);

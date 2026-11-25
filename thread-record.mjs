@@ -15,6 +15,7 @@ import { join } from 'node:path';
 import { HERE_DIR, airtable } from './lib.mjs';
 import { TABLES } from './config.mjs';
 import { handleFromUrl } from './thread-note.mjs';
+import { TBL } from './config.mjs';
 
 export const RECORDS_DIR = join(HERE_DIR, 'queues', 'threads');
 
@@ -52,7 +53,7 @@ export function airtableCard(recId, baseId) {
 
 // Harvests table (greenhouse-draft.mjs TABLES.Harvests). A harvest or a variation descends from one
 // of OUR posts, so its card is the Harvests row: a swipe card built from its recId opened nothing.
-const HARVESTS_TABLE = 'tblOtEftJl2p43o6M';
+const HARVESTS_TABLE = TBL.harvests;
 function sourceCard(spec, source, baseId) {
   if (spec.variationOf || spec.harvestOf) {
     const harvestRecId = source.harvestRecId || spec.harvestRecId || null;

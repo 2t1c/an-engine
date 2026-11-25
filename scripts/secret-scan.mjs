@@ -25,45 +25,11 @@ regexes = ['''^rec[A-Za-z0-9]{14}$''']
 [[rules]]
 id = "generic-api-key"
 [[rules.allowlists]]
-description = "Literal model names in legacy workflow comments"
+description = "Literal model names in workflow comments"
 condition = "AND"
 paths = ['''^\.github/workflows/(revenue|registry-sync)\.yml$''']
 regexTarget = "secret"
 regexes = ['''^(GLM/)?Kimi/DeepSeek/Claude$''']
-[[rules.allowlists]]
-description = "Genius run-piece keys (imported Genius history) are not API keys"
-condition = "AND"
-paths = ['''^genius/runs/R2026-10-05\.json$''']
-regexTarget = "secret"
-regexes = ['''^nvidia-lost-china-qrt-[0-9]$''']
-[[rules.allowlists]]
-description = "A LearningToan run-piece key (Genius run LT-R2026-10-12, and the baseline note naming it) is not an API key"
-condition = "AND"
-paths = ['''^genius/runs/LT-R2026-10-12\.json$''', '''^docs/security-baseline\.md$''']
-regexTarget = "secret"
-regexes = ['''^liemandt-grade-in-26-hours$''']
-[[rules.allowlists]]
-description = "GTX run-piece keys (Genius run R2026-10-12) are not API keys"
-condition = "AND"
-paths = ['''^genius/runs/R2026-10-12\.json$''']
-regexTarget = "secret"
-regexes = ['''^(mined-2026-10-04-39-qrt-[0-3]|storonsky-55-executives)$''']
-
-[[rules.allowlists]]
-description = "GTX run-piece keys (Genius run R2026-10-19) are not API keys"
-condition = "AND"
-paths = ['''^genius/runs/R2026-10-19\.json$''']
-regexTarget = "secret"
-regexes = ['''^lf-2026-10-(19-huang-dario-very-conservative|22-tobi-lutke-ai-before-headcount|23-baker-blue-collar-wages|24-andreessen-least-qualified)$''']
-
-[[rules]]
-id = "grafana-cloud-api-token"
-[[rules.allowlists]]
-description = "An X status URL for @GLC_Research (imported Genius history) is not a Grafana token"
-condition = "AND"
-paths = ['''^genius/learnings/a16z-qt-playbook\.json$''']
-regexTarget = "secret"
-regexes = ['''^GLC_Research/status/[0-9]{19}$''']
 `;
 export const ASSETS = {
   'linux-x64': '551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb',

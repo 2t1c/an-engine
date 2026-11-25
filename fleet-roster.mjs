@@ -5,8 +5,9 @@
 // accounts.mjs) is the live count. Fail-open: an unreadable roster leaves the fleet term at ×1 and
 // says so on the board, rather than crashing a planning script over a lookup.
 import { airtable, cliArg } from './lib.mjs';
+import { TBL } from './config.mjs';
 
-const ROSTER_BASE = 'app7vXbBugWeCGctD', ROSTER_TABLE = 'tblwn2lLoJBuJKvUv';   // XDB "Accounts"
+const ROSTER_BASE = '', ROSTER_TABLE = TBL.accounts;   // XDB "Accounts"
 
 export async function rosterFleet(env) {
   try {

@@ -3,29 +3,11 @@
     "what": "Pre-authored boilerplate for NEW accounts — closers (open question + share-ask, name-free) and disclaimers (all five required elements). The scaffolder picks the first entry that shares no 5-word run with ANY live account's boilerplate, so an entry adopted by one account automatically stops being available to the next. The suite validates the whole bank against the live fleet on every run — bank rot fails CI, not onboarding day.",
     "elements": "every disclaimer must carry: affiliate · commission/earn · medical advice · FDA · doctor/physician, and fit one tweet (≤280).",
     "added": "2026-08-24 (operator: 'new-account kit — one command builds an account's whole setup with its own unique wording')",
-    "consumed": [
-      {
-        "account": "kim",
-        "date": "2026-08-28"
-      },
-      {
-        "account": "rasmus",
-        "date": "2026-08-28"
-      },
-      {
-        "account": "lucinda",
-        "date": "2026-09-22"
-      },
-      {
-        "account": "natella",
-        "date": "2026-09-22"
-      }
-    ]
+    "consumed": []
   },
   "closers": [
     "What would you change if nobody was watching?\n\nSend this along to the one person who would actually do it.",
     "Which of these is the one you keep postponing?\n\nPass the thread to whoever is postponing it with you.",
-    "What did this thread explain that a doctor never did?\n\nGive it to a friend who is still guessing.",
     "Which of these had you nodding before you reached the end?\n\nPass it along to the person it describes.",
     "What is the one you already knew and still ignore?\n\nSend it to whoever needs that nudge more than you do.",
     "What is the smallest change here you could keep for a year?\n\nShare it with whoever you would do it alongside.",

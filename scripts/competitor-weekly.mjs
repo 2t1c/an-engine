@@ -23,10 +23,11 @@ import { pathToFileURL } from 'node:url';
 import { loadEnv, requireEnv, airtable, typefully, runMain, cliArg, HERE_DIR } from '../lib.mjs';
 import { ACCOUNTS } from '../accounts.mjs';
 import { REGISTRY_TABLE, TABLES } from '../config.mjs';
+import { TBL } from '../config.mjs';
 
 export const REPORT = join(HERE_DIR, 'learnings', 'competitor-weekly.md');
 export const HISTORY = join(HERE_DIR, 'learnings', 'competitor-weekly.jsonl');
-const COMPETITOR_THREADS = 'tblP4xywLyi2PZx3b';
+const COMPETITOR_THREADS = TBL.competitorThreads;
 const THREAD_LANES = new Set(['Cover', 'Harvest', 'Seed', 'Remix', 'Blitz']);
 
 // ---------- pure helpers ----------

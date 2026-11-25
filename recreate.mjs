@@ -10,7 +10,7 @@ import { crossPostLinks, crossPostLedgerRows } from './cross-post-links.mjs';
 import { appendFileSync, readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { loadEnv, requireEnv, LLM_KEYS, airtable, typefully, anthropic, FLEET_MODEL, STRONG_MODEL, levanta, tagGumroad, HERE_DIR, llmSpendSummary, flushLlmSpend } from './lib.mjs';
-import { getAccount } from './accounts.mjs';
+import { getAccount, defaultAccountKey } from './accounts.mjs';
 import { signOffOf } from './laws.mjs';
 import { effLen, hasUrl, plugTextLen, PLUG_LIMIT, TWEET_LIMIT, appendSubstanceBridge, unfuseBridge, substanceTermsFor, discriminationIssue, runUpIssue, numberingIssue, leadingNumbers, numeralizeBulletItems, renumberLeadingMarkers, hardTrimPlug, shortName, hardHealthClaim, hardHealthClaimMatch, normalizePlugStructure, absoluteSuperlativeIssue, plugFingerprint, plugStructure, plugEchoIssue, sharedNgramIssue, hookStrength, hookMoldIssue, plugPositions, splitMergedItems, packItems, hookBlockIssue, mergeHookBlock, stripItemMarkers, hookAttachIssue, attachFirstItemToHook, srcTweet1AttachesItem, attachRuleApplies, bulletizeRecapList, capItemCount, PLACEHOLDER_RE, placeholderIssue, fakePlugIssue, plugSubstanceMismatch, duplicateItemIssue, cutDuplicateItem, packedItemsIssue, stripEmDash, ensureDisclosure, validateDraft, normalizeLineBreaks, respaceWall, unstackParagraphs, splitLongTweet, hookTooLong, hookIdenticalIssue, hookFidelityIssue, hookSimilarity, hookDriftDirection, DANGLING_CTA_RE, firstItemFormIssue, listicleKind, hookBodyText, malformedLevanta, classifyPlugMove, isTrackedLink, wantsBonus, bonusSlot } from './checks.mjs';
 import { DISCLOSURE_LINE_RE } from './disclosure.mjs';
@@ -53,7 +53,7 @@ const SELF_QRT_META = flag('self-qrt-meta', ''); // "views·ageDays" — for the
 // retries and operator attention. `--model sonnet` is the cheap lane; `--model opus` still resolves
 // for any caller that passed it before.
 const MODEL = flag('model') === 'sonnet' ? FLEET_MODEL : STRONG_MODEL;
-const ACCOUNT = getAccount(flag('account', 'julian'));
+const ACCOUNT = getAccount(flag('account', defaultAccountKey()));
 const product = { asin: flag('asin'), link: flag('link'), title: flag('product'), suppliedSubid: flag('subid') };
 // Optional SECOND product (--asin2 / --link2 / --product2): when present, the LIGHT plug promotes this
 // product and the HEAVY plug promotes the primary, so the two CTAs can each fit the context of their own
@@ -1414,7 +1414,7 @@ async function main(resultChannel = null) {
   if (ALLOW_INVALID) console.log(`⚠️ ALLOW_INVALID_DRAFT: writing this draft for REVIEW despite ${issues.length} validation issue(s) — it is NOT shippable.`);
   if ((CREATE || updateId) && (!issues.length || ALLOW_INVALID)) {
     const scratchpad = [
-      `PROJECT INFINITY ${SKEL_MODE ? 'SKELETON VARIATION' : 'RECREATION'}`,
+      `ENGINE ${SKEL_MODE ? 'SKELETON VARIATION' : 'RECREATION'}`,
       `Source: ${src.url} (${src.impressions.toLocaleString()} views, ${src.niche})`,
       ...(SELF_QRT_URL ? [`SELF-QRT: ${SELF_QRT_URL}${SELF_QRT_META ? ` (${SELF_QRT_META})` : ''} — placed: ${selfQrtPlaced.join(' + ') || 'none'}`] : []),
       ...(SKEL_MODE ? [`MODE: skeleton`, `SKELETON: ${skeleton.id || SKELETON}`, `TOPIC: ${TOPIC}`, `ITEMCOUNT: ${skeleton.itemCount}`, ...(hookScore != null ? [`HOOKSCORE: ${hookScore}`] : [])] : []),

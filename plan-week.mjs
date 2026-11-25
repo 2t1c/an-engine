@@ -581,7 +581,7 @@ async function main() {
   // ORDER MATTERS AND COST A BUG. This ran BEFORE capSameDaySource on the first cut, and the cap
   // SWAPS SLOT DAYS to break up mold collisions — so a viral slot filled for one day was moved to
   // another and landed on a donor that day already had. The 2026-08-28 plan shipped exactly that:
-  // Julian and Magnus both on rec4xVIMpQL5FAFTy. A per-day invariant can only be established after
+  // Two pages both on one donor record. A per-day invariant can only be established after
   // the days have stopped moving, so the fill goes last.
   const viralFill = fillViralByDay(plan, viralPool, {
     memory,

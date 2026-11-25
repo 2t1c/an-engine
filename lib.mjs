@@ -1,4 +1,4 @@
-// Shared helpers for Project Infinity: env loader + thin API clients.
+// Shared helpers for the engine: env loader + thin API clients.
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { dirname, join } from 'node:path';

@@ -13,7 +13,13 @@
   },
   "profitShare": {
     "operatorPct": 50,
-    "costs": ["rtVendors", "rapidapi", "typefully", "hosting", "levantaFees"],
+    "costs": [
+      "rtVendors",
+      "rapidapi",
+      "typefully",
+      "hosting",
+      "levantaFees"
+    ],
     "statementDay": "Mon"
   },
   "features": {
@@ -23,5 +29,13 @@
   "swipe": {
     "copyDaily": true,
     "copyWindowDays": 30
-  }
+  },
+  "telegram": {
+    "topics": {
+      "alerts": 0,
+      "posted": 0,
+      "fuel": 0
+    }
+  },
+  "burner": null
 }

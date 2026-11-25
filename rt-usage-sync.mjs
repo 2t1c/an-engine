@@ -1,4 +1,4 @@
-// rt-usage-sync.mjs — refresh the Airtable "RT Usage" tracker (Project Infinity base): one row per
+// rt-usage-sync.mjs — refresh the Airtable "RT Usage" tracker (registry base): one row per
 // vendor with where the deal stands, what it costs, how fast we burn it and when it renews.
 // Operator, 2026-09-05: "very simple, updated every day."
 //

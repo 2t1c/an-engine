@@ -49,7 +49,7 @@ const env = loadEnv();
 const tf = typefully(env);
 const now = Date.now(), end = now + 72 * 36e5;
 let dPass = 0, dViol = 0, drafts = 0;
-for (const key of ['julian', 'magnus', 'lorenzo']) {
+for (const key of Object.keys(ACCOUNTS).filter((k) => k !== 'burner' && !ACCOUNTS[k].paused).slice(0, 3)) {
   const acc = getAccount(key);
   const j = await fetch(`https://api.typefully.com/v2/social-sets/${acc.socialSetId}/drafts?limit=50`, { headers: { Authorization: `Bearer ${env.TYPEFULLY_API_KEY}` } }).then((r) => r.json());
   const sched = (j.results || []).filter((d) => d.scheduled_date && new Date(d.scheduled_date).getTime() >= now && new Date(d.scheduled_date).getTime() <= end && String(d.status).toLowerCase() !== 'published');

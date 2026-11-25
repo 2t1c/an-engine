@@ -43,8 +43,9 @@ import { fileURLToPath } from 'node:url';
 import { requestWithPolicy, jsonWithSchema } from '../api-reliability.mjs';
 import { copyDigest, renderNote } from '../thread-note.mjs';
 import { checkHook } from '../hooks-check.mjs';
+import { TBL } from '../config.mjs';
 
-// The tracker built 2026-09-24 (private draft page "Project Infinity · Run Tracker").
+// The tracker built 2026-09-24 (a private Notion page, the Run Tracker).
 export const NOTION_DBS = Object.freeze({
   threads: 'c89babd998204ed793f0bf2873784ee0',
   runs: '3fbb733381274261995606b67148c838',
@@ -52,8 +53,8 @@ export const NOTION_DBS = Object.freeze({
 });
 export const NOTION_VERSION = '2022-06-28';
 export const POOL_DB = '65b176c2b1fc46fb95444c64f4b101d1';
-const HARVESTS_TABLE = 'tblOtEftJl2p43o6M';   // greenhouse-draft.mjs TABLES.Harvests
-const POTS_TABLE = 'tblJg81qkmj1t3eRi';       // greenhouse-draft.mjs TABLES.Pots
+const HARVESTS_TABLE = TBL.harvests;   // greenhouse-draft.mjs TABLES.Harvests
+const POTS_TABLE = TBL.pots;       // greenhouse-draft.mjs TABLES.Pots
 const RUN_ID = /^[A-Za-z0-9][A-Za-z0-9_-]{0,40}$/;
 const TEXT_MAX = 2000;            // Notion's cap per rich-text item
 const BODY_ITEMS = 100;           // and per block's rich-text array

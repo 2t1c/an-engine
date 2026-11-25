@@ -14,8 +14,7 @@
 //             local file instead (tests, offline). MATCH always ranks stored clips beside fresh
 //             passages; a stored clip within CLIP_RULES.reuseMargin wins (no cut).
 // --pool:     fresh passages also come from every transcript in the Podcasts table (--video <id> to narrow).
-// --lane gtx: the GTX & AI pool (clip-lanes.mjs): its base for the store and --pool, its focus and its lower
-//             bars for MINE. MATCH keeps the usual attach bars on every lane.
+// --lane:     the clip pool (clip-lanes.mjs); health is the only lane.
 // --account:  a fleet account key; stored clips used on that account inside the cooldown are left out.
 // --save:     MINE adds the chosen clips to the library. --out <file> writes the full JSON result.
 //

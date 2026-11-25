@@ -6,43 +6,34 @@
 //   CLIPS_BASE_ID    -> Clip Library (podcast pool + clips); defaults to CLIPS_BASE below, since a base
 //                       id is not a secret and the clip scripts should run without a deploy step
 
-// Airtable tables (IDs are stable; base is chosen per call via env).
-export const CLIPS_BASE = 'appMjL85FdALm5jkw'; // Clip Library (clip-pool.mjs), created 2026-09-23
+// Airtable ids come from the buyer's config/airtable.json (lib/config-file.mjs; the engine repo falls
+// back to config/airtable.example.json). Base ids are Railway variables; the clip and growth bases
+// default to the config file so the clip scripts run without a deploy step.
+import { readConfigFile } from './lib/config-file.mjs';
+const AT = readConfigFile('airtable');
+const AT_TABLES = AT.tables || {};
 
-// The GTX & AI clip pool (operator 2026-10-09): the same three tables in their own base, so the health
-// MATCH never ranks a business clip and the wider pool never crowds the health one. clip-lanes.mjs maps
-// TABLES.podcasts/clips/swipeMedia onto these ids when a script runs with --lane gtx.
-export const GTX_CLIPS_BASE = 'appbZwcOiJCxPpKlU'; // Clip Library · GTX & AI, created 2026-10-09
-export const GTX_CLIP_TABLES = { podcasts: 'tblr8qtNtNLCU9zwd', clips: 'tble4vJzALOEd7YgY', swipeMedia: 'tblbeRGrtS69D1u5o' };
-
-// GROWTH LOG has its own base since 2026-11-25 (owner: split it off; the Project Infinity base was
-// 3k rows from its 50k cap and the Growth Log was 62% of it). No Post link any more: links can't cross
-// bases, and every reader matches rows by {X URL}. Rows over 30 days are archived and trimmed weekly.
-export const GROWTH = { base: 'appz62qtYq8vhvpKs', table: 'tblmKHJZhcsZZPCVk' };
+export const CLIPS_BASE = AT.bases?.clips || '';
+export const GROWTH = { base: AT.bases?.growth || '', table: AT_TABLES.growth || '' };
 export const growthBase = (env = {}) => env.GROWTH_BASE_ID || GROWTH.base;
+export const ACCOUNTS_TABLE = AT_TABLES.accounts || '';
+// Every table id by key (config/airtable.json `tables`); an unknown key reads as '' so a typo fails at Airtable, not at import.
+export const TBL = new Proxy({}, { get: (_, k) => (typeof k === 'string' ? AT_TABLES[k] || '' : undefined) });
 
 export const TABLES = {
-  podcasts: 'tblW4RfyRKWDkUDsc', // CLIPS_BASE — the podcast pool, transcript attached
-  clips: 'tblYAE4QJkmEyXRQy', // CLIPS_BASE — clips Jev found, every score a field
-  swipeMedia: 'tblgcFFYuA8Sw3yv2', // CLIPS_BASE — swipe-DB media we placed on drafts, and where
-  swipe: 'tblS9wU39UjUVSsvl', // XDB_BASE_ID — creator swipe threads (source of recreations)
-  swipeUsers: 'tblEbIfYqCpxf1yMu', // XDB_BASE_ID — tracked creators; {Cohort} marks the Direct Competitor pages
-  config: 'tblqCg6MjfRTHz1SO', // XDB_BASE_ID — bot token, chat id, topic map
-  // Viral health SINGLES pool (2026-08-31): separate from `swipe` by design — its ingest bar is
-  // >=100K views OR >=1,500 likes from the Users.{Health Source} roster, well under the swipe
-  // scout's 250K floor, so blending them would pollute every selection pool that reads `swipe`.
-  // Lives in its OWN base ("Health Tweets Database", HEALTH_XDB_BASE_ID / appUkzz5Sq0vg3uiL) so
-  // its Media attachments never eat the X Swipe Database's per-base storage cap — callers must
-  // pass that base to airtable(env, base), not the XDB default. Fed by n8n "Health Tweets (241)"
-  // + n8n-x-pipeline/harvest-health.mjs; tag-niche.mjs heals its Niche gap via --table healthTweets.
-  healthTweets: 'tblmJicvT1m5F745U', // HEALTH_XDB_BASE_ID — viral health singles (100K views / 1.5K likes bar)
+  podcasts: AT_TABLES.podcasts || '', // CLIPS_BASE: the podcast pool, transcript attached
+  clips: AT_TABLES.clips || '', // CLIPS_BASE: clips found, every score a field
+  swipeMedia: AT_TABLES.swipeMedia || '', // CLIPS_BASE: swipe media placed on drafts
+  swipe: AT_TABLES.swipe || '', // XDB_BASE_ID: creator swipe threads (source of covers)
+  swipeUsers: AT_TABLES.swipeUsers || '', // XDB_BASE_ID: tracked creators; {Cohort} marks Direct Competitor pages
+  config: AT_TABLES.config || '', // XDB_BASE_ID: bot token, chat id, topic map
+  healthTweets: AT_TABLES.healthTweets || '', // HEALTH_XDB_BASE_ID: viral health singles
 };
 // Competitor Threads (XDB_BASE_ID): every Direct Competitor thread, head + body (competitor-bodies.mjs).
-export const COMPETITOR_THREADS = 'tblP4xywLyi2PZx3b';
-// One row per thread (2026-10-20, thread-fold.mjs): in these tables a head carries its body tweets in
-// {Body JSON}/{Body Media}, and lib.mjs's airtable() expands them on every read.
+export const COMPETITOR_THREADS = AT_TABLES.competitorThreads || '';
+// One row per thread (thread-fold.mjs): a head carries its body tweets in {Body JSON}/{Body Media}.
 export const FOLDED_TABLES = Object.freeze([TABLES.swipe, COMPETITOR_THREADS]);
-export const CONFIG_RECORD = 'recuCRHIrlQng6OyQ'; // the single Config row in TABLES.config
+export const CONFIG_RECORD = AT.records?.config || ''; // the single Config row in TABLES.config
 export const REGISTRY_TABLE = 'Published Content'; // REGISTRY_BASE_ID — our published posts (by name)
 
 // The title a collaborative /run gives a thread while the operator is still reviewing it. It lives
@@ -87,8 +78,9 @@ export const topicFor = (kind, fallback = 'ops') => MESSAGE_TOPICS[kind] || fall
 
 // Operator-confirmed Command Center forum links (2026-09-12). These are public routing metadata,
 // not credentials. `posted` is the existing route key for the topic now named Today.
-export const COMMAND_CENTER_CHAT_ID = '-1004393112008';
-export const COMMAND_CENTER_TOPICS = { posted: 2614, fuel: 2050, alerts: 7, books: 3298 };
+export const COMMAND_CENTER_CHAT_ID = process.env.TELEGRAM_CHAT_ID || '';
+// Topic thread ids in the buyer's Telegram group (config/engine.json `telegram.topics`).
+export const COMMAND_CENTER_TOPICS = readConfigFile('engine').telegram?.topics || {};
 
 // MEDIA FEATURE SWITCH (operator 2026-07-21): media attachment is its own feature so the fleet can go
 // text-only at ANY time with a one-line flip — text-only is good for retention and sidesteps

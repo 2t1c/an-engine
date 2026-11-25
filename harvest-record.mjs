@@ -18,7 +18,7 @@ import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { buildRecord, renderScratchpad, writeRecord, threadTitle } from './thread-record.mjs';
 import { loadEnv, requireEnv, airtable, typefully, HERE_DIR } from './lib.mjs';
-import { ACCOUNTS, getAccount } from './accounts.mjs';
+import { ACCOUNTS, getAccount, defaultAccountKey } from './accounts.mjs';
 import { REGISTRY_TABLE } from './config.mjs';
 import { loadRepair } from './harvest-repair.mjs';
 
@@ -86,7 +86,7 @@ async function main() {
   const env = loadEnv();
   requireEnv(env, ['TYPEFULLY_API_KEY']);
   const tf = typefully(env);
-  const account = getAccount(flag('account') || 'julian');
+  const account = getAccount(flag('account') || defaultAccountKey());
   const draft = await tf.getDraft(account.socialSetId, draftId);
   const tweets = (draft.platforms?.x?.posts || []).map((p) => String(p.text || ''));
   const rows = existsSync(join(HERE_DIR, 'ledger.jsonl'))

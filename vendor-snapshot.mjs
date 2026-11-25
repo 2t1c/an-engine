@@ -20,8 +20,9 @@
 //   node vendor-snapshot.mjs --dry     # print the diff, write nothing
 import { loadEnv, requireEnv, airtable, telegram } from './lib.mjs';
 import { TABLES } from './config.mjs';
+import { TBL } from './config.mjs';
 
-const HISTORY_TABLE = 'tblvUIV7teNRDZ1Ae'; // Vendor Config History, in REGISTRY_BASE_ID
+const HISTORY_TABLE = TBL.vendorConfigHistory; // Vendor Config History, in REGISTRY_BASE_ID
 const TIERS = ['T1', 'T2', 'T3', 'T4', 'T5', 'T6'];
 
 /** A Config row is a send target if Fuel the Fire would actually message it. Mirrors the

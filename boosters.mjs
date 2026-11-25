@@ -21,8 +21,9 @@
 //   T  16:30  the evening's threads
 // Each booster runs the same day STAGGER_MIN later than the one before it, so five pages never post the same minute;
 // at booking, every slot still moves forward to keep 5 minutes from any fleet post (slots.mjs MIN_SLOT_GAP_MIN).
-export const BOOSTERS = Object.freeze(['muah', 'johnathan', 'felicia', 'peak', 'irana', 'rosemary', 'live', 'violet', 'dzejla', 'rasmus']);
-export const NOT_YET = Object.freeze(['natella', 'lucinda']);
+// Booster pages are out of this engine's scope: none are configured.
+export const BOOSTERS = Object.freeze([]);
+export const NOT_YET = Object.freeze([]);
 export const KINDS = Object.freeze({ S: 'single', A: 'article QRT', T: 'thread QRT' });
 export const DAY = Object.freeze([
   { kind: 'S', utc: '02:00' }, { kind: 'A', utc: '07:30' }, { kind: 'T', utc: '09:00' },

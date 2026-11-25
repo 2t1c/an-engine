@@ -16,7 +16,6 @@ import { poolFitQuestions } from '../clip-pool.mjs';
 import { IMAGE_QUESTIONS, MEDIA_QUESTIONS, subjectQuestion } from '../swipe-media.mjs';
 import { HOOK_QUESTIONS } from '../hook-fingerprint.mjs';
 import { LEAD_FOLLOW_QUESTIONS, LEAD_ORDER_QUESTIONS, LEAD_QUESTIONS } from '../lead-item.mjs';
-import { ARTICLE_FIT_QUESTIONS } from '../article-fit.mjs';
 import { noul } from '../jev.mjs';
 
 /** A reading decision: the caller supplies { state, questions }; the template is what is hashed. */
@@ -82,11 +81,6 @@ export const leadPullRead = reading('lead-pull-read', LEAD_QUESTIONS);
 export const leadOrderRead = reading('lead-order-read', LEAD_ORDER_QUESTIONS);
 export const leadFollowRead = reading('lead-follow-read', LEAD_FOLLOW_QUESTIONS);
 
-// The article lane (scripts/article-research.mjs, owner 2026-09-29: "use Jev, and find the type of articles that you
-// think would fit very well with what we do"): each viral article in the XDB Articles table, read once for its
-// life area, the reader's problem, whether that problem is a deficiency symptom, whether a supplement fits as one
-// step, and what a quote-post funnel needs. Research only: nothing ranks, gates or writes on it.
-export const articleFitRead = reading('article-fit-read', ARTICLE_FIT_QUESTIONS);
 
 // Flop research (scripts/flop-research.mjs, owner 2026-09-25: "track what flops (under 100k views)"): an
 // LLM proposes yes/no questions each week and Jev answers them over a thread; code keeps only the ones
@@ -96,7 +90,7 @@ export const flopRead = reading('flop-read', {
 });
 
 export const READINGS = Object.freeze([hookRead, draftsRead, selectionRead, finalRead, plugsRead, nicheTag, nicheSafety, productFitRead, productPointerRead,
-  clipSupportRead, clipBoundaryRead, clipMainIdeaRead, mediaPairRead, mediaSubjectRead, mediaImageRead, flopRead, clipMineRead, reelMineRead, reelPickRead, clipPoolRead, leadPullRead, leadOrderRead, leadFollowRead, articleFitRead]);
+  clipSupportRead, clipBoundaryRead, clipMainIdeaRead, mediaPairRead, mediaSubjectRead, mediaImageRead, flopRead, clipMineRead, reelMineRead, reelPickRead, clipPoolRead, leadPullRead, leadOrderRead, leadFollowRead]);
 
 // Its own registry, loaded by askThrough when a reading is asked. Not in decisions/index.mjs: these
 // templates import the /run scripts, and index.mjs is loaded by those scripts' own import graph

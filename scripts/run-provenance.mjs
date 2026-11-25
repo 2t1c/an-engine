@@ -22,12 +22,13 @@ import { tweetsFromRollup, substanceTermsFor } from '../checks.mjs';
 import { checkHook } from '../hooks-check.mjs';
 import { handleFromUrl, notRead, PROVENANCE_SCHEMA } from '../thread-note.mjs';
 import { status as studioStatus } from './run-studio.mjs';
+import { TBL } from '../config.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const SWIPE_TABLE = 'tblS9wU39UjUVSsvl';      // config.mjs TABLES.swipe
-const HARVESTS_TABLE = 'tblOtEftJl2p43o6M';   // greenhouse-draft.mjs TABLES.Harvests
-const SEEDS_TABLE = 'tblk4GH77DQPh2AFq';      // greenhouse-draft.mjs TABLES.Seeds
-const POTS_TABLE = 'tblJg81qkmj1t3eRi';       // greenhouse-draft.mjs TABLES.Pots
+const SWIPE_TABLE = TBL.swipe;      // config.mjs TABLES.swipe
+const HARVESTS_TABLE = TBL.harvests;   // greenhouse-draft.mjs TABLES.Harvests
+const SEEDS_TABLE = TBL.seeds;      // greenhouse-draft.mjs TABLES.Seeds
+const POTS_TABLE = TBL.pots;       // greenhouse-draft.mjs TABLES.Pots
 const text = (v) => (v == null ? '' : String(v).trim());
 const card = (baseId, table, recId) => (recId ? (baseId ? `https://airtable.com/${baseId}/${table}/${recId}` : null) : null);
 

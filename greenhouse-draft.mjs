@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // greenhouse-draft.mjs — put a pot in the greenhouse: the `[POT] <fruit> · <angle>` draft on the
-// burner set (204330), tagged `pot` + the fruit, its scratchpad leading with the Airtable links and
+// burner set, tagged `pot` + the fruit, its scratchpad leading with the Airtable links and
 // carrying the DIALS TICKET, and (with --pots-row) the Pots row that makes the seed see it.
 //
 //   node greenhouse-draft.mjs queues/pots/mango-crossword.greenhouse.json            # create or patch
@@ -19,9 +19,12 @@ import { getAccount } from './accounts.mjs';
 import { buildPlatforms } from './platforms.mjs';
 import { gatePot } from './pot-gate.mjs';
 import { cellOf, ticketText, cellName, ensureCell } from './cells-sync.mjs';
+import { TBL } from './config.mjs';
+import { readConfigFile } from './lib/config-file.mjs';
 
-const BURNER = 204330;
-const TABLES = { Seeds: 'tblk4GH77DQPh2AFq', Harvests: 'tblOtEftJl2p43o6M', Pots: 'tblJg81qkmj1t3eRi' };
+// The staging set (config/engine.json `burner.socialSetId`); 0 when none is configured.
+const BURNER = readConfigFile('engine').burner?.socialSetId || 0;
+const TABLES = { Seeds: TBL.seeds, Harvests: TBL.harvests, Pots: TBL.pots };
 
 function angleOf(file, spec) {
   if (spec.angle) return spec.angle;

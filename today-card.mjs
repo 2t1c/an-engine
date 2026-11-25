@@ -16,13 +16,15 @@ import { REGISTRY_TABLE, GROWTH, growthBase } from './config.mjs';
 import { isKnownLane } from './lanes.mjs';
 import { airtable, esc, HERE_DIR, loadEnv, requireEnv, runMain, telegramCard, telegramTextLength } from './lib.mjs';
 import { estimateEarnings, measureRates } from './earn-estimate.mjs';
+import { TBL } from './config.mjs';
 
-const FUEL_LOG = 'tblNSMxxTggWNndI7';
+const FUEL_LOG = TBL.fuelLog;
 const GROWTH_LOG = GROWTH.table; // own base since 2026-11-25 (config.mjs GROWTH)
 const STATE_FILE = join(HERE_DIR, 'queues', 'telegram-today-card.json');
 // Published Content's "Published Today" grid view. It lives in this base only, so the link is offered
 // only when the registry base is this one, and only on the live card (Airtable's "today" is not a recap's).
-export const TODAY_VIEW = { base: 'app4Orfi56ghELGix', url: 'https://airtable.com/app4Orfi56ghELGix/tblUxuUy6Tiy9tlyC/viwda4kW5eD6LPASb' };
+// The registry's Today view link for the card; set TODAY_VIEW_URL (Railway variable) to show it.
+export const TODAY_VIEW = { base: process.env.REGISTRY_BASE_ID || '', url: process.env.TODAY_VIEW_URL || '' };
 const PAGE_LIMIT = 3900;
 // Owner scope: canonical thread lanes or measured multi-tweet evidence; explicit
 // singles and native X Articles (owner, R2026-10-03: articles are additive) always lose,
@@ -273,7 +275,7 @@ async function main() {
   const rates = measureRates(facts, { now: now.getTime() });
   const names = Object.values(ACCOUNTS).filter((a) => !a.paused).map((a) => a.name);
   const pages = renderTodayPages(buildTodayModel({ rows: pc.map((r) => r.fields), fuel: fuel.map((r) => r.fields), growth: growth.map((r) => r.fields), growthPrev: growthPrev.map((r) => r.fields),
-    accountNames: names, rates, now, day, recap, todayView: env.REGISTRY_BASE_ID === TODAY_VIEW.base ? TODAY_VIEW.url : null }));
+    accountNames: names, rates, now, day, recap, todayView: TODAY_VIEW.url || null }));
   console.log(pages.join('\n\n---\n\n').replace(/<[^>]+>/g, ''));
   if (dry) return;
   let state = { cards: {} }; try { state = JSON.parse(readFileSync(STATE_FILE, 'utf8')); } catch {}

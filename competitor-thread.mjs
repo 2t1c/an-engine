@@ -42,7 +42,7 @@ export function tweetRow(t, handle) {
   return {
     // A long tweet (X Premium "note tweet") carries only its first ~275 chars in legacy.full_text;
     // the whole text sits in note_tweet. Reading full_text alone stored every long competitor tweet
-    // cut mid-sentence (found 2026-11-12 on the Lifepad pages).
+    // cut mid-sentence (found 2026-11-12 on partner pages).
     rest_id: t.rest_id, screen_name: sn, text: cleanText(noteText(t) || leg.full_text),
     url: `https://x.com/${sn}/status/${t.rest_id}`,
     likes: leg.favorite_count || 0, comments: leg.reply_count || 0, retweets: leg.retweet_count || 0,

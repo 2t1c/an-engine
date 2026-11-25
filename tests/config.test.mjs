@@ -55,6 +55,10 @@ test('page validation catches duplicates, bad handles and active pages without a
   assert.ok(validatePages({ pages: [{ ...p, active: true }] }).some((m) => /real typefullySocialSetId/.test(m)));
   assert.ok(validatePages({ pages: [{ ...p, rtLane: 'fast' }] }).some((m) => /rtLane/.test(m)));
   assert.deepEqual(validatePages([]), ['pages: { "pages": [...] } required']);
+  const live = { ...p, active: true, typefullySocialSetId: 12 };
+  assert.deepEqual(validatePages({ pages: [live] }), []);
+  assert.ok(validatePages({ pages: [{ ...live, voice: undefined }] }).some((m) => /voice: required on an active page/.test(m)));
+  assert.ok(validatePages({ pages: [live, { ...live, id: 'two', handle: 'Two' }] }).some((m) => /share one closing/.test(m)));
 });
 
 test('product validation keeps non-Prime products off the active shelf', () => {

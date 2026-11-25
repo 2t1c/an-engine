@@ -285,7 +285,7 @@ export function formatScorecard(sc) {
 // ---- reconcile -----------------------------------------------------------------------------------
 /** PI's lines per (vendor, UTC day) against the bot's per-source tallies. `vendorByChat` maps the
  *  bot's chat id -> Fuel Log vendor name (from vendors.json), because the two sides spell names
- *  differently ("VGN without GTX" vs "All VGNs (bundle)"). */
+ *  differently ("one network alone" vs "the bundle"). */
 /** When the bot's per-source tallies began, as epoch ms. The payload's `tally_since` when the bot
  *  reports it (persisted from its first boot with the tally code); otherwise inferred as the start of
  *  the day AFTER the earliest tallied day, because that first day is partial; Infinity when the bot
@@ -547,7 +547,7 @@ export function orderSize(meanDemand, coverDays, leadDays, stock, safety) {
 }
 
 /** Distinct pages that fired at least once in the window — the population whose posting the history
- *  measured. Case-folded: the Fuel Log carries "CoachLucHerrera" and "coachlucherrera" for one page. */
+ *  measured. Case-folded: the Fuel Log carries "SomePage" and "somepage" for one page. */
 export function fleetInWindow(lines, { days, now = Date.now() }) {
   const since = now - days * 864e5;
   const seen = new Set();
@@ -843,7 +843,7 @@ export function autoTrim(args, { steps = [30, 20, 15, 10, 5, 0], floor = 0 } = {
  *
  *  This distinction is the whole ballgame and getting it wrong sized a package 2.5x too big. A
  *  vendor's own line history says how often it was fired at IN THE ROLE IT HELD THEN. The v2 ladder
- *  (2026-09-05) moved Pammy and IP out of T1 and into T2, and moved Hey Brother, Lifepad and ME the
+ *  (2026-09-05) moved Pammy and IP out of T1 and into T2, and moved three vendors the
  *  other way; a 14-day window straddles that, so Pammy's history is T1 volume while its price is T1's
  *  no longer. What actually depletes a vendor's stock is how often ITS CURRENT TIER fires, times its
  *  share of that tier's fan-out.

@@ -218,7 +218,7 @@ export async function automintDraft(env, acc, draftId, { dry = false, force = fa
   const minted = [];
   for (const s of plan) {
     // levantaSubidPrefix is ALREADY "x-thread-<key>", and automintSubid prepends "x-thread-" itself,
-    // so passing the prefix produced "x-thread-x-thread-julian-..." on the first live run. Nine wasted
+    // so passing the prefix produced "x-thread-x-thread-<page>-..." on the first live run. Nine wasted
     // characters out of a 50-char budget, which silently truncates the slug that makes a subid
     // readable. Strip the prefix back to the bare key.
     const key = String(acc.levantaSubidPrefix || '').replace(/^x-thread-/, '');

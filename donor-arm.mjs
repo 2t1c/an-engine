@@ -26,7 +26,7 @@ import { LAWS } from './laws.mjs';
 // standards, and mixing them in is what produced both false findings.
 export const REGIME_START = '2026-08-20';
 // Client rails in other niches — never part of a fleet read.
-const EXCLUDE_ACCOUNTS = new Set(['AI Evolution', 'LearningToan']);
+const EXCLUDE_ACCOUNTS = new Set();
 const statusId = (u) => (String(u || '').match(/status\/(\d+)/) || [])[1] || null;
 
 /** PURE. Bucket one cover by the age of its donor when we posted. */

@@ -56,7 +56,7 @@ async function main() {
   const rows = [];
   let offset;
   do {
-    const u = new URL(`https://api.airtable.com/v0/${env.REGISTRY_BASE_ID || 'app4Orfi56ghELGix'}/${encodeURIComponent('Published Content')}`);
+    const u = new URL(`https://api.airtable.com/v0/${env.REGISTRY_BASE_ID}/${encodeURIComponent('Published Content')}`);
     u.searchParams.set('pageSize', '100');
     ['Draft ID', 'Orders', 'Affiliate Clicks', 'Link Clicks', 'Post'].forEach((f) => u.searchParams.append('fields[]', f));
     if (offset) u.searchParams.set('offset', offset);

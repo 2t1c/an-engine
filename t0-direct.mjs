@@ -6,7 +6,7 @@
 // (its "Fuel Gate" fans one bare-link send per Active Config row tagged Tier "T0", via the Vendor
 // Bot, and bills one ledger line per network — see docs/bridge-nodes/ and vendors.json
 // bundles.t0Direct). T0 is FIVE networks now (Life Mastery, GL Growth Lab, VOPE, Lewin, All VGNs;
-// ConquerMM dropped, Lifepad moved to T1), $4.55 nominal. This module keeps its plan/refuse logic
+// one vendor dropped, one moved to T1), $4.55 nominal. This module keeps its plan/refuse logic
 // and tests as the PI-side fallback sender; T0_DIRECT stays false. Its broker interlock still
 // applies: while the broker row is Active the Bridge is in broker mode and nothing else may send.
 // ==================================================================================
@@ -19,7 +19,7 @@
 //
 // WHY, precisely — because the obvious reason is wrong. Going direct does NOT save money. The
 // broker's $8.60 is a PASS-THROUGH of what its members charge per ping (Life Mastery $2.30, GL
-// Growth Lab $2.30, Lifepad $4.00), not a margin: VOPE and Lewin are on retainers the fleet already
+// Growth Lab $2.30, another $4.00), not a margin: VOPE and Lewin are on retainers the fleet already
 // pays and All-VGNs is our own, so all three are free at the margin. ConquerMM is the one open
 // figure — $2.50 per ping (operator 2026-09-03) but absent from that breakdown, so a direct fan-out
 // is $11.10 if it is incremental and $8.60 if it is already covered. Either way there is no saving
@@ -225,7 +225,7 @@ export async function sendToVendor(token, chatId, text) {
   }
 }
 
-/** Report one delivery to genius-rt-bot's `POST /vendor-rt`, which burns a post from that vendor's
+/** Report one delivery to the RT bot's `POST /vendor-rt`, which burns a post from that vendor's
  *  credit deal. It exists precisely for this case: Telegram never shows one bot another bot's
  *  messages, so a send we make is invisible to the RT bot unless we tell it. Deduped bot-side per
  *  vendor per tweet for 3h, so reporting a tweet the bot also delivered never double-counts.

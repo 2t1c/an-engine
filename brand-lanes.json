@@ -1,35 +1,3 @@
 {
-  "_doc": "Brand lanes: pages that plug only one brand's products, through the brand's own links (not Levanta). Read by brand-lanes.mjs. Owner 2026-11-21: 'dedicate 3 accounts to push these products completely'.",
-  "ultimate-health": {
-    "brand": "Ultimate Health Solutions",
-    "deal": "Theta Brands pays its Levanta rate + 10%, monthly, off Levanta. Sales come from their dashboard only, per product.",
-    "since": "2026-11-22",
-    "pages": ["peak", "sophia", "rafael"],
-    "products": {
-      "B0CTNWBRXR": {
-        "name": "berberine",
-        "attributionUrl": "https://www.amazon.com/dp/B0CTNWBRXR?maas=maas_adg_20EF7E020E2AA4F208AEC11892D2B123_afap_abs&ref_=aa_maas&tag=maas",
-        "glink": "https://geni.us/8EmKIOD",
-        "prime": "verified",
-        "primeNote": "ships from Amazon (owner 2026-11-08)",
-        "fits": "blood sugar, insulin, metabolism, belly fat, cholesterol, gut, after 40"
-      },
-      "B0CKTQH4XQ": {
-        "name": "essential amino acids",
-        "attributionUrl": "https://www.amazon.com/dp/B0CKTQH4XQ?maas=maas_adg_B7D926BEC061F66FA9BA6321B236E3B0_afap_abs&ref_=aa_maas&tag=maas",
-        "glink": "https://geni.us/ZSyEb",
-        "prime": "verified",
-        "primeNote": "ships from Amazon (owner 2026-11-24)",
-        "fits": "muscle loss, protein, aging, recovery, fasting, strength after 40"
-      },
-      "B0CKTRFS5Z": {
-        "name": "beef organs",
-        "attributionUrl": "https://www.amazon.com/dp/B0CKTRFS5Z?maas=maas_adg_CBC7733F005B18E8659B554EB252414A_afap_abs&ref_=aa_maas&tag=maas",
-        "glink": "https://geni.us/tygMp",
-        "prime": "verified",
-        "primeNote": "ships from Amazon (owner 2026-11-24)",
-        "fits": "energy, fatigue, nutrient gaps, iron, B12, ancestral eating, hair and skin"
-      }
-    }
-  }
+  "_doc": "Brand lanes: pages that plug only one brand's products, through the brand's own links (not Levanta). Read by brand-lanes.mjs. None configured."
 }

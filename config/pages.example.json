@@ -1,5 +1,5 @@
 {
-  "$doc": "Copy to config/pages.json in a buyer's clone. One entry per X page the buyer owns.",
+  "$doc": "Copy to config/pages.json in a buyer's clone. One entry per X page the buyer owns. voice, closing and disclaimer are required once a page is active, and every page writes its own closing and disclaimer (no shared sentence across pages).",
   "pages": [
     {
       "id": "example",
@@ -9,7 +9,18 @@
       "typefullySocialSetId": 0,
       "levantaSubidPrefix": "x-thread-example",
       "rtLane": "ladder",
-      "active": false
+      "active": false,
+      "niches": ["Health", "Fitness"],
+      "voice": [
+        "Health educator. Plain, specific, personally invested, never hypey.",
+        "Short sentences. Generous line breaks. One or two sentences per paragraph.",
+        "First person, low pressure. Reason before recommendation.",
+        "No em dashes. No fake urgency."
+      ],
+      "closing": "Which of these will you try first?\n\nSend it to someone who needs to read it.",
+      "disclaimer": "Some links here are affiliate links: buy through one and I may earn a commission at no extra cost to you. This thread is education, not medical advice. Ask your doctor before changing anything.",
+      "defaultProduct": { "asin": "B000000000", "title": "Example Magnesium Glycinate" },
+      "altProducts": []
     }
   ]
 }

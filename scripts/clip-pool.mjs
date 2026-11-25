@@ -8,8 +8,7 @@
 //   node scripts/clip-pool.mjs list
 //   node scripts/clip-pool.mjs setup  --workspace <wsp…>                            a NEW Clip Library base
 //
-// --lane gtx  every command above on the GTX & AI pool instead of the health one (clip-lanes.mjs): its own
-//             base, the wide GTX focus, Fit >= 0.3 to mine, 20 clips per episode, and lower mining bars.
+// --lane      the clip pool (clip-lanes.mjs); health is the only lane.
 //
 // add     reads the video's details and English captions (RapidAPI: one call per video, from the free
 //         plan's monthly quota; when that fails, yt-dlp's embedded client), upserts the Podcasts row,

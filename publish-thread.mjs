@@ -258,7 +258,7 @@ async function main(filePath = arg('file'), resultChannel = null) {
   requireEnv(env, ['TYPEFULLY_API_KEY']);
   const spec = JSON.parse(readFileSync(filePath, 'utf8'));
   const lineage = publicationLineage(spec); // reject contradictory identity before provider writes
-  // BURNER LANE (operator 2026-08-23): --burner posts to the GeniusGTX Threads staging page.
+  // BURNER LANE (operator 2026-08-23): --burner posts to the configured staging page (engine.json burner).
   // Finished threads AND fragments are both welcome, so the monetization requirements (products,
   // minted links, the full engine gate set, the ledger row) do not apply — only the per-tweet laws
   // that protect any timeline: 280, no placeholders, no banned topics, no em dashes.

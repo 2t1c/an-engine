@@ -12,7 +12,7 @@ export function isStandalonePost(input = {}) {
 
 // AN X ARTICLE IS NOT A SINGLE (owner, R2026-10-03: "Every account should do ≥2 articles a week").
 // Its body is in platforms.x_article, not in X posts, so the one-post test above must never be what
-// classifies it. Recognised from the payload (an enabled x_article with a body, as gtx-registry.mjs
+// classifies it. Recognised from the payload (an enabled x_article with a body, as the registry
 // formatOf reads it, or the article's own published URL), from a registry row's Type, or from the
 // titles scripts/run-articles.mjs writes: `[Article] <Account> · <MM-DD> · <title>` once scheduled,
 // `[REVIEW] <run> · A<MMDD>-<key> · <key> · article — <title>` under review.

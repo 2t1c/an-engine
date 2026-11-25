@@ -35,10 +35,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { fxThread, fxTimeline, headsFromTimelines, readWatchlist } from '../fx-read.mjs';
+import { TBL } from '../config.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const HOST = 'twitter241.p.rapidapi.com';
-export const COMPETITOR_THREADS = 'tblP4xywLyi2PZx3b';
+export const COMPETITOR_THREADS = TBL.competitorThreads;
 
 // ---- pure helpers (tests/hotlist.test.mjs) -------------------------------------------------------
 /** One row per tweet id from the two tables; the higher stored view count wins, both sources are named. */
@@ -151,7 +152,7 @@ export function mergeHeadLists(...lists) {
   return [...heads.values()];
 }
 
-/** The health pages whose timelines the fx source reads: every cohort row except Lifepad, plus Health Source. */
+/** The health pages whose timelines the fx source reads: every cohort row except partner pages, plus Health Source. */
 export const ROSTER_COHORTS = ['Direct Competitor', 'Same Niche', 'Competitor RT Bridge', 'Adjacent'];
 
 export async function main(argv = process.argv.slice(2)) {

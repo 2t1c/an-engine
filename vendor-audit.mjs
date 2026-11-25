@@ -20,9 +20,10 @@ import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { loadEnv, requireEnv, telegram, esc, report, logRun, HERE_DIR, runMain } from './lib.mjs';
 import { parseTierBreakdown, tweetId } from './facts-build.mjs';
+import { TBL } from './config.mjs';
 
 const DRY = process.argv.includes('--dry');
-const GROWTH_LOG = GROWTH.table, FUEL_LOG = 'tblNSMxxTggWNndI7';
+const GROWTH_LOG = GROWTH.table, FUEL_LOG = TBL.fuelLog;
 const P = (s) => Date.parse(s);
 
 /** Velocity lift for one fire: views/hr over (last pre-fire -> first post-fire sample) minus

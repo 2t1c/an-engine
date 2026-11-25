@@ -30,7 +30,7 @@
 //        [--no-captions] [--watermark '@handle' | --no-watermark (default: the page's @handle)] [--replace] [--min 20] [--max 60] [--no-anchor]
 //
 // Two engines, one contract: a clip is an exact-window 1080p h264/aac mp4 with the original English
-// audio track. The service path is the fleet's cloud cutter (gtx-clipper-service); the local path is
+// audio track. The service path is the operator-hosted cloud cutter (the clipper service); the local path is
 // the same recipe run here (yt-dlp fetches ONLY the window's bytes, ffmpeg burns the captions).
 import { readFileSync, writeFileSync, existsSync, mkdirSync, rmSync, statSync, readdirSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
@@ -297,7 +297,7 @@ export function mediaAcrossPlatforms(posts, existing) {
   return Object.keys(out).length ? out : null;
 }
 
-// ---------------------------------------------------------------- Style A captions (mirrors gtx-clipper-service)
+// ---------------------------------------------------------------- Style A captions (mirrors the clipper service)
 
 /** Auto-caption hygiene for the burn: drop sound tags and speaker marks, fillers, stutters. Pure. */
 export function cleanCaption(text) {
@@ -738,11 +738,11 @@ export function buildFilmcraftRecipe({ source, out, clip, events = [], captions 
 /** Run `filmcraft-cli clip <recipe>` and hold its result to the format guard. Pure of side effects
  *  beyond the run; `run` is injectable. */
 export async function runFilmcraftClip(env, recipePath, { run = pExecFile } = {}) {
-  // CLIPS_ON=modal: the same FilmCraft renders on Modal (genius/tools/clipgpu); any failure there falls back to the
+  // CLIPS_ON=modal: the same FilmCraft renders on Modal (tools/clipgpu); any failure there falls back to the
   // local binary, so a batch never waits on the cloud
   if (env.CLIPS_ON === 'modal') {
     try {
-      const { stdout } = await run('python3', [join(HERE_DIR, 'genius/tools/clipgpu/clipgpu.py'), 'clip', recipePath],
+      const { stdout } = await run('python3', [join(HERE_DIR, 'tools/clipgpu/clipgpu.py'), 'clip', recipePath],
         { timeout: 20 * 60 * 1000, maxBuffer: 1 << 26, env: { ...process.env, ...env } });
       const text = String(stdout).trim();
       return JSON.parse(text.slice(Math.max(0, text.search(/^\{/m))));

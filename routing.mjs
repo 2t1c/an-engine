@@ -4,7 +4,7 @@
 // once, 24/7. That works at twelve accounts and it is the first thing that breaks as the fleet
 // grows, because each new page multiplies load on the SAME vendors. Vendor overload is not a
 // capacity problem to solve later — it is a routing problem, and routing is the only place it can
-// be prevented. genius-rt-bot's /load detects strain after the fact (late-rate, pending count);
+// be prevented. the RT bot's /load detects strain after the fact (late-rate, pending count);
 // this is the half that acts before the send.
 //
 // THE CONSTRAINT IS PER MEMBER ACCOUNT, NOT PER GROUP. Life Mastery is seven X accounts. A group
@@ -487,7 +487,7 @@ export function routesTextFor(vendorKey, ladder = ROUTE_LADDER) {
   }
   if (!parts.length) return '';
   // Nothing to say only when the vendor sits at ONE tier on EVERY route: its plain Tier then covers
-  // it. A vendor on some routes but not others (Lifepad is Lane A T0 and nowhere in Lane B, the v8
+  // it. A vendor on some routes but not others (one vendor was Lane A T0 and nowhere in Lane B, the v8
   // test) must name the routes it IS on, so the others never fire it. Its plain Tier mirrors the
   // default lane: blank when that lane leaves it out, kept when the default lane is the one it is on.
   const tiersSeen = new Set(parts.map(([, t]) => t));

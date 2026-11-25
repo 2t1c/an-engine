@@ -14,9 +14,10 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { loadEnv, requireEnv, typefully, runMain, HERE_DIR, cliArg } from './lib.mjs';
+import { TBL } from './config.mjs';
 
-export const FEED_BASE = 'app4Orfi56ghELGix';
-export const FEED_TABLE = 'tblb1d6l3byAMYdDd';
+export const FEED_BASE = process.env.REGISTRY_BASE_ID || '';
+export const FEED_TABLE = TBL.publishedFeed;
 const NODE_SRC = () => readFileSync(join(HERE_DIR, 'docs', 'feed-nodes', 'Build-Feed-Row.js'), 'utf8');
 const AsyncFunction = Object.getPrototypeOf(async function () {}).constructor;
 

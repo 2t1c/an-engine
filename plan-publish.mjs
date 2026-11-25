@@ -56,7 +56,7 @@ export function latestPlanFile(names) {
 async function main() {
   const env = loadEnv();
   requireEnv(env, ['AIRTABLE_PAT']);
-  const base = env.REGISTRY_BASE_ID || 'app4Orfi56ghELGix';
+  const base = env.REGISTRY_BASE_ID;
   const h = { Authorization: `Bearer ${env.AIRTABLE_PAT}`, 'Content-Type': 'application/json' };
   const url = `https://api.airtable.com/v0/${base}/${encodeURIComponent(TABLE)}`;
 

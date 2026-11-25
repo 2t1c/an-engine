@@ -7,7 +7,7 @@
 //   - WHICH posts went out, and when: the published-drafts list, newest first — the same read Fuel
 //     the Fire's Pick Candidates moved to (docs/FUEL-OPS.md, "Where candidates come from"). One item
 //     per publish; its head tweet is x_published_url. Thread tweets 2..N are not in it.
-//   - VIEWS: X's own count, read through twitter241 on RapidAPI (the source gtx-registry's X pass and
+//   - VIEWS: X's own count, read through twitter241 on RapidAPI (the source the registry's X pass and
 //     the swipe scouts use). Bulk `from:<handle>` search first, then one /tweet?pid= read for any id
 //     the search did not reach. BACKUP (2026-11-24): any id twitter241 could not read (no key, plan
 //     lapsed, error) is read from FxTwitter's free status endpoint. X_VIEWS_FX=0 turns the backup off.

@@ -3,7 +3,7 @@
 //
 // WHY THIS EXISTS. project-infinity spent $7,532.20 of fuel across 315 posts knowing six fields
 // about a vendor (Name/Tier/Price/Network Size/Active/Chat ID, read live from Airtable) while
-// genius-rt-bot held twenty-one vendors, 113 per-handle follower counts, a three-branch cost model
+// the RT bot held twenty-one vendors, 113 per-handle follower counts, a three-branch cost model
 // and a measured confirmation history. Every efficiency number the fleet computed was therefore
 // computed against a partial roster at a single blended price. vendors.json ends that; this file
 // makes it usable.
@@ -83,7 +83,7 @@ export function fanout(keys, { sendsPerMonth = 0 } = {}) {
     const isBundle = Boolean(bundles()[k]);
     for (const v of expand(k)) {
       // First key to claim a vendor sets its costing context; a bundle wins over a bare key, so
-      // fanout(['lifepad','t0']) prices Lifepad as part of T0 rather than at the bot's rate.
+      // fanout(['partner','t0']) prices the partner as part of T0 rather than at the bot's rate.
       const prev = set.get(v.key);
       if (!prev || (isBundle && !prev.bundle)) set.set(v.key, { v, bundle: isBundle ? k : null });
     }
@@ -117,7 +117,7 @@ export function costPerMille(keys, opts) {
 // ---------------------------------------------------------------------------
 // SENDING WINDOWS — in-hour vs off-hour
 // ---------------------------------------------------------------------------
-// genius-rt-bot holds one vendor-hours window for its paying clients: 07:00-12:00 America/New_York
+// the RT bot holds one vendor-hours window for its paying clients: 07:00-12:00 America/New_York
 // (`BUSINESS_START_MIN`/`BUSINESS_END_MIN`). Outside it, a client on `hours` delivery mode does not
 // fan out — the bot asks first. project-infinity's Fuel the Fire has no such notion and fires
 // hourly, 24/7.

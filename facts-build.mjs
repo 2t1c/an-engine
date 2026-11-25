@@ -19,8 +19,9 @@ import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { loadEnv, requireEnv, HERE_DIR, runMain } from './lib.mjs';
 import { REGISTRY_TABLE } from './config.mjs';
+import { TBL } from './config.mjs';
 
-const FUEL_LOG = 'tblNSMxxTggWNndI7';
+const FUEL_LOG = TBL.fuelLog;
 const DRY = process.argv.includes('--dry');
 const OUT = join(HERE_DIR, 'facts.jsonl');
 
@@ -69,7 +70,7 @@ export function deriveState(f) {
 
 /** Pure join: registry rows + fuel rows + ledger index -> { facts, exceptions }.
  *  opts.engineHandles: fuel-without-post only fires for these X handles — growth/manual accounts
- *  (GeniusGTX, Toan) never have registry cards by design, so their fuel is not an orphan.
+ *  (the operator's own) never have registry cards by design, so their fuel is not an orphan.
  *  opts.now: injectable clock; fuel younger than 48h is sync lag (PC lags fuel ~a day), not orphaned. */
 export function buildFacts(registry, fuel, ledger, { engineHandles = null, now = Date.now() } = {}) {
   const fuelByTid = new Map();

@@ -4,10 +4,11 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { airtable, HERE_DIR } from './lib.mjs';
 import { TABLES, GROWTH, growthBase } from './config.mjs';
+import { TBL } from './config.mjs';
 
-export const FUEL_LOG = 'tblNSMxxTggWNndI7';     // REGISTRY_BASE_ID
+export const FUEL_LOG = TBL.fuelLog;     // REGISTRY_BASE_ID
 export const GROWTH_LOG = GROWTH.table;   // own base since 2026-11-25 (config.mjs GROWTH)
-export const ACCOUNTS = 'tblwn2lLoJBuJKvUv';     // XDB_BASE_ID — the fleet roster the Bridge reads
+export const ACCOUNTS = TBL.accounts;     // XDB_BASE_ID — the fleet roster the Bridge reads
 
 export const FUEL_FIELDS = ['X URL', 'Account', 'Tiers Used', 'Networks', 'Tier Breakdown', 'Total Spend', 'Reach', 'First Fired', 'Last Fired', 'Ladder Version', 'Arm', 'Holdout', 'Skipped Vendor', 'Lifetime Commission Rollup (from Post)'];
 

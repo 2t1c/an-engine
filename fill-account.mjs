@@ -6,7 +6,7 @@ import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { loadEnv, requireEnv, LLM_KEYS, airtable, fmtSaigon, HERE_DIR } from './lib.mjs';
-import { getAccount } from './accounts.mjs';
+import { getAccount, defaultAccountKey } from './accounts.mjs';
 import { pickProduct } from './pick-product.mjs';
 import { takenSlots, openSlots, accountSlots, fleetSlotKeys } from './slots.mjs';
 import { ACCOUNTS } from './accounts.mjs';
@@ -17,7 +17,7 @@ import { runSafeDraftAttempts } from './draft-orchestration.mjs';
 const args = process.argv.slice(2);
 const flag = (n, d) => { const i = args.indexOf(`--${n}`); return i > -1 ? args[i + 1] : d; };
 const DRY = args.includes('--dry');
-const KEY = flag('account', 'lorenzo');
+const KEY = flag('account', defaultAccountKey());
 const ACCOUNT = getAccount(KEY);
 const recids = flag('recids', '').split(',').map((s) => s.trim()).filter(Boolean);
 

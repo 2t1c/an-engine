@@ -16,7 +16,7 @@ export const CREDENTIALS = [
   { service: 'RapidAPI', names: ['RAPIDAPI_KEY'] },
   { service: 'Clipper service', names: ['CLIPPER_URL', 'CLIPPER_SERVICE_KEY'] },
   { service: 'n8n administration', names: ['N8N_URL', 'N8N_API_KEY'] },
-  { service: 'Railway Project Infinity observation', names: ['RAILWAY_TOKEN'] },
+  { service: 'Railway project observation', names: ['RAILWAY_TOKEN'] },
   { service: 'Railway n8n project observation', names: ['RAILWAY_N8N_TOKEN'] },
   { service: 'Stripe', names: ['STRIPE_SECRET_KEY'] },
   { service: 'PayPal', names: ['PAYPAL_CLIENT_ID', 'PAYPAL_CLIENT_SECRET', 'PAYPAL_API_BASE'] },

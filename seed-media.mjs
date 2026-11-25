@@ -29,7 +29,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
 import { join } from 'node:path';
 import { loadEnv, requireEnv, airtable, typefully, HERE_DIR } from './lib.mjs';
-import { getAccount } from './accounts.mjs';
+import { getAccount, defaultAccountKey } from './accounts.mjs';
 import { buildPlatforms, CROSS_POST_PLATFORMS } from './platforms.mjs';
 import { ATTACH_MEDIA, REGISTRY_TABLE } from './config.mjs';
 import { lessonNum, cleanName, mapItem, fallbackIndex, mediaAcrossPlatforms } from './media-map.mjs';
@@ -138,7 +138,7 @@ async function main() {
   const env = loadEnv();
   requireEnv(env, ['AIRTABLE_PAT', 'TYPEFULLY_API_KEY', 'REGISTRY_BASE_ID']);
   const at = airtable(env, env.REGISTRY_BASE_ID), tf = typefully(env);
-  const target = getAccount(flag('account', 'julian'));
+  const target = getAccount(flag('account', defaultAccountKey()));
   const DRY = args.includes('--dry');
 
   // --- resolve the seed -------------------------------------------------------------------------

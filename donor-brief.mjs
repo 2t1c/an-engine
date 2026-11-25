@@ -6,7 +6,7 @@
 // of that volume is decision-relevant. What you need per tweet is the ITEM the donor is on, whether
 // the creator put a sell there, and enough of the argument to recreate it — not the whole paragraph.
 //
-//   node donor-brief.mjs recKcZlgkL0XPtx64
+//   node donor-brief.mjs <swipe record id>
 //   node donor-brief.mjs recA recB recC          # a whole slate, one screen
 //   node donor-brief.mjs recA --full 4           # tweet 4 in full, when the brief is not enough
 //

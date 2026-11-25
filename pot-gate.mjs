@@ -25,7 +25,7 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { HERE_DIR } from './lib.mjs';
-import { getAccount } from './accounts.mjs';
+import { getAccount, defaultAccountKey } from './accounts.mjs';
 import { LAWS, closingTail } from './laws.mjs';
 import { gateThread } from './gate-thread.mjs';
 import { rhythmIssues, hookShapeIssue, hookDeviceIssue, bodyOverlap } from './checks.mjs';
@@ -51,7 +51,7 @@ import { pointFrameIssues } from './point-frame.mjs';
 export const COLUMNED = ['authority', 'topic', 'solution', 'angle', 'count', 'audience', 'direction', 'narrator', 'substance', 'cta'];
 export const DIALS = new Set([...COLUMNED, 'twist']);
 export const MAX_DIALS = 2;
-const STAND_IN_GARDEN = 'julian';
+const STAND_IN_GARDEN = defaultAccountKey();
 
 /** PURE. The ticket's own rules: present, an array, ≤ MAX_DIALS entries, each a known dial with
  *  from/to strings, no dial twice. Returns [] when the ticket is valid. */

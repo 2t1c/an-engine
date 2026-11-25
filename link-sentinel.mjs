@@ -41,7 +41,8 @@
 //   node link-sentinel.mjs --hours 72
 import { isArticleDraft, isStandalonePost } from './monitoring-scope.mjs';
 import { buildPlatforms } from './platforms.mjs';
-import { articlePlatforms } from './scripts/run-articles.mjs';
+// An X Article draft keeps its markdown body and cover in platforms.x_article.
+const articlePlatforms = (markdown, coverMediaId = null) => ({ x_article: { content_markdown: markdown, ...(coverMediaId ? { cover_media_id: coverMediaId } : {}) } });
 import { readFileSync, existsSync, appendFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { loadEnv, requireEnv, airtable, typefully, levanta, telegram, esc, fmtSaigon, logRun, report, opsLog, OPS_LOG_TABLE, HERE_DIR, lvIdOf, alertDecision, readAlertState, writeAlertState, recordAlert } from './lib.mjs';

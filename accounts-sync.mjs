@@ -12,18 +12,19 @@
 //     everywhere (the engines overlay it onto ACCOUNTS[key].paused at startup; see accounts.mjs).
 //     It used to be engine-owned, which silently reverted the operator's toggle on every sync.
 //   - Feature flags (Fuel Watch, Calendar, RT Row, RT Threads Only) are likewise create-only.
-//   - Rows WITHOUT an Engine Key (RT-only / client accounts like GeniusGTX, Toan) are never touched.
+//   - Rows WITHOUT an Engine Key (RT-only or client accounts) are never touched.
 //
 // Runs automatically via .github/workflows/accounts-sync.yml on any push to main that changes
 // accounts.mjs — so "add/pause an account" = edit accounts.mjs, merge, done.
 import { loadEnv, requireEnv } from './lib.mjs';
 import { ACCOUNTS } from './accounts.mjs';
+import { TBL } from './config.mjs';
 
 const DRY = process.argv.includes('--dry');
 const env = loadEnv();
 requireEnv(env, ['AIRTABLE_PAT']);
-const BASE = env.XDB_BASE_ID || 'app7vXbBugWeCGctD';
-const TABLE = 'tblwn2lLoJBuJKvUv'; // Accounts
+const BASE = env.XDB_BASE_ID;
+const TABLE = TBL.accounts; // Accounts
 const H = { Authorization: `Bearer ${env.AIRTABLE_PAT}`, 'Content-Type': 'application/json' };
 
 const at = async (method, path, body) => {
@@ -67,7 +68,7 @@ for (const [key, a] of Object.entries(ACCOUNTS)) {
     // SINGLES ARE ALWAYS BLOCKED BY DEFAULT (operator rule, 2026-09-03): 'RT Threads Only' seeds
     // TRUE so a new page can never ping a one-post filler into a paid vendor group. It used to
     // seed blank (= false), which is how the fleet spent $8.60 a pop RT-boosting warm-up singles.
-    // All 17 Project Infinity rows were backfilled to true the same day; this keeps future ones
+    // All existing rows were backfilled to true the same day; this keeps future ones
     // correct. Since the owner's 2026-09-21 direction, the Bridge also enforces multi-post X
     // threads for every account, including client rows with a legacy false flag.
     // 'RT Row' is deliberately NOT seeded — blank is the bridge's off switch until warm-up ends.

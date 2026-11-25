@@ -2,7 +2,7 @@
 // egress-blocked from the agent sandbox (the proxy 502s on api.levanta.io), so a link that has to
 // be created by hand can only be created on a runner. Everything else about a draft — Typefully,
 // Airtable — is reachable from the sandbox; this is the single missing capability.
-//   node mint-link.mjs --asin B07DX89ZHN --subid x-thread-clara-foods-abc123
+//   node mint-link.mjs --asin B07DX89ZHN --subid x-thread-<page>-foods-abc123
 import { join } from 'node:path';
 import { loadEnv, levanta, HERE_DIR } from './lib.mjs';
 import { DENY_ASINS } from './checks.mjs';

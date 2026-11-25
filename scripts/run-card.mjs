@@ -468,7 +468,7 @@ export function renderCard(model) {
 
 <div class="wrap">
   ${model.sample ? '<p class="sample"><b>Example data.</b> This is what a run card looks like. A real one is made when a /run starts and updates itself until the run is done.</p>' : ''}
-  <p class="eyebrow">Project Infinity · run card</p>
+  <p class="eyebrow">Run card</p>
   <h1>Run ${esc(model.runId)}</h1>
   <p class="where"><span class="chip ${headline.cls}">${esc(headline.label)}</span>${esc(headline.text)}</p>
   <p class="meta">Updated <time datetime="${esc(model.updatedAt)}">${esc(model.updatedAt.slice(0, 16).replace('T', ' '))} UTC</time>${threadsStop?.counts ? ` · ${threadsStop.counts.approved} of ${threadsStop.counts.expected} threads approved` : ''}</p>

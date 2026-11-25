@@ -12,7 +12,7 @@
 //
 // Captions come from the episode's json3 transcript in the Podcasts table, chunked by the clipper service's own
 // buildWordCues (<=4 words, manual tracks spread per line) so a re-render matches a fresh service cut exactly.
-// Needs a gtx-clipper-service checkout: CLIPPER_SRC, else ../gtx-clipper-service beside this repo.
+// Needs a clipper-service checkout: CLIPPER_SRC, else ../clipper-service beside this repo.
 import { createRequire } from 'node:module';
 import { execFileSync } from 'node:child_process';
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
@@ -41,8 +41,8 @@ async function main(argv) {
   const flag = (f, d) => { const i = argv.indexOf(f); return i > -1 ? argv[i + 1] : d; };
   const [account, draftArg, vid, winStart] = argv.filter((a, i) => !a.startsWith('--') && !['--src', '--lead'].includes(argv[i - 1]));
   if (!account || !draftArg || !vid || winStart == null) { console.log('usage: clip-rerender.mjs <account> <draftId> <videoId> <windowStartS> [--src id] [--lead 0.4] [--dry]'); return 1; }
-  const src = resolve(process.env.CLIPPER_SRC || join(ROOT, '..', 'gtx-clipper-service'));
-  if (!existsSync(join(src, 'server.js'))) throw new Error(`no gtx-clipper-service checkout at ${src} (set CLIPPER_SRC)`);
+  const src = resolve(process.env.CLIPPER_SRC || join(ROOT, '..', 'clipper-service'));
+  if (!existsSync(join(src, 'server.js'))) throw new Error(`no clipper-service checkout at ${src} (set CLIPPER_SRC)`);
   const svc = createRequire(import.meta.url)(join(src, 'server.js'));
   const { loadEnv, typefully, airtable } = await import('../lib.mjs');
   const { ACCOUNTS } = await import('../accounts.mjs');

@@ -13,7 +13,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
 import { join } from 'node:path';
 import { loadEnv, requireEnv, airtable, typefully, HERE_DIR } from './lib.mjs';
-import { getAccount } from './accounts.mjs';
+import { getAccount, defaultAccountKey } from './accounts.mjs';
 import { TABLES, ATTACH_MEDIA } from './config.mjs';
 import { parseVirtualId } from './thread-fold.mjs';
 import { lessonNum, cleanName, mapItem, fallbackIndex, mediaAcrossPlatforms } from './media-map.mjs';
@@ -31,14 +31,14 @@ const args = process.argv.slice(2);
 const DRY = args.includes('--dry');
 const flag = (n, d) => { const i = args.indexOf(`--${n}`); return i > -1 ? args[i + 1] : d; };
 const draftId = args.find((a) => /^\d{6,}$/.test(a));
-const ACCOUNT = getAccount(flag('account', 'julian'));
+const ACCOUNT = getAccount(flag('account', defaultAccountKey()));
 // --as <key>: WHOSE VOICE this draft is written in, when that differs from whose social set holds
 // it. A greenhouse preview lives on the burner set but carries another page's closing and
 // disclaimer, and conflating the two put four donor images on rasmus 10602249's LEGAL DISCLAIMER —
 // the one target the fallback below is explicitly written never to choose, because it matched the
 // burner's boilerplate instead of Rasmus's. Defaults to --account, so every existing caller is
 // unchanged.
-const VOICE = getAccount(flag('as', flag('account', 'julian')));
+const VOICE = getAccount(flag('as', flag('account', defaultAccountKey())));
 const THREADS = TABLES.swipe;
 
 function sourceFor(draftId, scratchpad) {

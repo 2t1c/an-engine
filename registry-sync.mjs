@@ -42,6 +42,7 @@ import { indexLinksByPlatform } from './platform-clicks.mjs'; // platform of a m
 import { inspectRegistryQuality, renderQualityMarkdown } from './registry-quality.mjs';
 import { planRegistryReconciliation, executeRegistryReconciliation } from './registry-reconcile.mjs';
 import { buildLevantaIndex, saveLevantaCatalog } from './link-resolve.mjs'; // the ASIN behind a plug link, cached for republish
+import { TBL } from './config.mjs';
 
 const args = process.argv.slice(2);
 const DRY = args.includes('--dry');
@@ -169,7 +170,7 @@ export async function syncFollowers(env, { accounts = Object.values(ACCOUNTS), x
 // Fuel the Fire writes these tables (same PI base). We denormalize their spend onto
 // Published Content + backfill Post links here, because PC lags the live fuel candidates
 // by ~a day — so the link can only resolve once PC has caught up. (Fix for PR #10 review.)
-const FUEL_LOG = 'tblNSMxxTggWNndI7', GROWTH_LOG = 'tblh6tv1dzZxh1Apn', BOOST_EVENTS = 'tblptuzRPLTAYhbxq';
+const FUEL_LOG = TBL.fuelLog, GROWTH_LOG = TBL.registryGrowthLog, BOOST_EVENTS = TBL.boostEvents;
 const tweetId = (u) => (String(u || '').match(/status\/(\d+)/) || [])[1] || '';
 
 async function loadFuelLog(env) {
@@ -209,7 +210,7 @@ async function reconcileLinks(env) {
   // post whose PC row lands after the window closes never gets linked, and nothing retries it.
   // Audit 2026-08-17 found 267 such rows (13 posts, 2026-06-29→07-07) permanently orphaned this way.
   // So: filter on {Post} = BLANK() (the rows that actually need work), widen the window to 45 days,
-  // and restrict to handles the engine owns. Rows for the manual/organic accounts (GeniusGTX, Toan —
+  // and restrict to handles the engine owns. Rows for the manual/organic accounts (the operator's own pages —
   // Fuel Watch only, no Engine Key, so they never get a Published Content row) are unlinkable BY
   // DESIGN and made up 6,278 of the 6,545 unlinked rows; excluding them keeps the scan small enough
   // that the wider window costs nothing.
@@ -533,7 +534,7 @@ export const xUrlOf = (d) => d?.x_published_url || d?.x_article_published_url ||
 
 /**
  * A published article's tweet is on the FULL draft only: x_published_url stays null and the list
- * carries no x_article_published_url. The gtx-registry.mjs pattern: a URL the registry already holds
+ * carries no x_article_published_url. The registry pattern: a URL the registry already holds
  * for that Draft ID answers it, otherwise the draft is read once (on the run's detail-read budget).
  * A failed or skipped read leaves the URL missing, so the row keeps its previous X URL: never wrong.
  */
@@ -555,7 +556,7 @@ export async function fillArticleUrls(tf, setId, drafts, { isArticle = isArticle
 
 /** The X handle the account's newest published post actually went out under, when it differs from
  *  accounts.mjs `xHandle || handle` (case-insensitive) — else null. X renames do not reach Typefully's username,
- *  and a stale handle fails the follower read every run: @mind_and_beauty -> @thelorenzorosi turned
+ *  and a stale handle fails the follower read every run: one page's rename turned
  *  every sync red from 2026-10-04 and skipped the vendor, Today-card and product-test steps behind it. */
 export function handleDrift(acc, drafts) {
   let newest = null;

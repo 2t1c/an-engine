@@ -80,7 +80,7 @@ export const FLEET_TEAM = 'REQy9XJCJeLvkUDr';
  *
  *  THE SET'S `username` IS NOT THE X HANDLE. It is Typefully's own name for the set, and the two
  *  agree only by coincidence. Felicia's set is `ThiisiisAii` while her posts land on
- *  @FeliciaRios_ — caught 2026-09-20 by reading the first warm-up post's published URL, a month
+ *  One page was caught 2026-09-20 by reading the first warm-up post's published URL, a month
  *  after onboarding, because nothing had ever compared the two. Johnathan's matched, which is
  *  exactly why the bug survived: half the sample looked right.
  *

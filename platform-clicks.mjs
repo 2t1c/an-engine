@@ -97,7 +97,7 @@ export function indexLinksByPlatform(text) {
       // which is what keeps the platform guarantee above intact.
       //
       // Deliberately NOT read from the subid, even though these subids embed the account name
-      // ("x-thread-tina-…"). A hand-edited subid is not evidence of ownership, for the same reason
+      // ("x-thread-<page>-…"). A hand-edited subid is not evidence of ownership, for the same reason
       // platformOfRow refuses to infer a platform from a "-th" suffix.
       const cur = out.get(id);
       if (!cur.account && e.account) cur.account = e.account;

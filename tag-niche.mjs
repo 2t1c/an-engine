@@ -162,7 +162,7 @@ async function main() {
   // healthTweets lives in its OWN base (2026-08-31, attachment-storage headroom); everything else
   // sits in the default XDB base. The base id is public (like the tbl ids), so the env var is an
   // override, not a requirement.
-  const TABLE_BASE = TABLE_KEY === 'healthTweets' ? (env.HEALTH_XDB_BASE_ID || 'appUkzz5Sq0vg3uiL') : undefined;
+  const TABLE_BASE = TABLE_KEY === 'healthTweets' ? (env.HEALTH_XDB_BASE_ID) : undefined;
   const at = airtable(env, TABLE_BASE);
   if (NORMALIZE) return normalize(at);
   // --days 0 = all-time: the IS_AFTER clause only joins the formula for a positive window.

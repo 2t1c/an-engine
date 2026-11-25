@@ -31,7 +31,7 @@ import { appendFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { loadEnv, requireEnv, typefully, HERE_DIR } from './lib.mjs';
-import { getAccount } from './accounts.mjs';
+import { getAccount, defaultAccountKey } from './accounts.mjs';
 import { buildPlatforms, crossPostedTo } from './platforms.mjs';
 import { crossPostLinks, crossPostLedgerRows } from './cross-post-links.mjs';
 import { crossPostIntegrity } from './checks.mjs';
@@ -89,7 +89,7 @@ export function rowsForDraft(text, draftId) {
 async function main() {
   const env = loadEnv();
   requireEnv(env, ['TYPEFULLY_API_KEY', 'LEVANTA_API_KEY']);
-  const acc = getAccount(flag('account', 'julian'));
+  const acc = getAccount(flag('account', defaultAccountKey()));
   if (!acc?.socialSetId) throw new Error('account has no socialSetId');
   const only = (flag('drafts', null) || '').split(',').map((s) => s.trim()).filter(Boolean);
   const limit = Number(flag('limit', '0')) || Infinity;

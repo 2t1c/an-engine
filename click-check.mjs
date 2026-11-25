@@ -21,7 +21,7 @@
 // print as "not available", never 0. Without RAPIDAPI_KEY, or when X cannot be read, views print as
 // unknown.
 //
-//   node click-check.mjs https://x.com/MagnusLindbrg/status/2091...
+//   node click-check.mjs https://x.com/<handle>/status/<id>
 //   node click-check.mjs 10256230
 //
 import { readFileSync } from 'node:fs';

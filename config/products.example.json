@@ -1,0 +1,13 @@
+{
+  "$doc": "Copy to config/products.json in a buyer's clone. Built from the buyer's own Levanta catalogue; only Prime / ships-from-Amazon products enter.",
+  "products": [
+    {
+      "asin": "B000000000",
+      "name": "Example Magnesium Glycinate",
+      "substance": "magnesium",
+      "slots": ["heavy", "light"],
+      "prime": true,
+      "active": false
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "$doc": "Copy to config/airtable.json in a buyer's clone. Table and record ids in the buyer's own bases; the schema script (scripts/airtable-setup.mjs, PR 5) writes this file. Base ids themselves are Railway variables (XDB_BASE_ID, REGISTRY_BASE_ID, HEALTH_XDB_BASE_ID, CLIPS_BASE_ID, GROWTH_BASE_ID).",
+  "bases": {
+    "clips": "appXXXXXXXXXXXXXX",
+    "growth": "appXXXXXXXXXXXXXX"
+  },
+  "tables": {
+    "accounts": "tblXXXXXXXXXXXXXX",
+    "podcasts": "tblXXXXXXXXXXXXXX",
+    "clips": "tblXXXXXXXXXXXXXX",
+    "swipeMedia": "tblXXXXXXXXXXXXXX",
+    "swipe": "tblXXXXXXXXXXXXXX",
+    "swipeUsers": "tblXXXXXXXXXXXXXX",
+    "config": "tblXXXXXXXXXXXXXX",
+    "healthTweets": "tblXXXXXXXXXXXXXX",
+    "competitorThreads": "tblXXXXXXXXXXXXXX",
+    "growth": "tblXXXXXXXXXXXXXX",
+    "fuelLog": "tblXXXXXXXXXXXXXX",
+    "seeds": "tblXXXXXXXXXXXXXX",
+    "harvests": "tblXXXXXXXXXXXXXX",
+    "pots": "tblXXXXXXXXXXXXXX",
+    "publishedFeed": "tblXXXXXXXXXXXXXX",
+    "registryGrowthLog": "tblXXXXXXXXXXXXXX",
+    "boostEvents": "tblXXXXXXXXXXXXXX",
+    "articles": "tblXXXXXXXXXXXXXX",
+    "vendorConfigHistory": "tblXXXXXXXXXXXXXX"
+  },
+  "records": {
+    "config": "recXXXXXXXXXXXXXX"
+  }
+}

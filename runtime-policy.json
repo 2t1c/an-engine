@@ -1,0 +1,105 @@
+{
+  "schema": "project-infinity/runtime-policy/v1",
+  "defaults": {
+    "owner": "operations",
+    "runbook": "OPS.md",
+    "alert_destination": "GitHub Actions run log",
+    "write_surfaces": null
+  },
+  "overrides": {
+    "telegram-daily-cards": {
+      "owner": "operations",
+      "runbook": "SYSTEMS.md",
+      "write_surfaces": [
+        "Telegram Today topic",
+        "repository editable card state"
+      ]
+    },
+    "telegram-topic-test": {
+      "owner": "operations",
+      "runbook": "SYSTEMS.md",
+      "write_surfaces": [
+        "Telegram Command Center topics"
+      ]
+    },
+    "external-runtime-checks": {
+      "owner": "operations",
+      "runbook": "docs/external-runtime-checks.md",
+      "write_surfaces": [
+        "GitHub Actions sanitized observation artifact"
+      ]
+    },
+    "accounts-sync": {
+      "write_surfaces": [
+        "Airtable Accounts table"
+      ]
+    },
+    "failure-handler": {
+      "owner": "operations",
+      "runbook": "OPS.md#failure-response",
+      "alert_destination": "Telegram alerts topic"
+    },
+    "funnel-watch": {
+      "owner": "growth-operations",
+      "runbook": "docs/operations-observability.md#funnel-watch",
+      "alert_destination": "Telegram alerts topic",
+      "write_surfaces": [
+        "repository logs"
+      ]
+    },
+    "integrity-sentinel": {
+      "owner": "data-operations",
+      "runbook": "docs/operations-observability.md#integrity-sentinel",
+      "alert_destination": "Telegram alerts topic",
+      "write_surfaces": [
+        "repository logs"
+      ]
+    },
+    "weekly-growth": {
+      "write_surfaces": [
+        "Telegram performance topic",
+        "Airtable Weekly Metrics table",
+        "repository logs and learned hook performance"
+      ]
+    },
+    "ai-evo-weekly": {
+      "owner": "content-operations",
+      "runbook": "docs/ai-evo.md",
+      "write_surfaces": [
+        "Typefully (AI Evolution)",
+        "Airtable Hail Mary base",
+        "repository logs"
+      ]
+    },
+    "cta-learn": {
+      "owner": "content-operations",
+      "runbook": "docs/cta-learning.md",
+      "alert_destination": "GitHub Actions log/summary; existing failure-handler retry and ops alert",
+      "write_surfaces": [
+        "repository CTA learning report, preferences and dated history"
+      ]
+    }
+  },
+  "external_runtimes": [
+    {
+      "id": "n8n",
+      "configured_state": "documented",
+      "observed_state": "unknown",
+      "verified_at": null,
+      "verified_by": null,
+      "verification_source": null,
+      "owner": "operations",
+      "runbook": "SYSTEMS.md"
+    },
+    {
+      "id": "railway",
+      "configured_state": "documented",
+      "observed_state": "unknown",
+      "verified_at": null,
+      "verified_by": null,
+      "verification_source": null,
+      "owner": "operations",
+      "runbook": "SYSTEMS.md"
+    }
+  ]
+}

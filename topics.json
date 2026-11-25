@@ -1,0 +1,124 @@
+{
+ "meta": {
+  "what": "Topic taxonomy — the single data source for hook classification (classifyTopic), product-fit matching (PRODUCT_RE), and thin-pool broadening (ADJACENT). Compiled by pick-product.mjs; every other module imports from there.",
+  "order_is_semantic": "classifyTopic returns the FIRST topic whose hook regex matches, in array order. Reordering entries changes classification — treat moves like code changes.",
+  "regex_notes": "Sources are compiled with the i flag. JSON escaping applies: \\\\b in the file is \\b in the regex.",
+  "general_bucket": "'general' is the implicit no-match fallback, deliberately NOT an entry here: it has no product regex, so no selection path can exploit it — a general-classified hook falls back to the account's default product, and learn.mjs revenue attributed to 'general' is informational only.",
+  "changelog": "2026-07-21: moved out of pick-product.mjs verbatim, except omega's hook regex dropped 'inflammat' (joint owns inflammation hooks now — a knee/arthritis thread was classifying as omega and plugging fish oil instead of turmeric/collagen); joint gained omega as an adjacent so fish oil still surfaces for inflammation threads with a thin turmeric pool."
+ },
+ "topics": [
+  {
+   "key": "sleep",
+   "hook": "sleep|magnesium|melatonin|insomnia|3 ?am|wake",
+   "product": "sleep|magnesium|melatonin|glycinate|sleep mask|eye mask|eye massager|air purifier",
+   "adjacent": [
+    "stress"
+   ]
+  },
+  {
+   "key": "stress",
+   "hook": "cortisol|stress|anxiety|nervous|calm|burnout",
+   "product": "ashwagandha|stress|calm|rhodiola|adaptogen|magnesium|heating pad|eye massager|gratitude journal",
+   "adjacent": [
+    "sleep"
+   ]
+  },
+  {
+   "key": "heart",
+   "hook": "heart|blood pressure|blood flow|circulat|cholesterol|artery|cardio",
+   "product": "heart|nitric|circulat|beet|coq10|omega|blood pressure monitor",
+   "adjacent": [
+    "energy",
+    "omega"
+   ]
+  },
+  {
+   "key": "omega",
+   "hook": "omega|fish oil",
+   "product": "omega|fish oil|krill",
+   "adjacent": [
+    "heart",
+    "brain"
+   ]
+  },
+  {
+   "key": "testosterone",
+   "hook": "testosterone|libido|male|erection|erectile|\\bED\\b",
+   "product": "testosterone|tongkat|boron|nitric|citrulline",
+   "adjacent": [
+    "energy",
+    "fitness"
+   ]
+  },
+  {
+   "key": "gut",
+   "hook": "gut|digest|bloat|microbiome|fiber|probiotic",
+   "product": "probiotic|gut|digest|fiber|enzyme",
+   "adjacent": [
+    "bloodsugar"
+   ]
+  },
+  {
+   "key": "joint",
+   "hook": "joint|knee|arthritis|inflammat|turmeric|\\bfeet\\b|foot pain|\\btoes?\\b|plantar|back pain|posture|sciatica|tailbone",
+   "product": "joint|glucosamine|turmeric|curcumin|collagen|toe separator|toe spacer|massage gun|back brace|lumbar|seat cushion",
+   "adjacent": [
+    "skin",
+    "omega"
+   ]
+  },
+  {
+   "key": "brain",
+   "hook": "brain|memory|focus|dementia|cognit|nootropic",
+   "product": "brain|focus|nootropic|lion.?s mane|omega|threonate|magtein",
+   "adjacent": [
+    "omega",
+    "energy"
+   ]
+  },
+  {
+   "key": "bloodsugar",
+   "hook": "insulin|blood sugar|glucose|diabet|fatty liver|metabol",
+   "product": "berberine|blood sugar|glucose|chromium",
+   "adjacent": [
+    "gut",
+    "energy"
+   ]
+  },
+  {
+   "key": "energy",
+   "hook": "energy|fatigue|tired|mitochond|nad\\+?|nicotinamide|nmn|vitamin d3?\\b|d3 ?\\+ ?k2|sunlight vitamin",
+   "product": "energy|b12|iron|creatine|nitric|citrulline|nad\\+?|nicotinamide|riboside|vitamin d3?\\b|d3 ?\\+ ?k2|k2 ?\\(?mk-?7",
+   "adjacent": [
+    "heart",
+    "testosterone"
+   ]
+  },
+  {
+   "key": "liver",
+   "hook": "liver|detox",
+   "product": "liver|milk thistle",
+   "adjacent": [
+    "gut"
+   ]
+  },
+  {
+   "key": "skin",
+   "hook": "skin|hair|collagen|aging|wrinkle|face|sagg|jaw|jowl|elasticity|youthful|complexion|fine lines|botox|retinol",
+   "product": "collagen|biotin|skin|hair|astaxanthin",
+   "adjacent": [
+    "joint",
+    "gut"
+   ]
+  },
+  {
+   "key": "fitness",
+   "hook": "gym|muscle|weight loss|fat|workout|protein|creatine",
+   "product": "creatine|protein|pre.?workout|bcaa|magnesium|massage gun",
+   "adjacent": [
+    "energy",
+    "testosterone"
+   ]
+  }
+ ]
+}

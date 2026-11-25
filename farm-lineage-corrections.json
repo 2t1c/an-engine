@@ -1,0 +1,5 @@
+{
+  "$comment": "Harvest reposts the R2026-09-21..26 runs ledgered as variationOf (rewritten body, no heart) although the shipped copy is the source body verbatim or under farm.harvestEditMax with the hook unchanged. Each was measured on 2026-10-07 with scripts/run-content-packets.mjs harvestEdit() against the parent draft's live posts (owner 2026-10-07: 'Fix linking of 30 reposts'). harvest-gate.mjs reads this file and turns each row back into an attempt of its parent body, re-checking the measured share against the law, so a row past the bar is ignored. Rows that measured as real rewrites (share >= the bar or a changed hook) stay variations and are not listed.",
+  "measuredAt": "2026-10-07",
+  "corrections": []
+}

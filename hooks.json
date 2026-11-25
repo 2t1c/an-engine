@@ -1,0 +1,374 @@
+{
+  "meta": {
+    "what": "The HOOK LIBRARY. Every entry is a real hook that exists, quoted verbatim, with the numbers it earned. Nothing here was invented to sound plausible.",
+    "operator": "2026-08-21 — 'the mold actually come from data and the swipe file for what we believe are high converting' / 'next to each mold I want the exact original hook variation'.",
+    "twoKindsOfEvidence": "swipeOriginal = a real thread from the swipe DB with its impressions. That proves REACH. ourBest = our own recreation with its Levanta CVR. That proves CONVERSION. A shape with only reach evidence is a bet; a shape with both is a template.",
+    "whyThisReplacesTheOldMolds": "The mold library promoted on revenue-per-1k-views, which rewards a thread for going viral. Three 'proven' molds (M1, M2, M3) are curiosity hooks that measured 0.00% CVR in the Levanta data despite huge reach. This library ranks on CVR, because the reader who clicks a shopping list already intends to buy and the reader who clicks a mystery does not.",
+    "fleetBaseline": {
+      "cvr": 0.0355,
+      "clicksPer1kViews": 0.28,
+      "dollarsPer1kViews": 0.044,
+      "note": "726 conversions over 20,462 clicks (300 subids); click and dollar rates per 1k views from the last 30 days of the registry, 2026-08-21"
+    },
+    "updated": "2026-08-21",
+    "correction": "2026-08-21, twice on the same shape. H7 was first published as 'never run' -- the operator supplied a live Magnus thread proving it had run five times. It was then republished as 'avoid' on a 1.68% CVR. The operator pushed back again, and re-measuring on earnings per view showed the shape is mid-table, not last. Both misses came from the same root: ranking a funnel on one of its two halves. Recorded rather than quietly edited, because the correction is more instructive than the entry.",
+    "ranking": "Ranked on DOLLARS PER 1,000 VIEWS, not CVR. The first version of this page ranked on CVR and got two shapes badly wrong in opposite directions: H5 showed the best CVR on the page (16.67%) while being the worst earner by 20x, because that rate sits on 54 clicks out of 9.3M views; H7 showed the worst CVR while out-earning it 47-fold, because it generates 9x the fleet click rate. CVR alone measures how well a click converts and says nothing about whether the thread produces clicks at all. All three numbers are kept -- clicks per 1k is the funnel's top, CVR is its bottom, dollars per 1k is the product of both.",
+    "swipeDb": "Swipe DB: base <id>, table <id>. Each shape's swipeOriginal carries airtableUrl, the card for the donor row, so the original can be opened where it was harvested rather than only on X.",
+    "familyRule": "A shape's swipe original and our version must be the SAME HOOK, at 90% Dice or better, or the pairing proves nothing: the donor's reach belongs to a hook we did not run. Operator rule, 2026-08-21. Enforcing it found four bad pairings in the first published version -- H4 at 15%, H7 at 13%, H5 at 0%, and H2/H6 paired to the wrong creator entirely despite identical hook TEXT (the same hook had been posted by several accounts). Two of those inflated the reach claim: H2 showed 2.4M where its real donor had 1.0M, H6 showed 1.7M against a real 1.0M. Donors are now resolved from the ledger's sourceUrl -- what the thread was actually built from -- not by matching hook text.",
+    "siblings": "alsoInSwipe holds hooks that LOOK like the same shape but are separate threads by separate creators. Operator, 2026-08-21: 'technically those one elements can be considered another format by itself'. Agreed — each is a candidate PARENT with zero children, not a footnote on this one. They are listed here with their own cards so a promotion is a copy, not a re-hunt. Promote one when we actually run it: it becomes a parent, the run becomes its first child, and it stops borrowing this shape's numbers.",
+    "candidates": "Hooks with real reach that we have NOT run. Each is a parent-in-waiting: promote it when we ship it, and that first run becomes its first child. They were previously listed inside the shapes as 'same shape in the swipe file'. Operator, 2026-08-21: 'These are like different structure completely.' Measured, and correct — not one scored above the 90% family bar against the shape it was filed under; the closest was 80% and most were under 20%. Grouping them by theme let them borrow numbers from shapes they have nothing structurally to do with, which is the same error as pairing a donor by hook text instead of provenance."
+  },
+  "shapes": [
+    {
+      "id": "H1",
+      "name": "Outcome shortlist",
+      "why": "The hook names a RESULT the reader already wants and promises the list that delivers it. Highest CVR we have ever measured. The reader self-selects twice: once on the outcome, once on the willingness to buy for it.",
+      "swipeOriginal": {
+        "hook": "The supplements you need to boost testosterone after 35:",
+        "views": 826514,
+        "url": "https://x.com/Austin_Hart00/status/2078094084204535874"
+      },
+      "measured": {
+        "views": 138000,
+        "affiliateClicks": 97,
+        "conversions": 15,
+        "commission": 71.06,
+        "cvr": 0.1546,
+        "clicksPer1kViews": 0.7,
+        "dollarsPer1kViews": 0.513,
+        "vsFleetDollars": 11.7,
+        "vsFleetClicks": 2.5
+      },
+      "hookFidelity": 1.0,
+      "sameFamily": true
+    },
+    {
+      "id": "H2",
+      "name": "Protocol / timing stack",
+      "why": "Names three substances AND when to take each. Timing is a criterion, so the hook is already a buying guide. The single most replicated shape we have: it converts on three different accounts.",
+      "swipeOriginal": {
+        "hook": "I started taking zinc in the morning, magnesium at night, and vitamin D with K2 at breakfast.",
+        "views": 953280,
+        "url": "https://x.com/CoachDanCole_/status/2087887083067343142"
+      },
+      "alsoRanByUs": [
+        {
+          "hook": "I began taking zinc each morning, magnesium before bed",
+          "clicks": 102,
+          "cvr": 0.0686
+        },
+        {
+          "hook": "I swear taking zinc in the morning, magnesium at night, and vitamin D+K2 with breakfast",
+          "clicks": 142,
+          "cvr": 0.0845
+        }
+      ],
+      "measured": {
+        "views": 1340000,
+        "affiliateClicks": 879,
+        "conversions": 78,
+        "commission": 547.0,
+        "cvr": 0.0887,
+        "clicksPer1kViews": 0.66,
+        "dollarsPer1kViews": 0.408,
+        "vsFleetDollars": 9.3,
+        "vsFleetClicks": 2.4
+      },
+      "hookFidelity": 1.0,
+      "sameFamily": true
+    },
+    {
+      "id": "H3",
+      "name": "Scarcity shortlist",
+      "why": "A numbered list framed as everything else being a waste. The reader arrives having already accepted they will buy something; the only open question is which. Replicates across accounts.",
+      "swipeOriginal": {
+        "hook": "The only 3 supplements worth your money.",
+        "views": 1485389,
+        "url": "https://x.com/phresh_arrow/status/2084387794076483939"
+      },
+      "alsoRanByUs": [
+        {
+          "hook": "The only 3 supplements worth your money.",
+          "clicks": 325,
+          "cvr": 0.1108,
+          "commission": 179.89
+        }
+      ],
+      "measured": {
+        "views": 3790000,
+        "affiliateClicks": 1195,
+        "conversions": 47,
+        "commission": 436.0,
+        "cvr": 0.0393,
+        "clicksPer1kViews": 0.32,
+        "dollarsPer1kViews": 0.115,
+        "vsFleetDollars": 2.6,
+        "vsFleetClicks": 1.1
+      },
+      "verdict": "MARGINAL. 3.79M views is the widest reach of any converting shape, but 0.32 clicks per 1k and $0.115 per 1k put it 6th of 7. It replicates across accounts, which is real, but it reaches far more than it sells.",
+      "hookFidelity": 1.0,
+      "sameFamily": true
+    },
+    {
+      "id": "H4",
+      "name": "Single substance, taught correctly",
+      "why": "One substance, and the FORM comparison is the buying guide. This is the shape pods J1, O1 and B1 are built on: the reader leaves holding a rejection rule, which is a stronger position than holding a benefit claim.",
+      "swipeOriginal": {
+        "hook": null,
+        "views": null,
+        "note": "No swipe donor. Our version is a MOLD (mold4), written from the template library rather than recreated from a creator's thread, so there is no original to prove reach with. The 1.2M-view 'TAKING MAGNESIUM CORRECTLY' hook previously shown here scored 15% against ours and was never its source."
+      },
+      "measured": {
+        "views": 77000,
+        "affiliateClicks": 78,
+        "conversions": 7,
+        "commission": 35.0,
+        "cvr": 0.0897,
+        "clicksPer1kViews": 1.01,
+        "dollarsPer1kViews": 0.449,
+        "vsFleetDollars": 10.2,
+        "vsFleetClicks": 3.6
+      },
+      "hookFidelity": null,
+      "sameFamily": false
+    },
+    {
+      "id": "H5",
+      "name": "Symptom avoidance",
+      "why": "Every item is a symptom the reader recognises in themselves, so urgency is self-generated rather than argued. Our widest-reaching converting shape.",
+      "swipeOriginal": {
+        "hook": "If you want to avoid heart clots, strokes, and heart attacks (especially if you're over 40)",
+        "views": 1478623,
+        "url": "https://x.com/Dr_Biohacker/status/2073402426556895262"
+      },
+      "alsoRanByUs": [
+        {
+          "hook": "If you want to avoid heart clots, strokes",
+          "clicks": 462,
+          "cvr": 0.0476,
+          "commission": 161.89
+        }
+      ],
+      "measured": {
+        "views": 9327000,
+        "affiliateClicks": 54,
+        "conversions": 9,
+        "commission": 47.0,
+        "cvr": 0.1667,
+        "clicksPer1kViews": 0.01,
+        "dollarsPer1kViews": 0.005,
+        "vsFleetDollars": 0.1,
+        "vsFleetClicks": 0.0
+      },
+      "verdict": "AVOID. The trap this library exists to expose. 16.67% CVR looks like the best number on the page and is computed on 54 clicks. The shape reached 9.3 MILLION views and produced 0.01 clicks per 1k -- it earned $47 in total, $0.005 per 1k views, 20x worse than anything else here. Enormous reach, almost nobody clicks through.",
+      "hookFidelity": 0.81,
+      "sameFamily": false
+    },
+    {
+      "id": "H6",
+      "name": "Who it's for",
+      "why": "Relational framing. Buying for someone else reads as care rather than spend, which lowers the price objection without a discount.",
+      "swipeOriginal": {
+        "hook": "4 supplements I'm getting my aging parents to take:",
+        "views": 988776,
+        "url": "https://x.com/Dr_Biohacker/status/2086073198039457891"
+      },
+      "alsoRanByUs": [
+        {
+          "hook": "4 supplements I'm getting my aging parents to take",
+          "clicks": 99,
+          "cvr": 0.0404
+        }
+      ],
+      "measured": {
+        "views": 499000,
+        "affiliateClicks": 389,
+        "conversions": 18,
+        "commission": 142.0,
+        "cvr": 0.0463,
+        "clicksPer1kViews": 0.78,
+        "dollarsPer1kViews": 0.286,
+        "vsFleetDollars": 6.5,
+        "vsFleetClicks": 2.8
+      },
+      "hookFidelity": 1.0,
+      "sameFamily": true
+    },
+    {
+      "id": "H7",
+      "name": "Stack reveal",
+      "why": "The whole cabinet, so the plug budget is the highest of any shape. Enormous reach in the swipe file and it PULLS CLICKS HARD — 1,381 link clicks on 668k views. But the clicks do not convert: 1,723 affiliate clicks returned 29 sales, 1.68%, less than half the fleet baseline. The reader who opens a 40-item cabinet tour is browsing, not shopping, and five plugs give them five chances to keep browsing. High reach and high CTR on a low CVR is the most expensive kind of thread we run.",
+      "swipeOriginal": {
+        "hook": null,
+        "views": null
+      },
+      "alsoRanByUs": [
+        {
+          "hook": "I take more than 40 supplements a day.",
+          "clicks": 0,
+          "cvr": 0.0,
+          "note": "The 11.6M-view swipe hook, run twice by us (Magnus and Julian) and earned ZERO affiliate clicks both times. Reach in someone else's feed did not transfer."
+        }
+      ],
+      "verdict": "KEEP, and it is the click engine. Worst CVR in the library at 0.47x fleet, but it produces 2.58 affiliate clicks per 1k views -- 9x the fleet rate -- and nets $0.234 per 1k views, 5.3x fleet. A low conversion RATE on a huge click VOLUME still out-earns a high rate on no clicks. Judging this shape on CVR alone was the error; it is 5th of 7 on earnings, not last.",
+      "measured": {
+        "views": 669000,
+        "affiliateClicks": 1723,
+        "conversions": 29,
+        "commission": 156.21,
+        "cvr": 0.0168,
+        "clicksPer1kViews": 2.58,
+        "dollarsPer1kViews": 0.234,
+        "vsFleetDollars": 5.3,
+        "vsFleetClicks": 9.2
+      },
+      "hookFidelity": null,
+      "sameFamily": false
+    },
+    {
+      "id": "H8",
+      "name": "Buyer-beware / quality warning",
+      "why": "Frames the whole category as a minefield and the thread as the map. Naturally hands over a rejection rule, which is what pods are built to carry. Untested by us.",
+      "swipeOriginal": {
+        "hook": "If you buy supplements off of Amazon, you need to read this:",
+        "views": 2500000,
+        "url": "https://x.com/FitFounder/status/1927387176360137182"
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "hook": "my latest investigation for @ConsumerReports is based on months of reporting and 60+ lab tests of leading brands",
+      "views": 9277681,
+      "url": "https://x.com/parismartineau/status/1978153578230349886",
+      "filedUnderBefore": "H8",
+      "fidelityToThatShape": 0.07
+    },
+    {
+      "hook": "What health supplements aren't a scam?",
+      "views": 4877948,
+      "url": "https://x.com/texasrunnerDFW/status/1997505769307287703",
+      "filedUnderBefore": "H3",
+      "fidelityToThatShape": 0.15
+    },
+    {
+      "hook": "What Happens When Your Body Is Severely Vitamin D Deficient?",
+      "views": 4448872,
+      "url": "https://x.com/dr_ericberg/status/1877339624491856195",
+      "filedUnderBefore": "H5",
+      "fidelityToThatShape": 0
+    },
+    {
+      "hook": "6 signs your body desperately needs magnesium (& you don't realize it):",
+      "views": 2872481,
+      "url": "https://x.com/LeddyLLC/status/2031737283620323756",
+      "filedUnderBefore": "H5",
+      "fidelityToThatShape": 0.09
+    },
+    {
+      "hook": "My best friend started taking zinc in the morning, magnesium at night, and vitamin D+K2 with breakfast",
+      "views": 2429395,
+      "url": "https://x.com/CoachDanCole_/status/2081727982402785539",
+      "filedUnderBefore": "H2",
+      "fidelityToThatShape": 0.8
+    },
+    {
+      "hook": "The Most Common Mistakes People Make When Taking Vitamin D",
+      "views": 2374978,
+      "url": "https://x.com/dr_ericberg/status/1911419132744208484",
+      "filedUnderBefore": "H4",
+      "fidelityToThatShape": 0
+    },
+    {
+      "hook": "Creatine isn't a steroid.",
+      "views": 2152373,
+      "url": "https://x.com/johnnyxbrown/status/1862462530611777689",
+      "filedUnderBefore": "H4",
+      "fidelityToThatShape": 0
+    },
+    {
+      "hook": "7 supplements that will supercharge your health and transform your body:",
+      "views": 1511395,
+      "url": "https://x.com/johnnyxbrown/status/1837494745846665355",
+      "filedUnderBefore": "H7",
+      "fidelityToThatShape": 0
+    },
+    {
+      "hook": "The supplement your body is silently begging for:",
+      "views": 1510238,
+      "url": "https://x.com/joeyyochheim/status/1864319661967364455",
+      "filedUnderBefore": "H5",
+      "fidelityToThatShape": 0
+    },
+    {
+      "hook": "Glycine is the most overlooked supplement for longevity.",
+      "views": 1389191,
+      "url": "https://x.com/craigbrockie/status/1915763785090171255",
+      "filedUnderBefore": "H1",
+      "fidelityToThatShape": 0.12
+    },
+    {
+      "hook": "I've tested hundreds of supplements over 30 years to heal myself.",
+      "views": 1308745,
+      "url": "https://x.com/CraigBrockie/status/2006755925923967214",
+      "filedUnderBefore": "H7",
+      "fidelityToThatShape": 0
+    },
+    {
+      "hook": "They tell you to take probiotics.",
+      "views": 1308731,
+      "url": "https://x.com/DrShayanSen/status/1913214689406054541",
+      "filedUnderBefore": "H4",
+      "fidelityToThatShape": 0
+    },
+    {
+      "hook": "I tested every supplement worth taking.",
+      "views": 1133279,
+      "url": "https://x.com/bensmithlive/status/1865785068582518873",
+      "filedUnderBefore": "H3",
+      "fidelityToThatShape": 0.15
+    },
+    {
+      "hook": "The only 5 supplements worth your money (and why each one matters):",
+      "views": 1121085,
+      "url": "https://x.com/LeddyLLC/status/2041512690733260962",
+      "filedUnderBefore": "H3",
+      "fidelityToThatShape": 0.53
+    },
+    {
+      "hook": "8 Supplements That Turn Men with Low Testosterone Levels into True Studs",
+      "views": 1040869,
+      "url": "https://x.com/EnergyUp_/status/2047722923893649832",
+      "filedUnderBefore": "H1",
+      "fidelityToThatShape": 0.19
+    },
+    {
+      "hook": "The vitamin that controls your energy, focus, and mood:",
+      "views": 1028598,
+      "url": "https://x.com/joeyyochheim/status/1902717641795498435",
+      "filedUnderBefore": "H1",
+      "fidelityToThatShape": 0.11
+    },
+    {
+      "hook": "Creatine. Magnesium. Vitamin D. Fish oil. Zinc.",
+      "views": 826476,
+      "url": "https://x.com/edgaralandough/status/2039437910705926193",
+      "filedUnderBefore": "H2",
+      "fidelityToThatShape": 0.08
+    },
+    {
+      "hook": "TAKING MAGNESIUM RIGHT WILL TURN YOU INTO A 13% BODY FAT BEAST:",
+      "views": 795989,
+      "url": "https://x.com/CoachWillStone/status/2082067560451960992",
+      "filedUnderBefore": "H4",
+      "fidelityToThatShape": 0
+    },
+    {
+      "hook": "The 3 pre-bed supplements I always come back to are:",
+      "views": 616004,
+      "url": "https://x.com/Austin_Hart00/status/2077002784323637399",
+      "filedUnderBefore": "H1",
+      "fidelityToThatShape": 0.3
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "generated": "2026-09-21",
+    "source": "project-infinity registry — levanta-days.jsonl (Levanta/Amazon) joined to ledger.jsonl",
+    "window": {
+      "days": 30,
+      "start": "2026-08-22",
+      "end": "2026-09-20",
+      "note": "window ends at the last settled day in the data, not today"
+    },
+    "epc_definition": "measured commission earned / clicks — not a platform estimate",
+    "fleet_clicks": 78788,
+    "fleet_commission_usd": 41049.25,
+    "fleet_orders": 5193,
+    "fleet_epc": 0.521,
+    "active_asins": 69,
+    "top_n": 15,
+    "top_n_share_of_clicks_pct": 92
+  },
+  "products": []
+}

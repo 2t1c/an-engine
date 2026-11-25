@@ -1,0 +1,756 @@
+{
+  "$latePlug": "Delayed-plug thread format (owner 2026-11-25, late-plug.mjs, docs/late-plug.md). The thread ships with no plug and ends on its last point; its heavy block waits as a [LATE PLUG of <id>] draft and is replied under the thread's last tweet when the thread has momentum. Owner 2026-11-25 \"It should be at the level of t2\": fire at Fuel's T2 bar, velocityAt views/hour only (viewsAt null = off), never before minAgeH; velocity = slope between hourly FxTwitter reads, else the average since posting; every thread is plugged by fallbackH (T2's 6h window) whatever its views, so none ships unmonetized; giveUpH = Telegram alert when FxTwitter never answers.",
+  "latePlug": { "minAgeH": 0.75, "viewsAt": null, "velocityAt": 6000, "fallbackH": 6, "giveUpH": 8 },
+  "$comment": "THE single source of numeric law. Every gate, planner, prompt and audit READS this file; none restates it. Born 2026-08-18 after sixteen instruction-vs-check contradictions in two days, every one caused by the same rule retyped in two places that then drifted apart. A rule change is an edit HERE and nowhere else. Prose docs cite the key path (laws.json: tweet.maxThread), never the number.",
+  "tweet": {
+    "limit": 280,
+    "urlCounts": 23,
+    "plugTextLimit": 255,
+    "maxThread": 23,
+    "idealMin": 7,
+    "idealMax": 13,
+    "stackedMin": 30,
+    "$rhythm": "Operator 2026-09-13, writing the first remix by hand: \"make sure none of our sentences are too long. Goal is to make it skimmable, so spacing + variety in sentence length\" and \"bar the listicle, I want no more than 4 paragraphs. Ideally it's between 3 - 4.\" The ceiling is 17, set 2026-09-15 from the operator's own FINISHED remix (burner draft 10750363 \u2014 the other nine were iterations toward it, not ten remixes): 45 sentences, median 10w, p75 13w, p90 16w, true max 17w once the compliance tweet is excluded. \"~15\" is the centre they write around; 17 is the edge they actually reach. At 15 the check flags five deliberate lines of their best work, which is how an advisory gets ignored. maxSentenceWords counts only segments that END in terminal punctuation — an item title line and an inline bullet row are not sentences. maxParagraphs counts blank-line-separated blocks; a numbered listicle item is exempt, per \"bar the listicle\".",
+    "maxSentenceWords": 17,
+    "maxParagraphs": 4,
+    "$citationTweetsMax": "SOURCES SUPPORT THE WRITING, THEY DO NOT REPLACE IT (operator, 2026-09-23: 'Make sure we don't fall into the issue of being too clever anding adding sources for everything. I think it kind of destroy the old linguistic fingerprint. Add where it's needed and support the writing, not overused.'). The mock run's cover carried an academic parenthetical, (Name et al., 2018), in 7 of 11 body tweets and read like a paper, not the page. Where a claim came from belongs in draft.sources, which the Typefully note shows under CLAIMS; the copy names a source only where the claim leans on it, in the page's own words. More tweets than this carrying a paper-style citation is flagged to the owner (review, never a hold).",
+    "citationTweetsMax": 2
+  },
+  "plugs": {
+    "budget": {
+      "shortMaxBody": 10,
+      "shortPlugs": 2,
+      "midMaxBody": 15,
+      "midPlugs": 3,
+      "longPlugs": 5
+    },
+    "roundupMinProducts": 3,
+    "roundupCap": 5,
+    "minGapTweets": 2,
+    "firstAt": 3,
+    "okWindowMax": 4,
+    "conceptualOkMax": 5,
+    "warnWindowMax": 6,
+    "beats": [
+      "opener",
+      "middle",
+      "cta"
+    ]
+  },
+  "hook": {
+    "$remixLane": "A REMIX IS EXEMPT FROM coverFloor, and for the opposite reason to a harvest (operator 2026-09-17, planning Run 5's 20/20 cover-remix split). A harvest has no donor hook at all. A remix HAS one and keeps only its SHAPE — remix-thread's layer 1 is the promise mechanic, layer 3 is the topic and every word of it, and layer 3 is written fresh — so a remix hook is supposed to share almost nothing with the donor's wording and coverFloor would refuse the lane by construction. The similarity is still MEASURED and still rides the ledger row, so the next autopsy can ask what remix fidelity does to reach; it simply does not decide whether the thread ships. Before this, the only remixes that ever shipped did it by leaving recId blank on the burner, which passes the gate as \"unmeasured\" — a gate disabled by an empty field. What a remix still owes is layer 2: the count (hookPromiseIssue), the audience filter verbatim, the tension direction and the authority stance.", "$coverFloor": "Operator 2026-09-06, after the Sep 4-6 autopsy (37 of 47 covers below 0.72; median views 79K against 1.43M in band, an 18x gap on the same pages and fuel): a COVER ships only at >= coverFloor of its donor hook. Between gateMin and coverFloor it ships only with a declared drift class on the spec (hookDrift: { class, note }), class one of driftClasses. Below gateMin nothing ships. Above gateMax is a duplicate post. publish-thread is the gate, hooks-check the dashboard; harvests, pots, seeds and the burner are exempt (no donor hook to keep).",
+    "coverFloor": 0.85,
+    "$hardClaimClass": "THE FIFTH CLASS, added 2026-09-17. The other four all say the same thing in different words: the donor's hook contains something this fleet cannot reproduce in its own voice. A HARD HEALTH CLAIM is exactly that and had no escape, so a donor whose hook says \"reverse\" or \"cure\" could not be covered faithfully at all — keeping the hook ships a claim hardHealthClaim blocks, and cutting the word drops the similarity under coverFloor. Measured across the 1,095-day pool on the day it was added: 15 of 878 usable donors, 1.7%, among them a 2.5M Stanford cartilage thread and a 4.8M grey-hair thread. Small, real, and previously unreachable. The note must name the word that was dropped and what replaced it, because that is the whole content of the declaration.",
+    "driftClasses": ["named-person", "persona-claim", "caps-hype", "premise", "hard-claim"],
+    "gateMin": 0.72,
+    "gateMax": 0.93,
+    "targetMin": 0.85,
+    "targetMax": 0.9,
+    "sentenceTolerance": 0.25,
+    "$leadItem": "A numbered first tweet leads with the list's strongest item (lead-item.mjs). Owner, 2026-09-28, asking \"is it possible to lead the tweet 1 in a numbered thread with the most clickbaiting point first? Is that quantifiable with Jev. Contrarian could be considered.\", then, after the retro test: \"yes adopt fully — every numbered first tweet should have it implemented.\" Evidence (learnings/lead-item.md, our 612 numbered first tweets over 90 days): item 1 as the list's top-pull item reached 100k views 56% vs 41%, 1.69x page median views, same money per view; with item 1 out of sight in tweet 2 the split shows nothing (29% vs 28%). Jev reads each item alone under the hook (lead-pull-read); another item that beats item 1 by margin trades places with it, every word kept (a swap, not a move to the front: a move pushed the first ask past tweet 4 in all 19 moves on the last run). The last item, an item carrying a link, an item that shares a tweet or runs on, and an item opening on a connective never lead. minItems: a list shorter than this is left alone.",
+    "$leadItemGuards": "Owner, 2026-09-29, asked whether to remove these so every numbered first tweet swaps: \"keep the exceptions\". Two reads keep a list whole (lead-item.mjs): a list Jev reads as a sequence at orderedMax or above keeps its order (steps, a story told in order, a morning/lunch/night stack: 19 of the 270 would-be moves in the retro corpus), and a move that would separate an item from a neighbour leaning on it at followMax or above is skipped for the next strongest item (\"Remember, don't take the wrong form.\" after \"Magnesium Glycinate\": 45 of the 270). Set to 1 to switch a guard off.",
+    "leadItem": { "margin": 0.05, "minItems": 3, "orderedMax": 0.4, "followMax": 0.5 }
+  },
+  "runUpBeats": {
+    "roundup": 1,
+    "deepDive": 1,
+    "diagnostic": 2,
+    "conceptual": 3,
+    "prescriptive": 2
+  },
+  "scale": {
+    "$comment": "Scaling-phase knobs (operator 2026-08-25). Growing the fleet must never need a code edit: the planner, winner rule, harvest and blitz read these plus the LIVE roster. winClicks counts LIFETIME LEVANTA clicks; winRevenue lifetime commission. DEPRECATED PAIR (2026-09-02): winClicks/winRevenue backed the retired Winner/Repost Candidate statuses — the `farm` block's gates are the successor; existing readers keep working but nothing new should consume these two.",
+    "moldSlots": 0,
+    "viralSlots": 7,
+    "harvestSlots": 7,
+    "winClicks": 500,
+    "winRevenue": 500,
+    "breakoutViews": 500000,
+    "blitzMinLevClicks": 500,
+    "blitzWave1Accounts": 6,
+    "blitzWave1Days": 5,
+    "blitzFullDays": 14,
+    "bodyRotationDays": 7,
+    "maxFamilyPerAccountPerWeek": 2,
+    "sameDaySourceCap": 2,
+    "listicleBoost": 1.5,
+    "$sellSlotBoost": "A donor that monetized its OWN thread hands us the position the creator already conversion-tested; our plug replaces theirs in place. Measured 2026-08-28: 56 of 85 usable donors in the window carry one, and they are the highest-value shape we harvest.",
+    "sellSlotBoost": 1.6,
+    "$roundupBoost": "Three or more bridgeable substances means the roundup rule allows one plug per product instead of two, so the slot is worth roughly double. Rare: 1 in 40 of the recent top donors.",
+    "roundupBoost": 1.5,
+    "$topMoldExtraSlots": "Extra weekly slots the best-CONVERTING proven mold gets, per account (operator 2026-08-25). 0 restores the flat rotation. Ranked on clicksPer100k over molds.json measured, so it only moves once a mold has a real sample.",
+    "topMoldExtraSlots": 1
+  },
+  "farm": {
+    "$comment": "The Cover -> Harvest -> Seed gates (operator, 2026-09-01 doc + session). Every figure is LIFETIME and clicks are LEVANTA lifetime clicks (the registry's Lifetime Clicks column), never Typefully's. Entry gate passes on ANY of four paths: gateViews+gateCommission, gateViews+gateClicks (Levanta), gateViews+gateTypefullyClicks (the same-day sensor, added 2026-09-16 so a body with broken Levanta attribution is not invisible), or gateStraightCommission alone (no view floor — money is the point). harvest-gate.mjs is the only referee; registry-sync is the sensor; Airtable stores state and never computes it.",
+    "gateViews": 400000,
+    "gateCommission": 250,
+    "gateClicks": 600,
+    "$gateTypefullyClicks": "A FOURTH entry path, on the click figure the registry already stores as `Link Clicks` (the MAX of Typefully's and Levanta's sensors). Levanta measures affiliate clicks that reached the destination and settles late; Typefully measures every link click in the thread and settles same-day. Measured 2026-09-16 over 1,094 published rows: the per-post Levanta/Typefully ratio has median 0.676 and the money-weighted ratio is 0.723 ($0.4692 per Levanta click against $0.3391 per Typefully click), so gateClicks 600 lands at 830-888 by ratio; a threshold sweep over the 146 posts past the view floor puts precision = recall = 0.805 at 900. ADDITIVE, never a replacement: 21 posts past the view floor carry real Typefully clicks and ZERO Levanta attribution (14,767 clicks between them), and 8 of those clear 900 — bodies the clicks path structurally cannot see.",
+    "gateTypefullyClicks": 900,
+    "gateStraightCommission": 400,
+    "$potentialFloor": "Watchlist tier: >= this lifetime commission but not yet gate-passing. Auto-promotes the moment a gate path clears — no operator action needed.",
+    "potentialFloor": 200,
+    "$tiers": "By settled tracked commission: T1 tier1Min..tier2Min, T2 tier2Min..tier3Min, T3 above. Clicks-path entrants below tier1Min sit Untiered until data settles.",
+    "tier1Min": 250,
+    "tier2Min": 350,
+    "tier3Min": 600,
+    "$hearts": "Each heart is a verbatim repost with a fresh link. Two distinct repeats at 70% of the STANDARD entry thresholds qualify for Seed-Eligible: 280K views + $175 commission, 280K + 420 clicks, or $280 commission. Original performance does not count as a repeat. Origin entry and pot thresholds remain unchanged. The operator names and approves seeds.",
+    "hearts": 7,
+    "performsToSeed": 2,
+    "attemptGateFactor": 0.7,
+    "heartsExpiryDays": 60,
+    "$cooldownHours": "The ONLY spacing rule: one body never posts twice fleet-wide inside this window.",
+    "cooldownHours": 24,
+    "$verdictProvisionalHours": "A perform can be awarded after 48h from publication. A miss also waits for the publication UTC day to close plus reportSettlementHours, because Levanta ingests daily earnings late. Later lifetime accrual can promote Missed to Performed.",
+    "verdictProvisionalHours": 48,
+    "reportSettlementHours": 48,
+    "$repost": "A CREATOR REPOSTS THEIR OWN WINNER, and the second post gets a new tweet id. harvest-classify's donor key is the full source URL, so those two reads as two donor threads and the covers of them fragment into two Harvest bodies — each auditing alone on its own hearts, each needing its own performsToSeed. Measured on the live pool 2026-09-18: @coachwillstone's 'Your blood sugar is aging you faster than smoking/cigarettes' is one thread posted twice, holding 8 spent hearts and $1,827 across two rows at 0 performs each, with the denser row already at the heart cap — it would have Retired without ever being seed-eligible. So a donor HANDLE plus a near-verbatim hook links unattended too. The bar is measured, not chosen: across every live pair, same-handle hook affinity tops out at 0.89 and the NEXT same-handle pair sits at 0.67, while the highest CROSS-handle pair in the whole pool is 0.33. 0.85 sits in that gap; it merges the one real repost and nothing else, and no cross-creator pair comes within 0.5 of it.",
+  "repostHookMin": 0.85,
+  "$harvestEditMax": "A HARVEST MAY BE LIGHTLY EDITED (operator, 2026-09-23: 'we can make a rule where if we change less than 5% of a thread it's still considered a harvest. Relatively we should keep the hook the same.'). A verbatim body that a reviewer holds for one false line or one broken step can be repaired in place and still spend its heart as a harvest, instead of being dropped. Measured in WORDS: the word-level edit distance (insertions, deletions, substitutions; a tweet break counts as a word) between the source body and the copy, divided by the source's word count, with tracking links neutralised and the page sign-off (closing, disclaimer, site line) left out. It must be strictly BELOW this share, and tweet 1 (the hook) must be unchanged. At or above it, or with any hook change, the row is a harvest VARIATION, not an attempt. Every edit under the bar is still put to the owner with its percentage. Raised from 0.05 to 0.075 by the owner on 2026-09-23 ('we can move the similarity percentage to 7.5% if needed'): the julian repost needed 7.1% to fix two repeated tweets.",
+  "harvestEditMax": 0.075,
+  "$pots": "Seed children, operator-written via /pot: potChances attempts each, perform >= once at potGateFactor x the full gate. A pot clearing the FULL gate enters the Harvest pool as a new body. potFailsToDormant CONSECUTIVE failed pots flag the seed Dormant (operator revives/expires); a dead seed never kills a living body.",
+    "potChances": 3,
+    "potGateFactor": 0.8,
+    "$potGateViews": "The pot gate's OWN view floor (owner, 2026-11-19: \"lower view baseline\"). The scaled bar (0.8 x 400K = 320K) could not be reached at November reach: the median thread on Nov 17-18 got 26K views (32 threads), and September pots, which out-earned covers per view, had median 23-34K. The owner picked 100K from 25K / 50K / 100K on the card. At 320K every pot read as a miss and three misses flag a seed Dormant. Only the view part moves; the money part stays at potGateFactor ($200, 480 clicks, 720 Typefully clicks, or $320 outright). Entry and attempt gates are unchanged. Remove the key to scale views by potGateFactor again.",
+    "potGateViews": 100000,
+    "$potGateCommission": "The pot gate's OWN money bar on the views+commission path (owner, 2026-11-19, asked whether the $200 should move too: \"drop it to $150\"). A pot performs at potGateViews + $150. The other paths keep potGateFactor: 480 Levanta clicks, 720 Typefully clicks, or $320 outright. Remove the key to scale by potGateFactor again ($200).",
+    "potGateCommission": 150,
+    "potFailsToDormant": 3,
+    "$potFailsAutoDormant": "Owner, 2026-11-19, asked whether a seed should pause by itself after 3 pots with no perform: \"make my call - I believe they can all perform. If we added it as a seed they must be at a certain standard. most of time it doesn't work is because our machine didn't write the copy correctly.\" So false: three consecutive missed pots are REPORTED for the owner and the seed's Status is never changed by the gate. Before reporting a seed as failing, read its missed pots against the origin (hook verbs, adjectives, structure): a pot that drifted is a writing miss, not a seed miss. true restores the automatic Dormant flag.",
+    "potFailsAutoDormant": false,
+    "$coverAsPot": "EVERY COVER IS WRITTEN AS A POT (owner, 2026-10-12: \"every cover —> now write as pot ... cover —> seed —> pot, we can choose and change from the variables available\"; chose \"Build now\" on the card). The donor is read as an UNNAMED seed: its skeleton (seed-mint's closed vocabulary, never minted, never named, no Seeds row) is the home cell, and the cover is a pot of it, stamped on the spec with the same `dials` ticket a pot carries. As for a seed (docs/seed-dials/README.md), the control `[]` keeps the donor's hook shape and writes NEW items into its skeleton; a 1-2 dial ticket also turns hook components, inside the hook band. Why: a plain cover keeps the donor's items and moves the hook only to 0.85-0.93, so it reads to X as a lightly reworded copy of a post that already went viral (inferred, unverified; the 2026-10-10 verbatim reruns of our own 500k+ bodies did 28-76k against 0.8-4.7M originals). New items make the body ours, and the ticket lets the 48h read be attributed to a named change. WHAT DOES NOT MOVE: the hook gate (hook.coverFloor, measured 2026-09-06 at an 18x reach gap below it), so a dial that touches the hook (topic, count, audience) still has to land the hook in band; a cover that wants a new hook subject is a remix. A cover-pot that clears the full gate is a candidate for /seed-mint by hand-induction, and naming stays the owner's. run-content-packets holds a cover without a ticket at the drafts stop; publish-thread stamps the ticket on the ledger row. on:false restores plain covers.",
+    "$coverBodyMax": "NEW ITEMS, CHECKED (owner 2026-10-12: \"build this\", on the gap that \"items are new\" was a written rule no gate read). A cover-pot's body, tweet 2 onward, may share at most this much with the donor's body, measured as word-4-gram overlap (checks.mjs bodyOverlap, the donor screen's own measure) read in both directions, the higher one counting. Measured 2026-10-12: the three cover-pot trial bodies scored 0-3%; six plain covers from 2026-10-04 scored 15-71%. 0.10 sits between the two. A cover held here kept the donor's items: write new ones into the skeleton.",
+    "coverAsPot": { "on": true, "minDials": 0, "bodyMax": 0.1 },
+    "$phases": "Rollout bucket WEIGHTS [cover, harvest, pot], one generation per milestone — normalize by the sum when allocating (the operator's phase-1 numbers total 105, so they are weights, not strict percents). Advance past phase 2 only when >= 1 pot has a Performed verdict (the /farm checkpoint, operator-overridable).",
+    "$phases": "The rollout ramp, by RUN. Weights, not percents — plan-check normalizes each triple by its own sum, which is why phase 1's 75/20/10 totalling 105 is deliberate. Phase 3 was the last one the ramp planned for; phase 4 is an operator decision (2026-09-13) that tilts further off covers and splits the remainder evenly between the two proven lanes. Phase 5 is an operator decision too (2026-09-17, Run 5) and it moves BACK up the cover column, for a supply reason rather than a strategy one: see $phase5.",
+    "$phase5": "45/25/30, set by the operator for Run 5 (Fri-Sun 2026-09-18..20). Covers rise because HARVEST CANNOT FILL 30%. pool-probe on 09-17 returned 11 runnable of 27 bodies, and four of those eleven sit at zero hearts, so only SEVEN bodies could take a heart at all; against the 24h cooldown that is 7 x 3 days = 21 body-days total, and a 30% harvest share wanted 20 of them. One refusal at write time and the lane is short. 25% asks for 16 and leaves real slack. The operator repairs the pool separately; when it is repaired this number goes back up, and that is a laws edit, not a --phase flag. The COVER 45 is TWO lanes: half written as covers, half as remixes of the same donors (operator: 'remix the donor'). Remix rows carry bucket 'cover' with lane 'remix', because a fourth bucket would silently break the MIX arithmetic — plan-check sums cover/harvest/pot only, so a remix bucket would inflate the total and report all three lanes short.",
+    "$phase6": "Owner decision 2026-09-21 for Monday/Tuesday run: cover40/harvest20/seed40. Existing booked content and final account warmups are preserved; requested mix applies to newly allocated money-thread slots.",
+    "$phase7": "50/20/30, set by the operator 2026-09-23 for this run (Wed-Fri 2026-09-23..25), in their words: \"Let's do 50/20/30\". Covers rise again and the pot column comes down from phase 6's 40. HARVEST STAYS AT 20 on the same supply argument as $phase5, and the numbers still say 20: pool-probe on 09-23 returned 13 runnable of 26 bodies, one of those at zero hearts, so 12 bodies can actually take a heart; against the 24h cooldown that is 12 x 3 days = 36 body-days and 63 hearts, which carries 20% (14 slots) with real slack but would be one write-time refusal from short at 30%. The POT COLUMN comes down because 40% of a 72-slot run is ~29 angles in one sitting and every one of them is the operator's creative call; 30% asks for ~22 across the five plantable seeds (olive Active; yarrow, ginger, mango, poppy Approved) and leaves the cover lane, which is the lane that absorbs a shortfall, the room to take it. The checkpoint was read clear before this was set: a pot has Performed, 110 fired.",
+    "phases": [
+      { "mix": [75, 20, 10] },
+      { "mix": [50, 30, 20] },
+      { "mix": [40, 30, 30] },
+      { "mix": [30, 35, 35] },
+      { "mix": [45, 25, 30] },
+      { "mix": [40, 20, 40] },
+      { "mix": [50, 20, 30] }
+    ],
+    "runsPerWeek": 2,
+    "postsPerAccountPerDay": 1,
+    "$excludeTitle": "Title regex that bars a draft from Harvest induction outright: reference/infra drafts (LOCKED, [CTA]) and parked work. Burner + client accounts are excluded by roster rule, not by title.",
+    "excludeTitle": "LOCKED|\\[CTA\\]|\\[parked\\]"
+  },
+  "selection": {
+    "$listicleBoost": "Operator 2026-09-21 prefers proven listicle hooks for the first pass of cover selection: their clear numbered promise is easier to preserve while delivering useful points. Raised the cover picker preference from the shared scale value 1.5 to 1.8, without changing plan-week's separate use of that shared value. This is a bounded ranking preference, not a hard quota or a measured claim that listicles convert better. Age-arm, 500k view, burn and overlap screens still decide whether a source may ship; the selection summary reports the actual listicle share for review.",
+    "listicleBoost": 1.8,
+    "$comment": "Donor freshness. viralWindowDays bounds the pool; the half-life tilts INSIDE it, and the floor stops an old-but-excellent donor being zeroed rather than merely outranked. Retuned 2026-08-28 (operator: \"prioritize the more recent one\"). Half-life 14 -> 7: a fortnight-old donor now needs 4x the reach-and-conversion of a fresh one, where before it needed 2x. Floor 0.4 -> 0.12 because a floor that binds early destroys the tilt it exists to soften — at half-life 5 the old 0.4 floor flattened everything past 6.6 days, so a 7-day donor and a 21-day one scored identically. 7/0.12 stays monotonic out to 21 days and only flattens beyond that. Window 21 -> 30 to widen the POOL; ranking, not the window, is what keeps the batch fresh.",
+    "$donorOverlapWarn": "Share of a donor's own word-4-grams that already appear in another donor on the same day's slate. Added 2026-08-29 after the 08-31 slate handed two accounts the same recycled nitric-oxide thread, with two byte-identical tweet bodies, and it was caught only because the second one was written by hand and read oddly. Measured on that slate: real collisions scored 29-61%, the donors we kept scored 0-11%, and unrelated donors score 0. A WARNING, never a block -- two threads can share a mechanism honestly, and the caller is a human who can read both.",
+    "donorOverlapWarn": 0.2,
+    "viralWindowDays": 30,
+    "$recencyRetune20260908": "MEASURED, and it moves the two numbers that were doing the most damage. Donor age against OUR result, current regime, 121 covers: 0-7d median 285,529 impressions / 161 clicks / $158.66 a thread · 7-14d 118,944 / 80 / $138.12 · 14-30d 107,489 / 64 / $54.79 · 30-90d 100,165 / 74 / $51.56 · 90d+ 32,098 / 14 / $7.25 (n=4). THE 30-90 DAY BAND MEASURES EQUAL TO 14-30. There is no cliff at the window edge, and the old curve put an 8.3x one there: 0.5^(30/7) floors instantly, so every donor past ~25 days sat at 0.12 while a three-day-old sat at 0.74. That is why an old thread with extraordinary numbers could never surface, which is exactly what the operator reported. Fitting both columns gives half-life ~14 days decaying to a plateau ~0.33, not 7 and 0.12. Raising the floor also RE-BALANCES the whole formula: the age term now swings 3x instead of 8.3x, so reachTiers (up to 2x) and intent (up to 1.4x) can actually decide a ranking instead of being rounding errors.",
+    "recencyHalfLifeDays": 14,
+    "recencyFloor": 0.33,
+    "$archiveDecay": "The extra handicap past archiveStepDays. Operator 2026-09-08 chose the 365-day vault KNOWING the 90-365 slice is unproven: the current regime has n=4 there, and the all-time numbers that look catastrophic ($1.91-$2.32 a thread) are almost entirely the retired evergreen lane, which selected on allTimeFloor 2M and is the same artefact that faked the donor-size finding. So this is a declared bet, priced conservatively rather than excluded, and donor-arm.mjs reports the slice separately so it can be settled instead of argued.",
+    "$archiveDecay20260917": "THE 90-DAY CLIFF RESTED ON n=7, AND IT WAS HIDING A REAL WALL 275 DAYS FURTHER OUT. Operator asked for a deliberate blend of trending and resurfaced evergreen winners, and named three writers to try. Re-measuring donor age against OUR result, current regime, 227 matured covers: 0-7d n=69 244,483 imp $136.64 · 8-14d n=47 155,846 $116.22 · 15-30d n=40 109,491 $66.85 · 31-60d n=30 85,091 $58.19 · 61-90d n=4 69,775 $81.34 · 91-150d n=2 132,129 $9.61 · 151-240d n=5 52,270 $24.65 · 241-365d n=0 · 366d+ n=17 11,926 $3.24. The `deep-archive` headline of 25 covers at $7.90 was SEVENTEEN covers past 365 days, which this ranking never picked, plus seven inside it. So the step that has been flattening everything from 91 to 365 days to a constant 0.15 was fitted on seven covers, and the 241-365 band has literally never been tried. Replaced by a continued exponential to a lower plateau: an evergreen donor now ranks BELOW every fresh one and can still be reordered by reach and merit against its own band, which a constant cannot do.",
+    "archiveDecay": 0.15,
+    "archiveStepDays": 90,
+    "evergreenFloor": 0.1,
+    "$evergreenFloor": "The plateau the 91-365d band decays toward, in place of the flat 0.15 step. 0.5^(age/14) is far below this by 91 days, so the floor is what actually binds and the band spans 0.15 down to 0.10 — narrow on purpose. It is not the tilt that decides whether an evergreen donor ships; evergreenShare is, and it reserves the slots so the bet gets measured instead of being outranked into never happening.",
+    "evergreenShare": 0.25,
+    "$evergreenShare": "Share of a run's cover slots reserved for donors past archiveStepDays — the third arm, after fresh (<=30d) and archive (31-90d). Operator 2026-09-17: \"a great blend between what is trending, which is content that is recently performing, but we are also resurfacing evergreen posts from before. We know, fundamentally, they have something that helped them go viral before.\" Same shape as archiveShare and explorationShare: it never outranks merit, it only guarantees the rows exist. 0.15 of 11 picks is between one and two a day, which is the smallest slate that produces a readable n inside a month and the largest that cannot wreck a run if the band is as bad as 366d+ turned out to be. Read it back with donor-arm.mjs. 0 turns the arm off.",
+    "$topicSpread": "NOVELTY (operator 2026-09-08, 'add novelty, gently'). 165 current-regime covers came from 104 donors -- 1.59 covers per donor -- and 85% of them landed in five topic buckets: general 32%, stress 17%, heart 15%, bloodsugar 11%, fitness 10%, with seven more topics sharing the last 15%. Repetition at that rate is what stops NEW harvest bodies appearing, because the funnel can only find what it tests. Reuses spreadFactor, the same tilt product diversity already uses, so there is one idiom for 'this has been picked enough lately'. Gently is the point: halving every six covers keeps the money topics leading and buys two or three exploratory slots a run rather than abandoning what converts.",
+    "topicSpreadHalfLife": 6,
+    "topicSpreadFloor": 0.4,
+    "$topicMemory": "WIDEN THE LANE (operator 2026-09-09). topicSpread was scoped to one batch, so topicUses started EMPTY every run: each run reopened with every topic at full novelty, took the money topics first because they carry the intent multiplier, and reproduced the same mix. Measured over the 20 days to 09-09: sleep 33%, stress 15%, heart 10%, fitness 10%, bloodsugar 6% -- 74% of covers in five buckets, while skin (55 plug-able products) took 5% and joint (33) took 2%. Halving every six covers inside a day cannot fix a bias that resets daily. topicMemory() seeds the tally from the ledger's own topic stamp, half-life decayed over topicMemoryDays, so a subject worked hard last week still costs something today. The tilt stays BOUNDED by topicSpreadFloor: at these volumes all five leaders sit at the 0.4 floor together and the cold topics at 0.8-0.95, a ~2x tilt that intent (up to 1.4x) and reach (up to 2x) can still overcome -- the operator's rule is that the five main topics keep their common use, so this biases and never bans.",
+    "topicMemoryDays": 21,
+    "topicMemoryHalfLifeDays": 7,
+    "$explorationShare": "The FLOOR on diversity, where topicMemory is only the tilt. Share of a day's picks reserved for COLD topics -- anything outside the hotTopicCount leaders by recent weight, derived from the mix rather than listed so the definition follows reality. Same shape as archiveShare: it never outranks merit, it only guarantees the exploratory slots exist on a day when the leaders would otherwise take everything. Safe because every one of the 13 topics can be monetized -- verified 2026-09-09 against 306 products, thinnest testosterone/liver at 3, richest skin 55 and joint 33, so an exploration slot can always carry a plug. 0 turns the arm off.",
+    "explorationShare": 0.25,
+    "hotTopicCount": 5,
+    "$viewFloor": "Operator 2026-09-10, twice and unambiguously: \"floor must be 500k from now\". A donor under 500k is not selected, full stop — supply is not the constraint (104 donors sat at 500k+ inside 30 days on the day this was set, 54 of them usable once oncology and off-niche were dropped, the freshest 1-2 days old at 1.3M and 2.2M), so there is no reason to spend a slot below the bar. WHAT THIS COSTS, recorded because it was measured and the operator overrode it knowingly: the earlier 250k floor existed so a donor collected at 250k could be re-read at 800k a fortnight later, since the scraper updates Impressions in place; and in the then-current regime the 250k-500k band posted the HIGHEST median reach of any band (307k, n=16). Against that, NO donor virality metric predicted our result at all (donor views r=-0.083 against our impressions), so the band advantage was never a strong signal either. Raising the floor shrinks the 30-day selection pool roughly 122 -> 84. The scrape is unaffected: nothing else reads this number, so sub-500k donors still enter the table and can still rise past the bar and become selectable.",
+    "viewFloor": 500000,
+    "$reachTiers": "Donor reach as a PRIORITY, [minViews, multiplier] descending. This is an operator preference and NOT a measured effect, and this file should say so plainly. Across 387 matured covers whose donor was inside the 30-day window, NO donor virality metric predicts our result: donor views r=-0.083 against our impressions, -0.135 clicks, -0.184 commission; bookmarks -0.087; likes -0.068; comments -0.220; retweet rate -0.070; engagement rate -0.067; thread retention +0.067; thread length +0.052. In the current regime the 250k-500k band posted the HIGHEST median reach of any band (307k, n=16). An earlier read showing a clean monotone decline with donor size was an ARTEFACT of the retired all-time evergreen lane, whose donors had a median age of 378 days -- it measured the lane, not the size. So these multipliers buy the ordering the operator asked for, not performance the data promises; the honest test is the archive arm below plus a re-read of this correlation once a few hundred covers have shipped under it. Replaces log10(views), which spanned 5.40 at 250k to 6.70 at 5M -- a 1.24x range against recency's 8.3x, so reach was decorative rather than weighted.",
+    "reachTiers": [[2000000, 2], [1000000, 1.8], [500000, 1.5], [0, 1]],
+    "$archiveShare": "Share of a run's cover slots drawn from donors OLDER than viralWindowDays -- the vault arm (operator 2026-09-08: 'the more unique winners that we can identify, the higher the possibility of adding them to the harvest'). The fresh lane stays the control. The pool is the whole argument: 122 in-niche donors inside 30 days against 1,690 all-time, so the window costs 13.9x the selection, and a pool that small is what makes a batch repeat itself. 0 turns the arm off.",
+    "archiveShare": 0.4,
+    "$archiveMaxAgeDays": "Outer bound on the vault arm, RAISED 365 -> 1095 on 2026-09-17 by the operator, who overruled the reading below and was right about the half of it that mattered. The reading: 17 covers past 365 days shipped in the current regime, median 11,926 impressions and ZERO median clicks against 244,483 and 100 for 0-7d, and only 4 of 17 cleared half their own page's median fresh cover. The correction (operator): \"clicks don't work for those since they are OG threads, no clicks tracked.\" Checked, and it holds at the day level — on the six days that carried a 366d+ cover, 12 of 41 NON-deep covers also logged zero clicks, and 2026-09-08 posted a median of zero for the whole day. Clicks and therefore $/thread are not evidence here. What survives the correction is IMPRESSIONS, which need no attribution: 11,926 against 119,346. That is the number the OG arm is being run against, and ogShare is sized so it can be read without betting the run on it. \"OG\" is the operator's word for this band and it means written more than a year ago; 1095 days is three years, which is where the swipe file itself runs out.",
+    "archiveMaxAgeDays": 1095,
+    "ogStepDays": 365,
+    "$ogStepDays": "Where evergreen ends and OG begins. Kept as its own boundary rather than folded into archiveStepDays because the two bands have different evidence: evergreen (91-365d) is thin at n=7, OG (366d+) is n=17 with untrustworthy clicks and a real impressions deficit. donor-arm reports them separately for the same reason.",
+    "ogShare": 0.1,
+    "freshShare": 0.6,
+    "offNicheExceptions": ["BeBetterMan_"],
+    "$offNicheExceptions": "Owner, 2026-09-28, on whether Cover should take @BeBetterMan_'s off-niche viral threads (tax loopholes, aura, low-IQ signs, relationships): \"we accept BebetterMan as he is an exception to the rule\". A thread from a listed handle is offered its topic's pods through the same Jev donor-writeability route a Health thread with no named supplement gets, whatever its niche tag; Jev still picks the product whose criterion is the natural next question, and a thread no pod fits is left out, as before. The slot allocator does not hold these for account-fit review. Every other page stays health-only (off niche = completely outside the health niche, owner 2026-09-28).",
+    "freshWinner": {
+      "cohort": "Direct Competitor",
+      "views": 500000,
+      "hours": 24,
+      "maxAgeDays": 3,
+      "dayOneExponent": 0.5
+    },
+    "$freshWinner": "Owner, 2026-09-28, asked whether Cover should prioritise his (the Direct Competitor network's) threads that cross 500k within 24h: \"yes. build this into selection\". pick-donors places them right after the owner's pins, before merit, one page each (the run's one-donor-once rule still holds, unlike a pin). The swipe row carries today's views, so day one is estimated as views / (age in days)^dayOneExponent; 0.5 is an estimate, not a fitted curve. Why: his first post of a hook has a median of 958k, his own reposts 20k, and our covers of his hooks a median of 173k against 69k for our own hooks (2026-09-28 study). The swipe tracker captures his threads 15-24h after posting.",
+    "reuse": {
+      "coversMax": 3,
+      "days": 30,
+      "winnerViews": 200000
+    },
+    "$reuse": "Owner, 2026-09-28, replacing the burn screen they had just removed (\"remove the burn screen rule\"): \"if we have covered more than 3 times in the last 30 days, then we can drop it, but that only applies if the score is not high enough ... If it's a winner, then we should keep on reusing it\", and what makes it a winner: \"our covers did over 200K view once\". So a donor our pages covered more than coversMax times inside the last `days` (counted from the ledger, scheduled covers included) sits out, unless one of our covers of it ever reached winnerViews impressions (the registry's Published Content). pick-donors.mjs; donor-burn.mjs reuseVerdict.",
+    "$freshShare": "Owner, 2026-09-28, after R2026-09-27 shipped 9 recent covers out of 77: \"I think 60% — then within the OG we would divide into 30 - 90 days (15%), 90 - 365 days (15%) and 365 days+ (10%) this would be the default and I can change it before a run if needed.\" So the default split is exact rather than a set of floors under merit: freshShare 0.6 of cover slots from the last viralWindowDays, archiveShare 0.4 over 30 days (15% at 31-90 days, 15% at 91-365, 10% over a year), evergreenShare 0.25 over 90 days, ogShare 0.1 over a year. The shares are nested (archive counts evergreen and OG picks; evergreen counts OG picks), and fresh + archive = 1, so every slot is bound. A band the pool cannot fill is reported as a quota miss and filled by merit. The Notion page's OG room setting changes it per run (scripts/run-intake.mjs AGE_PRESETS).",
+    "$ogShare": "Share of a run's cover slots reserved for donors older than ogStepDays. Operator 2026-09-17, lifting the ban: the writers they asked for by name live here — @bensmithlive has 19 usable threads averaging 3.45M views and NOTHING newer than 500 days, so under the old bound 100% of him was unreachable. Smaller than evergreenShare because the impressions deficit is real even after the click correction: roughly one slot a run, which is enough to read a trend across a month and too few to cost one. Read it back with donor-arm.mjs, on impressions rather than $/thread.",
+    "ogFloor": 0.06,
+    "$ogFloor": "The plateau past ogStepDays, below evergreenFloor. An OG donor ranks under every evergreen one on age, and ogShare — not the tilt — is what actually gets it shipped. The gap is deliberately small: the band is being MEASURED, not bet on, and a floor that collapsed to near zero would make the reserved slots pick arbitrarily within it."
+  },
+  "product": {
+    "$comment": "Product SELECTION law (2026-08-26). Every threshold here is read by pick-product.mjs and product-board.mjs. The two EPC bars are MULTIPLES of the measured fleet EPC, never absolute dollars: the fleet average moves as the mix improves, and the old flat $0.03 loser floor drifted so far out of meaning that NAD+ ran to 2,334 clicks at EPC $0.092 without ever tripping it. winnerMinClicks is the operator's own judging bar -- nothing is judged under it, so thin products keep their run instead of being cut on a sample too small to mean anything.",
+    "$spread": "Product DIVERSITY within one batch (2026-08-29). Usage used to be a tiebreaker after EPC in commitSlateProducts, and since realised EPC is a float the tie never happened, so the top product took every slot it was eligible for: the 08-31 slate ran magnesium on 8 of 11 threads and KSM-66 on 6. spreadFactor now multiplies the score, halving it every `spreadHalfLife` picks, exactly as recencyFactor tilts donors by age. The floor stops a dominant product being zeroed rather than merely outranked -- same reasoning as selection.recencyFloor. It ORDERS and never excludes; a thread with one honest substance still fills.",
+    "spreadHalfLife": 2,
+    "spreadFloor": 0.15,
+    "$geniClickFactor": "CLICK UNIT (2026-11-10, owner: \"fix the different read on the EPC so our stats are reliable again\"). A geni.us link logs about 2.5x the Levanta clicks per view of a plain lvnta link for the same orders and dollars per view (read 2026-11-06: plain 2.0-3.1 vs geni 6.4-6.5 Levanta clicks per 10k views; orders per 1M views level at 10-13). Every EPC bar here (minEpcFloor $0.45, the fleet multiples) was calibrated on plain-link clicks, so product-board.mjs counts a geni-routed link's clicks at this factor before it divides: EPC stays in plain-link dollars and a product is not condemned for the link it rode. Which links are geni-routed comes from learnings/geni-links.json (product-board.mjs --refresh-geni, Geniuslink API). Re-measure from the Nov 9 geni-vs-plain split and update this one number. 1 turns the correction off.",
+    "geniClickFactor": 0.4,
+    "$settleDays": "Orders post 1-2 days after the click (Levanta keeps adding to a day for ~48h), so the newest days of levanta-days.jsonl carry full clicks and partial orders. The board leaves the last settleDays days out of every EPC it judges; they still count once they settle. 0 judges everything.",
+    "settleDays": 2,
+    "winnerMinClicks": 100,
+    "loserEpcMultiple": 0.35,
+    "winnerEpcMultiple": 1.0,
+    "$minEpcFloor": "ABSOLUTE floor, operator 2026-09-19: \"raise the floor of performance to epc 0.45\". Everything else in this block is a MULTIPLE of fleet EPC, and the $comment above says why that is normally right. This is the deliberate exception. A relative floor tracks the fleet average, so when the mix is mediocre the floor sinks with it and a product only has to beat its equally mediocre peers -- at the 2026-09-19 board the 0.35 multiple sat at $0.165, which nothing in the catalogue could fail. An absolute floor says what a click has to be WORTH to us regardless of what the rest of the shelf is doing. The two are combined with max(), never replaced: if the fleet average ever rises past $1.29 the relative floor becomes the stricter of the two and takes over again on its own. Applied to the RESTATED EPC (rate-moves.mjs), not the measured one -- a product whose rate we just raised must be judged on the deal we have now, and on 2026-09-19 that distinction alone decided four SKUs, among them B0DZ33GTQ2, whose measured $0.260 fails this floor and whose restated $0.610 clears it after Sports Research took us 15% -> 40%. Judged only at winnerMinClicks; below the bar a product is unjudged and keeps its run.",
+    "minEpcFloor": 0.45,
+    "$minEpcFloorPhysical": "PHYSICAL-PRODUCT floor, operator 2026-10-02: \"for physical product lower floor to 0.35 EPC\". Devices and tools (sleep mask, heating pad, massage gun, BP monitor...) pay 8-25% on a higher ticket, so they earn less per click than the 35-50% supplements the $0.45 bar was set against, and the operator wants them judged on their own bar while the shelf moves off supplements. Applies to every keep/allow/experiment entry in keep-asins.json marked physical:true, in place of minEpcFloor; combined with the relative floor by max() exactly as minEpcFloor is. Same judging bar (winnerMinClicks), same restated EPC.",
+    "minEpcFloorPhysical": 0.35,
+    "$winnerMinClicksPhysical": "PHYSICAL-PRODUCT judging bar, operator 2026-10-06: \"let's raise it to 200 clicks instead of 100\" ... \"need more data\". Physical products pay 8-25% on a higher ticket and convert less often per click than supplements, so 100 clicks holds too few orders to read (at a 5% CVR, 100 clicks is ~5 orders, and 0 orders in 45 clicks happens ~10% of the time to a product that converts at 5%). Replaces winnerMinClicks for keep-asins entries marked physical:true, in product-test.mjs verdicts and in pick-product's loser floor alike. The test kill floor scales with it (testKillMinClicksPhysical, 2x like the bar) so a physical product is not killed at 40 clicks on a sample the operator has called too small. Supplements keep 100 / 40.",
+    "winnerMinClicksPhysical": 200,
+    "testKillMinClicksPhysical": 80,
+    "exploreSlots": 2,
+    "$test": "Product TEST hearts (operator 2026-09-02). An unjudged product gets testHearts chances; a heart = the LIGHT plug (tweet 7) on testCoversPerHeart covers in one run, roughly winnerMinClicks clicks in a week, while the heavy plug stays proven so the thread's money is never bet on the unknown. Judged by product-test.mjs on the board's lifetime figures: at or above winnerMinClicks clicks, EPC < loserEpcMultiple x fleet -> Retired, >= winnerEpcMultiple x fleet -> Promoted, in between -> another heart, and testHearts spent without a promotion -> Parked. The FLOOR runs at any heart: testKillMinClicks clicks at EPC < testKillEpcMultiple x fleet is horrendous enough to kill on the spot — 40 clicks at $0 never becomes a winner. Never inside a pot's plant: a pot's chance must not be confounded by an unjudged product (an unjudged one may ride as P2 only where P1 carries the money). HEAVY SLOTS (operator 2026-09-09): \"some of the test should get heavy plugs too — maybe the top 3 candidates — this way we give everyone a fair test, since some of them are very promising but we are not giving them opportunity.\" Two things change. testProductsPerRun products ride each run instead of one, and testHeavyCovers of those cover placements may take plug index 0 rather than index 1. The heavy slot SWAPS with the judged pick, never replaces it: the thread still carries a proven product, demoted to light, so a heavy test costs the traffic difference and not the whole plug. Measured 2026-09-09 over 1,020 slate links, that difference is small — heavy 15 median / 67.5 mean first-week clicks against light 12 / 53.9, about 1.25x — and the EPCs are within 4% ($0.426 vs $0.410). So the slot was never why the board stays unjudged: the median link draws 12-15 clicks in its first week, so three covers reach ~40, not the ~100 the heart was designed around, and only 14-17% of links ever pass the bar at all. Testing three products a run is the bigger half of this change; the heavy slot is the smaller, and it is capped because an unjudged heavy is real revenue at risk. Order comes from queues/product-queue.json, the operator's standing queue, which unlike --candidates does NOT skip a product for being stocked — that blind spot is what left four Healthy Origins SKUs at zero clicks for months.",
+    "testHearts": 3,
+    "testCoversPerHeart": 3,
+    "testKillMinClicks": 40,
+    "testKillEpcMultiple": 0.15,
+    "testProductsPerRun": 3,
+    "testHeavyCovers": 3,
+    "$selectionFit": "Owner, R2026-10-03, after four covers had their products changed once the threads were written: \"I think in future run we should be extra careful with selection so there is no need to reconsider after plugging.\" The products planner in the selection build (scripts/plan-product-review.mjs, --preview and the products stop; scripts/product-allocation.mjs) now HOLDS a cover, to be reselected before any writing, when Jev's heavy decision reads no_product and Jev's product fit puts both the thread's any-product reading under noProduct.anySupplementBelow and the placed heavy's fit under noProduct.heavyFitBelow (S1003-marcos: caffeine gum on a kidney thread, any 0.04, fit 0.01). That case no longer takes the \"Keep donor, sell anyway\" bridge; every other unargued heavy still does. Jev not read: no hold. The same planner drops a product titled for the other sex than the page (accounts.mjs `sex`) or one in safetyClash below; the next product leads, and alone it holds.",
+    "selectionFit": { "noProduct": { "anySupplementBelow": 0.1, "heavyFitBelow": 0.1 } },
+    "$safetyClash": "Owner, R2026-10-03 (see $selectionFit): a product whose substance reads as unsafe advice on the thread it is sold on. One entry per substance: its ASINs (every catalog title naming it; a new SKU is added here by hand), the donor topics (topics.json keys) and donorWords (regex sources, matched case-insensitively from a word start against the donor's hook and whole text) that make the clash, and why, with its source. A clashing product is dropped when another product remains on the row (the next one leads), and holds the row for a reselect when it is the only one. S1003-peak sold ashwagandha on a \"liver quietly starting to fail\" thread.",
+    "safetyClash": [
+      { "id": "ashwagandha", "substance": "ashwagandha",
+        "asins": ["B079K32QB6", "B079K4MPVB", "B0DLDZSQ5T", "B0DYLB3XNN", "B073DN2YG9", "B07S76M4D5", "B079NMSPBW", "B0G4XN31BL", "B0F76PXST3"],
+        "donorWords": ["liver", "hepat", "jaundice", "fatty liver"], "topics": ["liver"],
+        "why": "liver-injury case reports (NIH LiverTox)" },
+      { "id": "caffeine-focus-gum", "substance": "caffeine focus gum",
+        "asins": ["B0F74VWPSR", "B0DFHL299C"],
+        "donorWords": ["kidney", "renal", "heart failure", "arrhythmia", "palpitation", "high blood pressure", "hypertension"], "topics": [],
+        "why": "a caffeine product on a kidney or heart-rhythm thread reads as unsafe advice" }
+    ]
+  },
+  "$voiceBlocks": "TEMPORARY (operator 2026-09-03): when enabled is false, per-account `voice` is withheld from every generation and repair prompt fleet-wide. accounts.mjs still carries each account's voice verbatim and nothing is deleted — this flag alone decides whether it reaches a prompt. Flip enabled back to true to restore; no other edit is needed. Consumers: prompts.mjs buildPrompt/buildSkeletonPrompt/buildPromptLite, qc.mjs plug repair, swap-product.mjs generatePlug — all routed through VOICE_BLOCKS_ON in laws.mjs, with a test that fails if a sixth consumer reads account.voice unguarded.",
+  "voiceBlocks": { "enabled": false, "disabledOn": "2026-09-03" },
+  "$signOff": "Owner, R2026-09-26 (the Willie study): \"Content, then the disclaimer.\" A thread ends on content, its last point or a one-line takeaway, and then the disclaimer, the one non-content tweet; #ad stays on the CTA. When enabled is false, no thread is given the account's sign-off ask (accounts.mjs `closing`): write-day and the pot builder do not append it, checkThread and validateDraft do not require it, and QC, repair-drafts, repostRepairs and recreate do not restore it. Each account keeps its closing text, so a draft written before the switch still reads as signed (closingTexts) and nothing stacks a second goodbye on it. laws.mjs SIGN_OFF_ON and signOffOf() are its only readers. Flip enabled to restore.",
+  "signOff": { "enabled": false, "disabledOn": "2026-09-26" },
+  "$articles": "Owner, R2026-10-03: \"Every account should do \u22652 articles a week starting next week\" (built into the codebase for the next run), on the lane scoped in docs/article-lane.md and the owner's 2026-09-29/30 words there (a self-improvement piece tilted to a symptom, the supplement one of its steps, replicating a viral source's title skeleton and cover style, numbered when a listicle, the fleet gated --loose). Two a week is one article per X Premium page per run (Sun fills Mon-Thu, Thu fills Fri-Sun); additive to the page's thread, never in the farm mix. scripts/run-articles.mjs plans, checks, covers, pushes, approves and schedules them; pages without X Premium are skipped (queues/x-premium.json, scripts/x-premium.mjs). problemProducts is the starting menu per reader problem from docs/article-lane.md section 2, in order; the first sellable ones that pass the product-fit checks are the plugs.",
+  "articles": {
+    "perPagePerWeek": 2,
+    "perRun": 1,
+    "words": [1200, 2000],
+    "plugsMax": 2,
+    "gapHoursFromThread": 6,
+    "windowIct": ["11:00", "23:00"],
+    "defaultIct": "11:07",
+    "sourceReuseDays": 60,
+    "swipeShare": 0.5,
+    "swipeMinLength": 5,
+    "swipeMinViews": 250000,
+    "swipeMaxAgeDays": 365,
+    "swipeCoverDays": 30,
+    "swipeReadMax": 80,
+    "premiumMaxAgeDays": 7,
+    "problemProducts": {
+      "fatigue": ["B01IQB2UYS", "B077JC1GCN", "B0GT2JKMYZ", "B0GTS6GGSK"],
+      "brain_fog": ["B09QFSDLL5", "B01IQB2UYS", "B07DX89ZHN", "B07NXW4GW7"],
+      "memory": ["B07DX89ZHN", "B09QFSDLL5", "B0DXR7MPNV"],
+      "sleep": ["B0GT2JKMYZ", "B09QFSDLL5"],
+      "stress": ["B0GT2JKMYZ", "B079K32QB6"],
+      "low_mood": ["B07NXW4GW7", "B07DX89ZHN"],
+      "low_drive": ["B0GT2JKMYZ", "B07NXW4GW7", "B07DX89ZHN"],
+      "body_decline": ["B0DXR7MPNV", "B0GTS6GGSK", "B07NXW4GW7"]
+    }
+  },
+  "$run": "Scheduled runs (owner, 2026-09-26): \"create the scheduled routine for the /run so I stop having to do them manually\", twice a week, \"from the afternoon day before the next publishing date, so at night we resolve all the final conflicts and then start publishing the following day\". A Claude routine starts a session the evening before each scheduled.fireDays day for the prep (\"engine work (preparation) that can be done prior to the scheduled run session\"), and that session starts the run on the day in the early afternoon (ICT; the routine and the session own the minutes). The run fills the next blocks[day] days: Sunday fills Mon-Thu, Thursday fills Fri-Sun. Every word is written in the chat, never through a model API (\"Remember to use claude chat token NOT Api\"): the session marks itself chat-only and lib.mjs anthropic() refuses. The run's Notion Runs page is its intake (scripts/run-settings.mjs), edited by the owner before it fires. Then: \"the only thing I need to see is the inital selection, everything else until the final revision can and should be automated.\" standingConsent is those words, recorded verbatim by `run-studio approve-standing` at the stops it names, and only on a run initialised with --scheduled. run-studio refuses standing consent at the selection and at drafts and schedule whatever this list says. Since 2026-09-28 those two stops are covered instead by the owner's vetoConsent (below; `run-studio approve-veto`): the selection proceeds as soon as it is shown, and a finished thread ships once its deadline passes with no hold from the owner. Scheduling follows the final revision; an unchanged slot inherits the brief's calendar approval, as in every run.",
+  "run": {
+    "hand": {
+      "crossOverlapMax": 0.1,
+      "_why": "Owner 2026-11-10: reuse \"may increase similarity between threads which means more linkage\", so each day's threads keep 90% of their body 4-grams to themselves. fixedPhrases are words the owner fixed in docs/cta-templates.md and in a seed skeleton, which every thread has to carry; they leave both sides of the count (proposed 2026-11-18, thread 'Prepare Nov 18 threads'). Slot-bank fills (credentials, mechanisms, link lines) are NOT exempt: those are the pasted bridge the check exists to catch. exemptFixedPhrases false counts everything again.",
+      "exemptFixedPhrases": true,
+      "fixedPhrases": [
+        "But only if it actually gets into your body",
+        "Here's the number on the back to check",
+        "Here's the word on the back to check",
+        "Here's the name on the back to check",
+        "Here's the line on the back to check",
+        "Here's the ingredient list on the back to check",
+        "If you're looking to",
+        "The one I recommend",
+        "This is my magnesium",
+        "This is my creatine",
+        "This is my omega-3",
+        "This is my fish oil",
+        "This is my B12",
+        "This is my ashwagandha",
+        "This is my beet root",
+        "This is the one I take every single night",
+        "This is the one supplement I never skip",
+        "Here's mine: the one I'd keep if I could only have one",
+        "This is the first one I tell friends to start with",
+        "Here's the one I've turned into a daily habit",
+        "This is the one that's always on my kitchen counter",
+        "Here's how to take it the right way",
+        "Who should skip it",
+        "The one detail that decides whether it works",
+        "Flip it and look for",
+        "Only one kind gets past all three problems",
+        "I take it after dinner, every night, for",
+        "I take it an hour before bed, every night, for",
+        "I take it before bed, every night, for",
+        "I take it with breakfast, every morning, for",
+        "I take it with lunch, every day, for",
+        "I take it with water, every morning, for",
+        "It helps with",
+        "Which magnesium? Chelated glycinate, made in the USA. Not oxide",
+        "Which omega-3? Triglyceride form, high in EPA, IFOS 5-star. Not ethyl ester",
+        "Which magnesium? Magtein L-threonate, patented and third-party tested. Not oxide",
+        "Which creatine? Micronized monohydrate, third-party tested. Not flavoured blends",
+        "This is the magnesium I take every night",
+        "This is the magnesium I recommend to everyone",
+        "This is the omega-3 I take every morning",
+        "This is the omega-3 I recommend to everyone",
+        "This is the creatine I take every day",
+        "This is the creatine I recommend to everyone",
+        "This is the ashwagandha I take every morning",
+        "a year now",
+        "years now",
+        "months now"
+      ]
+    },
+    "scheduled": {
+      "fireDays": ["Sun", "Thu"],
+      "blocks": { "Sun": 4, "Thu": 3 },
+      "standingConsent": {
+        "by": "owner",
+        "on": "2026-09-26",
+        "quote": "I want it to be more hands off — the only thing I need to see is the inital selection, everything else until the final revision can and should be automated",
+        "stages": ["brief", "products"]
+      },
+      "$vetoConsent": "Owner, 2026-09-28, in the chat: \"Build the ship-if-no-answer approval model\" (and, asked how, \"1 - switched\": the owner moved the session off auto mode to approve these edits). It builds on the process rules the owner answered the same day (AskUserQuestion; R2026-09-27 notes.md): rows that still wait for the owner at selection, \"Nothing: auto-resolve all\" (\"My selection review should only hold up the ones in review — everything else should proceed simultaneously don't wait.\"); a row waiting on review with no answer by its writing deadline, \"Ship as proposed\"; the final revision, \"Show me, ship if no answer\" (a row schedules unless held before its deadline, about 12 h before the slot). On a run initialised --scheduled only, scripts/run-studio.mjs approve-veto records these words verbatim, marked standing (never an owner verdict, never an agent's words): at the selection every row the owner was shown proceeds at once; at the drafts stop a row is approved only once its deadline, deadlineHours before its approved slot, has passed on the clock (the command takes no time argument). A hold, swap or revision the owner records before then keeps the row out. Consent approves a row; it never clears a hold: a row its packet holds is never submitted and approve-veto refuses one that says so, and Jev's safety holds still stop.",
+      "vetoConsent": {
+        "by": "owner",
+        "on": "2026-09-28",
+        "quote": "Build the ship-if-no-answer approval model",
+        "selection": "Nothing: auto-resolve all",
+        "drafts": "Show me, ship if no answer",
+        "unanswered": "Ship as proposed",
+        "deadlineHours": 12
+      }
+    }
+  },
+  "modelRouting": {
+    "$": "Jev picks the writer model per task (owner, 2026-09-24: \"setup jev to handle ai model selection for specific tasks. Not everything needs the highest model, so you can functionally switch between models to save time and money\"). decisions/model-route.mjs reads a task and says fast / standard / strong; model-router.mjs clamps it to the role's min/max and hands lib.mjs anthropic() the tier's model. A role not listed here keeps its call default; MODEL_<ROLE> and LLM_MODEL (the operator's explicit word) and a caller's explicit model still win; a pinNative call is never routed. Jev unread -> the role's default. `agent` is unused since 2026-10-06: in-session writing happens in the main chat (AGENTS.md); routing applies to script calls only. Prices per M tokens in/out (llm-prices.json): haiku-5.5 0.10/0.50, sonnet-5.5 2/10, opus-5.5 4/20 (2026-11-10: moved up from haiku-4.5 / sonnet-5 / opus-5, each the same price or cheaper). Fable 5.2 (8/40) is not a tier: no script call needs it.",
+    "enabled": true,
+    "tiers": {
+      "fast": { "model": "claude-haiku-5-5", "agent": "haiku" },
+      "standard": { "model": "claude-sonnet-5-5", "agent": "sonnet" },
+      "strong": { "model": "claude-opus-5-5", "agent": "opus" }
+    },
+    "roles": {
+      "$": "min / max bound what Jev may pick; default is used when Jev is unread. Published copy (hooks, the /run writer) never drops to fast; a mechanical repair can. aux (classification fallbacks, clip windows) never needs strong. Roles apply to script calls through lib.mjs anthropic(); since 2026-10-06 in-session skills write in the main chat instead of routing a subagent (AGENTS.md).",
+      "pool-prep-writer": { "min": "fast", "max": "strong", "default": "standard" },
+      "repair-writer": { "min": "fast", "max": "strong", "default": "standard" },
+      "hook-writer": { "min": "standard", "max": "strong", "default": "standard" },
+      "run-writer": { "min": "standard", "max": "strong", "default": "standard" },
+      "aux": { "min": "fast", "max": "standard", "default": "standard" },
+      "article-writer": { "min": "standard", "max": "strong", "default": "standard" },
+      "single-writer": { "min": "fast", "max": "standard", "default": "fast" }
+    }
+  },
+  "jev": {
+    "$comment": "Jev decision platform (plan Phase 0, 2026-09-23): the modes, thresholds, pinned model and calibrated build every decisions/<name>.mjs reads through jev-decide.mjs. Resolves AGENTS.md (questions and thresholds beside the caller) against this file's rule (numeric law lives only here) the way the plan proposes: the QUESTIONS stay in the decision module beside the caller, the NUMBERS live here, and the module reads them. Promotions up the ladder off -> shadow -> propose -> decide -> enforce are the operator's call only, on jev-report.mjs evidence; a model bump or a question-wording edit resets a decision to shadow. See docs/typesafe-jev.md \"Decision platform\".",
+    "$model": "The pinned model every decision sends unless it names its own. jev-1.13 is the OpenRouter id (routed as typesafe/jev-1.13); jev-1.13.0 does not exist on that route (docs/typesafe-jev.md). decide and enforce refuse an unpinned model such as jev-latest and run as shadow.",
+    "model": "jev-1.13",
+    "$calibratedBuild": "The answering build the thresholds were tuned against (the swipe calibration run, 2026-09-23, SWIPE_RULES.calibratedBuild). An answer from any other build downgrades propose, decide and enforce to shadow and logs why.",
+    "calibratedBuild": "typesafe/jev-1.13-20260917",
+    "$deadlineMs": "Per-call deadline via AbortSignal, the same 20 s the swipe reclassification ran under. A call past it is not read and the incumbent runs.",
+    "deadlineMs": 20000,
+    "$confidenceFloor": "Default floor for decide/enforce: below it the incumbent's action stands. Matches the choice/score floor in the plan's confidence routing (0.6); a decision may set its own in thresholds.confidenceFloor, and money or risk actions should sit at 0.85 or above.",
+    "confidenceFloor": 0.6,
+    "$decideRule": "OWNER RULE, 2026-09-23: 'Make it a rule that everything related to decision making & gate must be made by Jev from now on. Use subagent only for tasks like writing, otherwise Jev got everything covered.' Every gate decision below runs at mode decide on the pinned model: Jev's answer is the decision, code turns it into the action, and a subagent never reviews or gates. What stays code is what Jev cannot do (counts, positions, lengths, arithmetic such as the 5% harvest edit share, dates) and every write. Safety stays monotone (a Jev hold stands; a Jev pass never clears a regex hold), a failed read is never a pass, and a model or question-set change still drops a decision back to shadow. One exception, pending the owner: reply-intent stays shadow, because in decide it would refuse the owner's own approvals, and on the mock run it read three clear approvals as unclear (consent 0.64 to 0.72).",
+    "$allowedSafetyClasses": "Owner, 2026-09-23: \"fix the gate - quoting is fine.\" Jev still asks these safety questions (the question sets and their hashes are unchanged), but no decision routes on them: the editorial decision does not send a row to the owner, run-jev does not flag it, and the donor screen does not reject a donor for it. The code checks for FABRICATED quotes (checks.mjs fabricationFlags) are a different rule and still run.",
+    "allowedSafetyClasses": ["named_quote"],
+    "$signOffMaxChars": "Owner, 2026-09-23: \"keep the sign off pls.\" The last body tweet as a short question to the reader (\"Be honest, which of the five would you drop first?\") is the house sign-off: the editorial decision does not ask it to stand alone or to land the thread. Up to this many characters, ending in a question mark, with no link.",
+    "signOffMaxChars": 160,
+    "$repairLoops": "Owner, 2026-09-23, approving the repair loop (\"Let's do all 3\"): after Jev reads a draft, the writer rewrites only the tweets Jev or a gate points at, and Jev reads it again. At most this many repairs per row (scripts/run-repair.mjs). Owner, 2026-09-28, on a Jev editorial hold at drafts: \"Repair once, then ship\" (safety holds still stop). So one loop, and after it a hold whose every pointer is craft becomes a review line and ships with the row (run-content-packets.mjs jevEditorialIssues); a safety hold, or a gate hold, still stops the row.",
+    "repairLoops": 1,
+    "$craftHolds": "Owner, 2026-10-06 (chose \"Both\" on making Jev's drafts read advisory): across R2026-10-03 and R2026-10-04 Jev flagged 116 of 116 draft reads (104 review_needed, 12 hold) and the owner approved all 116 (scripts/run-metrics.mjs). \"advisory\": a Jev editorial hold whose every pointer is craft is a note on the row from the first read (run-content-packets.mjs jevEditorialIssues); a safety pointer, a non-craft pointer, or a missing, stale or unread reading still holds. Any other value restores the repair-once-then-ship rule above.",
+    "craftHolds": "advisory",
+    "$poolRepairPasses": "The evening prep's bound (scripts/pool-prep.mjs): how many brief-and-apply passes a light-edit pool body gets before it stays as it is. It was jev.repairLoops (2) until 2026-09-28, when the owner's \"Repair once, then ship\" set the run's drafts loop to one; the prep repairs bodies before anyone waits on them, so it keeps its two.",
+    "poolRepairPasses": 2,
+    "decisions": {
+      "product-fit-heavy": {
+        "$": "Example decision (Phase 0): is the picker's heavy placement argued by the donor? product-fit.mjs's own question set, unchanged, so it enters at shadow (report-only) and moves nothing. thresholds.fit and thresholds.margin equal PRODUCT_FIT_THRESHOLD and PRODUCT_FIT_MARGIN in product-fit.mjs (tests/jev-decide.test.mjs fails if they drift) until product-fit.mjs itself migrates to reading them from here.",
+        "mode": "decide",
+        "questionSetHash": "b99a17a8519b02b0179a8352908997132887e65c9133f42f0b13275e40af54cb",
+        "thresholds": { "fit": 0.5, "margin": 0.2 }
+      },
+      "product-second-earned": {
+        "$": "Plan Track C / A3 Products (2026-09-23): is the light placement earned? Two nouls from docs/glue.md LAW G1: 'the second product is honestly supported by the donor / thread' and 'need A and need B are the same decision' (two products doing the same job). State: the donor, both products by substance label, and the CTA needs and bridge lines when present. The incumbent is product-allocation.mjs's identical-needs check. Shadow, report-only: plan-product-review.mjs --jev prints Jev's reading in the products packet and never changes a pick, status or approval. thresholds.supported is PRODUCT_FIT_THRESHOLD (0.5), the bar product-fit already uses for 'argued'; thresholds.same is 0.5, the midpoint. Initial values, not tuned: no products-stop verdicts are committed yet to tune them against.",
+        "mode": "decide",
+        "questionSetHash": "c9d0a9aaf475bb9520916ef4574a23e831b26912a6ead8d24bd21433d6dca3f4",
+        "thresholds": { "supported": 0.5, "same": 0.5 }
+      },
+      "editorial-prescore": {
+        "$": "Editorial pre-score (plan Track A, 2026-09-23): one Jev reading per /run drafts row, beside the fresh-reader subagent, on docs/glue.md's five questions asked one by one (numbered steps, seams, CTA entry, point, bridge, ask-free copy, tail, the product pair) plus the run-jev safety battery and a line-level claims pointer. Roles and positions are computed in code from gate-thread.mjs plugsAt; Jev points at T#/L# and code quotes. Policy: hold only for a safety class (explicit, cancer, prescription drug; monotone OR with the banned-topic regex), craft answers only ever review_needed (plan section 6 item 18, glue.md: the five questions are review prompts, not machine gates), claim lines are routing only. Enters at shadow: scripts/run-jev.mjs prints it under the Jev lines and never changes a row's status, holds or approval. Thresholds: safetyHoldAt/safetyReviewAt are the run-jev FLAG_AT (0.7); craftLow/craftHigh are the plan's noul bands (below 0.30 no, 0.30-0.70 uncertain); scoreLow/scoreReview bound the 0-2 scores (below 0.8 fails, below 1.2 uncertain, as run-jev's promise_kept); claimConfidence drops low-confidence claim pointers.",
+        "mode": "decide",
+        "questionSetHash": "96be76ff042a591e7b7837b5a60b8bf0dc55067ba5f5576b538d9e15ab99eae1",
+        "thresholds": { "safetyHoldAt": 0.7, "safetyReviewAt": 0.7, "craftLow": 0.3, "craftHigh": 0.7, "scoreLow": 0.8, "scoreReview": 1.2, "confidenceFloor": 0.6, "claimConfidence": 0.6, "craftHolds": true }
+      },
+      "claims-battery": {
+        "$": "Track E claims battery (docs/claim-safety.md, LAW 4(b), LAW 7): per tweet a claim class, three nouls and a severity score. Safety decision, shadow (report-only): no checks.mjs gate changes and the incumbent regex's action is returned. Its policy is monotone on its own: a tweet holds when Jev crosses any threshold below OR the incumbent regex holds (plan §1.2 invariant 8). severity is the 0-3 severity score scaled to 0-1 (0.75 = most of the mass on 'must not ship'); holdClass is the probability of results_testimonial or disease_treatment; the noul thresholds sit at 0.7 like run-jev FLAG_AT. Initial values, not tuned: scripts/jev-eval.mjs claims-battery prints the sweep, and moving them is the operator's call.",
+        "mode": "decide",
+        "questionSetHash": "38ae41c4b4cd31c60501ce11391b220319f26874fd104d054d8c97b2353400d7",
+        "thresholds": { "$relaxed": "Owner, 2026-09-23: 'can we be a little more relaxed on the claims'. Each flag now needs a stronger Jev reading: severity 0.75 -> 0.85, a hold class 0.5 -> 0.7, the three claim nouls 0.7 -> 0.8. Safety classes (cancer, explicit, Rx) in the editorial decision are unchanged.", "severity": 0.85, "holdClass": 0.7, "unsourcedStatistic": 0.8, "absoluteSuperlative": 0.8, "statedAsProven": 0.8 }
+      },
+      "topic-stamp": {
+        "$": "Back-stamp (plan Track G, Phase 5): Jev's topic for a shipped thread, beside the classifyTopic regex (the incumbent), with 'general' split into general_health / not_health plus one multi-topic noul per bucket. Shadow and report-only: stamps are append-only rows in learnings/stamps/, read only through stamps.mjs, and no existing reader switches to them. thresholds.namedRoute is the noul a general_health thread needs on a bucket to be routed to that named topic (and the bar for the topic-multi set); thresholds.stampFloor is the confidence below which stamps.mjs resolve() ignores a stamp and returns the ledger value, the platform's default choice floor (0.6).",
+        "mode": "decide",
+        "questionSetHash": "d93269051f833e56fdc40598f63e3ca7e8df17b22f067df65917eff37db1969c",
+        "thresholds": { "namedRoute": 0.5, "stampFloor": 0.6 }
+      },
+      "cta-recipe-stamp": {
+        "$": "Back-stamp (plan Track G, Phase 5): which pods.json skeleton recipe (or 'none') a shipped plug tweet carries in meaning, so chat-written plugs can join cta-learn's library (recipe_not_in_library held 478 of 487 candidates on 2026-09-21). The incumbent is cta-learn's exact-text recipe id. Shadow and report-only: stamps are append-only rows in learnings/stamps/, read only through stamps.mjs; cta-learn does not read them. thresholds.stampFloor 0.7 is the bar the Phase 5 report counts a mapping at, and the floor stamps.mjs resolve() applies. v2 (2026-09-23, question-set hash below): one yes/no noul per library recipe of the plug's own role (v1 asked one choice over both roles and mapped 50 of 478 at p >= 0.7, about half right on a hand-read of 8). The policy picks the highest noul at or above stampFloor only when it beats the runner-up by thresholds.margin (0.15: set before the v2 run and not calibrated; a pod's heavy recipes form a 2x2 criterion x cta grid, so near-ties between siblings are expected and read as 'none'); otherwise 'none'.",
+        "mode": "decide",
+        "questionSetHash": "796ea9827d744b8766b4610a77495929fd23d8ac8901fd52fbb9fa4c6c0da097",
+        "thresholds": { "stampFloor": 0.7, "margin": 0.15 }
+      },
+      "premise-twin": {
+        "$": "Premise twins across one run (plan section S; owner, 2026-09-23: \"implement: 2,3,4, 6 first\"). One Jev call per pair of the run's rows at selection: a 0-2 score for how close the two ideas are and a noul for \"a reader would feel they read the same thread twice\". The incumbent is run-rules.mjs runTwinIssues (word 4-gram overlap at selection.donorOverlapWarn). Monotone: a Jev twin adds a hold on the later row, never clears the code's. Pots of one seed are compared by the code only (they share a premise by design). twinScoreAt 1.5 is the midpoint between 'same subject, new premise' and 'same premise'; readTwiceAt is run-jev FLAG_AT (0.7). No confidence floor: the score is already the probability-weighted level (a reordered 14-tweet copy scored 1.59 at confidence 0.38). Each side is read to 16 tweets.",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "2f7bf5e49e6054ab7edbbc7f5f3a43c96a1353688d2ce6e79fc7feeee89f8488",
+        "thresholds": { "twinScoreAt": 1.5, "readTwiceAt": 0.7 }
+      },
+      "hook-candidate": {
+        "$": "Five hooks, Jev picks (plan W3, hook track H1+H2; owner, 2026-09-23: \"implement: 2,3,4, 6 first\"). scripts/hook-pick.mjs has the writer draft 5 cover hooks from the donor's; code keeps only candidates the hook gate passes (checkHook coverFloor..gateMax, no dash, 280 chars, the promised count). Jev reads each survivor against the donor hook: H1 fidelity drops one that changes the promise (same_promise below promiseAt), adds a claim (new_claim at newClaimAt or above) or reads as an ad (reads_as_ad at adAt or above); H2 strength (mean of specific and pull, 0-1) ranks the rest. Jev only chooses among gate-legal hooks, never loosens the gate. promiseAt is run-jev FLAG_AT (0.7); newClaimAt and adAt sit at 0.5 because an added claim or an ad costs more than a lost candidate (four remain).",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "65284d46e17901ac7dc6beffb55622b5a347221ad7578118816197dcc9377a85",
+        "thresholds": { "promiseAt": 0.7, "newClaimAt": 0.5, "adAt": 0.5 }
+      },
+      "singles-screen": {
+        "$": "Singles meaning gates (plan Track E; owner, 2026-09-23: \"implement: 2,3,4, 6 first\"). One Jev battery per health single: health_post, off_niche, commerce, and the safety classes sexual, smear, rx_drug, claim, remedy, biography. plan-singles.mjs singlesVerdict combines it with rejectReason: mechanical gates stay code; a safety regex hit or a Jev safety flag rejects (monotone, Jev never clears a safety regex); topic classes (off niche, commerce, off topic) Jev decides and the regex hit is context; an unread post keeps the regex answer. flagAt is run-jev FLAG_AT (0.7); onTopicAt 0.3: off topic only when Jev is fairly sure it is not a health post (a 0.5 line rejected 31 of 406 kept posts, mostly the owner-kept fitness aphorisms). Only disagreements reach the decision log.",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "098fb9b28700dae9489696687ce42bf1b24354758694d0cdbb76ee443ae32d9c",
+        "thresholds": { "flagAt": 0.7, "onTopicAt": 0.3 }
+      },
+      "plug-anchor": {
+        "$": "Plan before words (plan A2 'Plug insertion anchor', W1; owner, 2026-09-23: \"implement: 2,3,4, 6 first\"). scripts/row-skeleton.mjs asks, for each LEGAL fresh-insert position placePods computed (plugSlots, clear of the funnel tail), whether the tweet before it raises a need the product answers and whether the product reads as the natural next step inside the hook's promise; fit is their mean. The earliest position at anchorAt or above is taken (earlier plugs earn more, plugs.budget); with none, placePods' own nearest-to-tweet-3 pick stands. Jev never adds a position. anchorAt 0.6 is the platform confidence floor.",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "b5b7bb5cb41d877baaeec9ef14a4d749c4fc430dc4395e0387ed89eda908105a",
+        "thresholds": { "anchorAt": 0.6 }
+      },
+      "item-swap": {
+        "$": "Plan before words (plan A2 'Item-swap target', W1). For each numbered item placePods offers as a swap target (itemSwapCandidates rank 1-3), Jev reads whether the item already argues the product or its need, and whether the list cannot lose it (the example the hook names, the item it builds to). row-skeleton swaps the legal item that argues most among those at arguesAt or above and below essentialAt; with none, the plug becomes a fresh insert instead of taking a 'no topical tie, writer's choice' seat. arguesAt is run-jev FLAG_AT's midpoint (0.5): a seat is only taken on a real tie; essentialAt 0.7 is FLAG_AT.",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "e80802932fb00ef9b593fe520f4165648039176ca33971ca9e8a2a9c93bef6e7",
+        "thresholds": { "arguesAt": 0.5, "essentialAt": 0.7 }
+      },
+      "cta-depth": {
+        "$": "Plan before words (plan A2 'CTA depth 1/2/3', W1). On a donor slot, Jev reads the creator's three run-up tweets: does it name the substance, does it hand a buying criterion. Depth 1 (CTA only) when both reach their threshold, else 2 (bridge + plug); the table is pod-place.mjs depthFor's own. Only donor slots: item-swap and insert depths are structural and stay code. namesAt/criterionAt are FLAG_AT (0.7): a one-tweet CTA on a cold reader is the costlier mistake.",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "5d3716c3ff48403e05c73ac34a89bfb8f70358eadc42a3ec954032063bed2785",
+        "thresholds": { "namesAt": 0.7, "criterionAt": 0.7 }
+      },
+      "qrt-template": {
+        "$": "Plan v7 N4 (owner 2026-09-23, 'become jev native'): the /qrt skill's nine quoted-post signals. Jev reads the eight text signals as nouls; the clip is a fact the caller passes; code maps them to the skill's own signal table and returns the template shortlist (the 'nothing special' set only when no signal holds). signalAt: a signal counts at this noul or above; clearAt: between clearAt and signalAt it is uncertain and the answer is 'unsure' with the signal named. Advisory: the writer still ranks, mixes and fills.",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "b967459ee9340f9228207528db65c342d620d9a3638f95d2c9a9f1549f0ea1f9",
+        "thresholds": { "signalAt": 0.6, "clearAt": 0.4 }
+      },
+      "article-format": {
+        "$": "Plan v7 N4 (owner 2026-09-23, 'become jev native'): write-article §2's format pick, a choice over the ten formats with article-patterns.md §2's own openings as the options. floor: below this confidence the answer is 'unsure' and the writer picks as before (the platform's default choice floor). Advisory: nothing is written on it.",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "6f6fd3f54ed353dd5ae0fdfc7fb27424564bacf86f7a10b124d06aebd0b4bf66",
+        "thresholds": { "floor": 0.6 }
+      },
+      "clip-mine-read": {
+        "$": "A Jev READING through the one door (plan v7 N1, closed 2026-09-25): clip-judge MINE reads each candidate podcast window (claim, arguable, self-contained, clean start/end, one point, ad read, optional focus); clipDecision's rules decide. This was the last raw clip ask (dispatch-only clip-pool lane). ACTIONS is read-only ('read').",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "b9b63786119818b0002566a1255d452912311141960f71d396f85e850d2b5da7",
+        "thresholds": {}
+      },
+      "reel-mine-read": {
+        "$": "A Jev READING through the one door, for the IG Run's health reels (RM, LR). Owner 2026-10-19: \"choose better snippets — shocking or high value, etc... and then clip must be complete. It can be longer than 60s — I guess just under 2 minutes is fine.\" clip-judge.mjs REEL_QUESTIONS (shock, value, complete, self-contained, clean start/end, one point, ad read, optional focus) over 45-115 s windows; reelDecision's REEL_RULES decide. ACTIONS is read-only ('read').",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "6ff5035ed769952b4aa772af36ba02bee117127af97d0016c1e204805aafe80e",
+        "thresholds": {}
+      },
+      "reel-pick-read": {
+        "$": "A Jev READING through the one door, for the IG Run's health reels (RM, LR). Owner 2026-10-19: \"optimize our clip selection and idea selection\". clip-judge.mjs REEL_PICK_QUESTIONS (hook on the first three seconds, payoff, how broad, topic, self-contained, complete) over each mined reel and its lead-in-trimmed openings; reelPick and bestOpening rank and keep, igrun.mjs selectHealth spreads topics. ACTIONS is read-only ('read').",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "ef872b93e3f25cb4db71f1f178ae2f8fe2d4b152de500f3842f1fa56049c57b6",
+        "thresholds": {}
+      },
+      "clip-pool-read": {
+        "$": "A Jev READING through the one door (plan v7 N1, closed 2026-09-25): scripts/clip-pool.mjs asks whether a podcast episode fits the focus (fit noul + format choice) from its title, channel and description before its transcript is stored. ACTIONS is read-only ('read').",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "eb6279ea761ab81071b713dede2efaf89830de2475b75eaf5dd8a28a014fbada",
+        "thresholds": {}
+      },
+      "flop-read": {
+        "$": "A Jev READING through the one door (owner 2026-09-25, 'track what flops (under 100k views)'): scripts/flop-research.mjs asks yes/no questions an LLM proposes each week over a thread (ours and the competitor pages in the swipe DB); code keeps only questions that predict a flop beyond the page baseline, on a validation split, and scores them once on a locked newest-25% holdout. Read-only research: ACTIONS is 'read'; nothing ranks, gates or writes on it.",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "1087be5d9117525e3f353a7363c8b90b47093e458a11c758e0499664518bbb9b",
+        "thresholds": {}
+      },
+      "hook-read": {
+        "$": "A Jev READING through the one door (owner 2026-09-24, 'Reverse engineer virality'): scripts/virality.mjs asks each hook's shape (a choice) and eleven yes/no checks (names the reader, payoff, curiosity gap, stakes, specific, counterintuitive, emotion, plain words, credibility, reads as an ad, one idea) once per hook text. The answers are features for the fingerprint model; the model fitted on our own last-window reach, not Jev, says what spreads. ACTIONS is read-only ('read').",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "f0bf82b85055c5eac4287debfef0058505a1a9e73a42767e04d2e2933d51e40f",
+        "thresholds": {}
+      },
+      "drafts-read": {
+        "$": "A Jev READING through the one door (plan v7 N1, owner 2026-09-23 \"become jev native\"): scripts/run-jev.mjs drafts reading (safety battery, plug seams, sources, promise, owner clauses). The caller builds its own questions and reads the answers exactly as before; decide() (askThrough) adds the log, deadline, breaker, pinned model and a hash lock on the question template. ACTIONS is read-only ('read'), so the mode changes nothing but those guarantees.",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "29f090b18dc01f993cf8692fdd1312d5c1892de9f966f5da88516234b4684c69",
+        "thresholds": {}
+      },
+      "selection-read": {
+        "$": "A Jev READING through the one door (plan v7 N1, owner 2026-09-23 \"become jev native\"): scripts/run-jev.mjs selection reading (safety battery, buyer intent, owner clauses). The caller builds its own questions and reads the answers exactly as before; decide() (askThrough) adds the log, deadline, breaker, pinned model and a hash lock on the question template. ACTIONS is read-only ('read'), so the mode changes nothing but those guarantees.",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "2ff78ea667a200c76bea554a236b8445f8dd7d676edaccc49c714e31e7e5c3d7",
+        "thresholds": {}
+      },
+      "final-read": {
+        "$": "A Jev READING through the one door (plan v7 N1, owner 2026-09-23 \"become jev native\"): scripts/run-jev-final.mjs final-copy safety reading at stop 5. The caller builds its own questions and reads the answers exactly as before; decide() (askThrough) adds the log, deadline, breaker, pinned model and a hash lock on the question template. ACTIONS is read-only ('read'), so the mode changes nothing but those guarantees.",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "c18130ea8480d078e97975ac23f78b832c9e1c1fdefb0bb6d00410ee17534c16",
+        "thresholds": {}
+      },
+      "plugs-read": {
+        "$": "A Jev READING through the one door (plan v7 N1, owner 2026-09-23 \"become jev native\"): scripts/run-jev-plugs.mjs plug recheck after a products change. The caller builds its own questions and reads the answers exactly as before; decide() (askThrough) adds the log, deadline, breaker, pinned model and a hash lock on the question template. ACTIONS is read-only ('read'), so the mode changes nothing but those guarantees.",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "5302ab41bb8af6fb9ba78ac4201c6c9c414825d8ca6a8e74d38c99e6f1791d17",
+        "thresholds": {}
+      },
+      "niche-tag": {
+        "$": "A Jev READING through the one door (plan v7 N1, owner 2026-09-23 \"become jev native\"): tag-niche.mjs call 1 (swipe-classify NICHE_QUESTIONS; the calibrated set, byte-identical). The caller builds its own questions and reads the answers exactly as before; decide() (askThrough) adds the log, deadline, breaker, pinned model and a hash lock on the question template. ACTIONS is read-only ('read'), so the mode changes nothing but those guarantees.",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "2f2686cf66585115612f20610ee722d9ae74eaa8b4c8c30fd75d95b835729ddd",
+        "thresholds": {}
+      },
+      "niche-safety": {
+        "$": "A Jev READING through the one door (plan v7 N1, owner 2026-09-23 \"become jev native\"): tag-niche.mjs rule D safety hold (swipe-classify SAFETY_QUESTIONS). The caller builds its own questions and reads the answers exactly as before; decide() (askThrough) adds the log, deadline, breaker, pinned model and a hash lock on the question template. ACTIONS is read-only ('read'), so the mode changes nothing but those guarantees.",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "86dddb837766ff8c96d9e1438891ba863a562851109a15788ac55d73762c7fa9",
+        "thresholds": {}
+      },
+      "product-fit-read": {
+        "$": "A Jev READING through the one door (plan v7 N1, owner 2026-09-23 \"become jev native\"): product-fit.mjs judgeProductFit (the products-stop fit reading, plan-product-review --jev). The caller builds its own questions and reads the answers exactly as before; decide() (askThrough) adds the log, deadline, breaker, pinned model and a hash lock on the question template. ACTIONS is read-only ('read'), so the mode changes nothing but those guarantees.",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "b99a17a8519b02b0179a8352908997132887e65c9133f42f0b13275e40af54cb",
+        "thresholds": {}
+      },
+      "product-pointer-read": {
+        "$": "A Jev READING through the one door (plan v7 N1, owner 2026-09-23 \"become jev native\"): product-fit.mjs pointProducts (the WHY pointer the source note quotes). The caller builds its own questions and reads the answers exactly as before; decide() (askThrough) adds the log, deadline, breaker, pinned model and a hash lock on the question template. ACTIONS is read-only ('read'), so the mode changes nothing but those guarantees.",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "134e34b64cd11f07fb50a76dc80ab1f9d14d460586292b69ff99c6d7d83a21cd",
+        "thresholds": {}
+      },
+      "clip-support-read": {
+        "$": "A Jev READING through the one door, for the /run media pass (scripts/run-media.mjs, operator 2026-09-24: Jev is the decision engine for media): clip-judge.mjs matchTweets SUPPORT_QUESTIONS: does a clip passage make the tweet's claim (direct / partial / unrelated / contradicts). The caller builds its own questions and reads the answers; decide() (askThrough) adds the log, deadline, breaker, pinned model and a hash lock on the question template. ACTIONS is read-only ('read').",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "02de4e157a73696ce03a0b367b75f9a68c0ce4e2b47925e611b7bf02468e48ff",
+        "thresholds": {}
+      },
+      "clip-boundary-read": {
+        "$": "A Jev READING through the one door, for the /run media pass (scripts/run-media.mjs, operator 2026-09-24: Jev is the decision engine for media): clip-judge.mjs matchTweets refinement: support plus clean start/end over a fresh cut's boundary variants. The caller builds its own questions and reads the answers; decide() (askThrough) adds the log, deadline, breaker, pinned model and a hash lock on the question template. ACTIONS is read-only ('read').",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "abbb1ce08390d1c9d025918533d7046603c5865191e7a08f861151c2caef4ffa",
+        "thresholds": {}
+      },
+      "clip-main-idea-read": {
+        "$": "A Jev READING through the one door, for the /run media pass (scripts/clip-find.mjs MATCH, the hook only). Owner 2026-09-28: \"maybe cause the hook may have said a lot that the clip specifically didn't mention, but if it meets the requirements and does mention the main idea then we can let it through (in a way lower the gate)\". clip-judge.mjs MAIN_IDEA_QUESTIONS asks whether a passage states the hook's main idea; matchTweets asks it of the top 3 on-point candidates (CLIP_RULES.mainIdea) only when the high bar held the hook, and picks the best at 0.6 or more. Set on R2026-09-27's held hooks, read in full: 9 of 12 clips that state the hook's point passed, 0 of 5 that do not. ACTIONS is read-only ('read').",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "951d2d41604db130a6e734838093c8d4e84a5b47f75e49965921dcdaf94ea419",
+        "thresholds": {}
+      },
+      "lead-pull-read": {
+        "$": "A Jev READING through the one door (lead-item.mjs, owner 2026-09-28: \"yes adopt fully — every numbered first tweet should have it implemented.\"). Each item of a numbered first tweet's list, alone under the hook with item 1 removed: P(it makes most readers open the thread). The question is the retro test's, asked 5,186 times over our last 90 days (learnings/lead-item.md). Code, not Jev, swaps the strongest item with item 1 when it beats item 1 by hook.leadItem.margin. ACTIONS is read-only ('read').",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "8b9368413f5b7ca082a5269daccd6499f6b0cb4ecff83ad60f394ab249ae5a2c",
+        "thresholds": {}
+      },
+      "lead-order-read": {
+        "$": "A Jev READING through the one door (lead-item.mjs, owner 2026-09-28: \"yes adopt fully — every numbered first tweet should have it implemented.\"). The whole list of a numbered first tweet under its hook: P(its order carries meaning, as steps, a story or a countdown). A list at hook.leadItem.orderedMax or above keeps its order. Set on the retro corpus's 270 would-be moves: food and meal lists 0.05, a story told in order and a morning/lunch/night stack 0.48, breakfast/lunch/dinner and narratives 0.8+. ACTIONS is read-only ('read').",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "87b5b2294bed7aec7256bafa05e7fc1f3120d094b98760cd4a89ced97d0b817a",
+        "thresholds": {}
+      },
+      "lead-follow-read": {
+        "$": "A Jev READING through the one door (lead-item.mjs, owner 2026-09-28: \"yes adopt fully — every numbered first tweet should have it implemented.\"). Two neighbouring list items: P(the second leans on the first, so it only makes sense right after it). A lead move that would break a pair at hook.leadItem.followMax or above is skipped for the next strongest item. On the retro corpus: \"Use that wake window gently.\" after \"Expect a natural wake window\" 0.93, \"Remember, don't take the wrong form.\" after \"Magnesium Glycinate\" 0.77; standalone neighbours under 0.5. ACTIONS is read-only ('read').",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "d15e590205108c9c8651d369f05ad7adea4321f454e8ccac996af58fe912a2b6",
+        "thresholds": {}
+      },
+      "article-fit-read": {
+        "$": "A Jev READING through the one door (scripts/article-research.mjs, owner 2026-09-29: \"use Jev, and find the type of articles that you think would fit very well with what we do\"; the game: \"Self improvement articles + Supplements — We can skew the topics to slightly make it more related to symptoms of certain deficiency and then supplement happens to be one of the plug in the article\"). Each viral article in the XDB Articles table, read once: its life area and the reader's problem (choices), and eleven yes/no checks (self-improvement, deficiency symptom, tilts to the body, supplement slot, protocol, body science, health reader, evergreen, quotable, first person, disease claim). Research only: ACTIONS is 'read'; nothing ranks, gates or writes on it.",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "b79190299d700980a6c9351330fad5fcdffd9006c2e4be2d36f63b94d20f5c03",
+        "thresholds": {}
+      },
+      "media-pair-read": {
+        "$": "A Jev READING through the one door, for the /run media pass (scripts/run-media.mjs, operator 2026-09-24: Jev is the decision engine for media): swipe-media.mjs matchMedia MEDIA_QUESTIONS: same point / same subject / visual reference between our tweet and a swipe tweet whose media it would borrow. The caller builds its own questions and reads the answers; decide() (askThrough) adds the log, deadline, breaker, pinned model and a hash lock on the question template. ACTIONS is read-only ('read').",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "86654fe8e0c07b3df8e898a0f7c136e86de863b7bd8206367083fa43605124ba",
+        "thresholds": {}
+      },
+      "media-subject-read": {
+        "$": "A Jev READING through the one door, for the /run media pass (scripts/run-media.mjs, operator 2026-09-24: Jev is the decision engine for media): swipe-media.mjs tweetSubjects: which code-proposed phrase names the tweet's subject (select, not generate). The caller builds its own questions and reads the answers; decide() (askThrough) adds the log, deadline, breaker, pinned model and a hash lock on the question template. ACTIONS is read-only ('read').",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "e1f9b8336aa1dd4b9a26e54d2b1229a755960fa248c87fab7194d34fc2e870af",
+        "thresholds": {}
+      },
+      "media-image-read": {
+        "$": "A Jev READING through the one door, for the /run media pass (scripts/run-media.mjs, operator 2026-09-24: Jev is the decision engine for media): swipe-media.mjs visionChecker IMAGE_QUESTIONS: from a vision model's description of the image (the describer never sees our tweet), does it show the tweet's subject and does it carry another creator's branding. The caller builds its own questions and reads the answers; decide() (askThrough) adds the log, deadline, breaker, pinned model and a hash lock on the question template. ACTIONS is read-only ('read').",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "103e11fe633436a504bc8ebb912869567c7ab28fd72d3e6100fe8bdb8e061e60",
+        "thresholds": {}
+      },
+      "rule-proposal": {
+        "$": "Retro rule gate (plan v7 N2; owner 2026-09-23 \"become jev native\"). retro-core.mjs's LLM still writes each proposal; Jev decides whether a 'rule' enters style/learned-rules.md (a human review queue, not injected): queue only when it does not restate an existing rule (duplicate below duplicateAt), is checkable (checkableAt) and would have prevented the cited failure (preventsAt). The incumbent is the old 50-character prefix dedupe. A refused proposal is still logged to IMPROVEMENTS.md with Jev's reason. Thresholds are run-jev FLAG_AT's band: 0.7 to call a duplicate, 0.5 for the two craft reads (a borderline proposal is cheap to queue for a human).",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "40554b609fe4c3132136b1bbf3f3328406283541ef86b940879e06c21566d752",
+        "thresholds": { "duplicateAt": 0.7, "checkableAt": 0.5, "preventsAt": 0.5 }
+      },
+      "books-category": {
+        "$": "Books uncategorised rows (plan L; v7 N2). books-weekly.mjs suggestAccounts: one Jev choice per row over the chart of accounts + TRANSFER + '?', replacing a fail-open LLM JSON array. Advisory only: the digest shows it; a human writes books-rules.json. floor 0.75: the suggestion is advisory and a human reads every one, so a likely account beats a blank; at 0.85 (the swipe write floor) a live check blanked a Stripe payout at 0.84 and a Levanta credit at 0.78.",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "69ea765986695dbae7a1dfeacd496dad2f32ecd172a29ccb2aefebb88acf65b3",
+        "thresholds": { "floor": 0.75 }
+      },
+      "hook-bank-curate": {
+        "$": "Hook bank curation (plan H6; v7 N3; owner 2026-09-23 \"become jev native\"). refresh-hook-bank.mjs asks Jev, per candidate winner hook, whether it only makes sense with media, is off the health-education style (politics, religion, philosophy prose, quote cards) or is reply-bait. Monotone (safety: true): the JUNK/OFF_STYLE regexes or Jev exclude; neither admits what the other refused; an unread hook keeps the regex answer. excludeAt is run-jev FLAG_AT (0.7): the bank has hundreds of candidates, so only a confident exclusion costs it a hook.",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "5ae87b5e651143924d18004683248b1807269f2cf0aec89571082f5351549f3e",
+        "thresholds": { "excludeAt": 0.7 }
+      },
+      "donor-intent": {
+        "$": "The /funnel rubric as a registered decision (plan v7 N4; owner 2026-09-23 \"become jev native\": skills stop judging in prose). Questions are donor-intent.mjs INTENT_QUESTIONS, bands are its intentVerdict (8-10 write, 5-7 repair, <=4 swap). The 2026-09-23 offline backtest found the total does not predict $/1k better than the formula, so this is advice when choosing among donors, never a gate. No thresholds: the bands are the rubric's.",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "687a56a7420498b0f062b1fedaded96af7e66a0c2a7b55d2f24304cb5d48dde4",
+        "thresholds": {}
+      },
+      "pot-read": {
+        "$": "The owner's pot and seed hook rules read by Jev (plan v7 N4; pot SKILL 2d no imagery, 2e one subject, 2g nothing harsh, and 'the reader knows their own answer'). /pot and /seed-mint call it through jev-ask and rewrite what it flags. Advice to the writer, never a gate: pot-gate.mjs and the drafts stop decide what ships. flagAt is run-jev FLAG_AT (0.7).",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "9eaf7470bfc4c49edc318a0b21d77a2e08053fd11e363d4fc5adfe72695a94c2",
+        "thresholds": { "flagAt": 0.7 }
+      },
+      "model-route": {
+        "$": "Writer model per task (owner 2026-09-24; see modelRouting). Jev scores the task's difficulty (0-2) and whether it is voice-critical published copy or holds many rules; below fastBelow is fast, at or above strongAt strong, else standard; voice-critical or many-rule work is never fast (bumpAt is run-jev FLAG_AT, 0.7). fastBelow 0.6 and strongAt 1.6 put the middle level (a rewrite inside clear rules) on standard with margin on both sides. The role's min/max clamp in code.",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "ff9eb72dbff5968fad2b9af1a22648a40f6436417c84c83796d4f10abe862871",
+        "thresholds": { "fastBelow": 0.6, "strongAt": 1.6, "bumpAt": 0.7 }
+      },
+      "plug-replacement": {
+        "$": "A scheduled thread's product died (owner, 2026-09-24: \"Jev picks a replacement product that fits what the thread argues, so it can stay on schedule\"). link-sentinel.mjs re-mints the same product first; when that link is also dead, code shortlists curated-menu products sharing a substance (never DENY, same brand first) and Jev reads whether everything the plug says about its product (brand, form, dose, count) is true of each. Only the link is swapped, never the words, so a wrong pick mis-sells: matchAt is high (0.8). Nothing clears it: the thread is unscheduled as before. It only picks among code-legal options and falls back to the old behaviour, so it enters at decide.",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "2fd19b97035c0e0366cde26a1995a1ebe97dab39500afb120f133384a2d8f52d",
+        "thresholds": { "matchAt": 0.8 }
+      },
+      "plug-fill": {
+        "$": "Which product a [LINK] placeholder sells (owner, 2026-09-24: wire Jev into automint). automint.mjs resolveSlot shortlists sellable products for the substance the plug's lead-in names (curated menu, never DENY, pod-covered, never a proven loser, not already used in the draft), highest realised EPC first; until now the first simply won. Jev reads the plug and its lead-in against each: is it a product the words recommend, with nothing they say about it untrue? The highest reading at matchAt (0.8, the plug-replacement bar: the words are never changed, so a wrong pick mis-sells) fills the slot. A clear none (decline confidence 1 − best ≥ the 0.6 floor) mints nothing and tags the draft mint-failed, as an unresolved slot always has. Unread or unsure: the highest-EPC candidate, as before. It only picks among code-legal options or declines, so it enters at decide.",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "6dc61e1cdbf7368cb4eb745ca1fb8401b1c4c79bd5c20894190b2cad1188cfaf",
+        "thresholds": { "matchAt": 0.8 }
+      },
+      "aie-lane": {
+        "$": "Is a Hail Mary backlog post really about AI (owner, 2026-09-24: wire Jev into ai-evo-weekly)? isAiLane admits rows on a keyword list ('compute', 'chips', 'agents', 'automation', 'Cursor'…) that also matches travel agents, potato chips and footers ('summary by Grok'). Jev reads each pick before the rewrite; under laneAt (0.5) the row is skipped and the next candidate takes the slot. Monotone (safety): Jev only removes rows the keywords admitted, never adds one. Unread: the keyword admission stands. It only removes, so it enters at decide.",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "6fd4c8376ca204a1c4556cb766b0b72c004809a1b887b89c05f2c9dce669d132",
+        "thresholds": { "laneAt": 0.5 }
+      },
+      "aie-rewrite": {
+        "$": "Did the AI Evolution paraphrase keep the original's facts (owner, 2026-09-24: wire Jev into ai-evo-weekly)? rewriteIssues checks only shape (length, quotes, copied runs, emoji, links, hype), so a changed number or an invented claim ships under the page's name. Jev reads original against rewrite after the shape checks pass: hold when keeps_facts < keepsAt (0.5) or adds_claim >= addsAt (0.5); the reason feeds the one retry, then the row is skipped as any failed rewrite is. Monotone (safety): Jev only holds. Unread: the shape checks stand. It only holds, so it enters at decide.",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "f70714ca97b6415d81bed47e367208abd27b2cbe94188f82ce80f56a03eb04ca",
+        "thresholds": { "keepsAt": 0.5, "addsAt": 0.5 }
+      },
+      "donor-account-fit": {
+        "$retired": "Owner 2026-11-04: \"retire the concept of account-fit and niche-fit per page. That's BS. all pages are the same.\" Off: no model call, and cover-selection accountFit() returns compatible for every page.",
+        "$": "Phase 3a donor selection (plan Track B 'Account fit', A3 'Selection'): a choice of specific / compatible / review per (donor, page), because most pages carry the same broad niche list and only the persona separates them (the 2026-09-11 tina/peak voice swaps). State: the donor hook and tweets plus the page's niches, variationTopics and persona line from accounts.mjs. The incumbent is scripts/cover-selection.mjs accountFit()'s string tier. Shadow and report-only: scripts/run-jev.mjs prints it at selection beside the incumbent and never changes selection status, allocation or approvals. Its one threshold, confidenceFloor, is the platform default (0.6) and applies only if it is ever promoted.",
+        "mode": "off",
+        "model": "jev-1.13",
+        "questionSetHash": "916f923890f2110066eca6f92bbd620710865e1f8139d098bc76c3ce4cfaea08",
+        "thresholds": { "confidenceFloor": 0.6 }
+      },
+      "donor-writeability": {
+        "$": "Phase 3a (plan Track A2 'Donor writeability': 7 of 11 donors replaced mid-write on 2026-08-31). Nouls: media or poll dependent, recreatable as text, two distinct buyer needs, and one per eligible pod (pods.json, substance screen as preflight) 'the pod criterion is the natural next question'. The swap rule is code: swap when media_or_poll >= flagAt, recreatable < recreatableLow, or the best pod noul < podFit (or no pod is eligible); fewer than two needs (two_needs < twoNeeds) is a note, never a swap (plan 1.3: donor-owned dims decide swap, writer-fixable ones repair). The incumbent is today's regex screens (preflight UNRECREATABLE on the hook, not a thread, no substance we can sell). flagAt is run-jev FLAG_AT; the others are the plan's noul bands. Initial values, not tuned. Shadow and report-only.",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "466a85bbbc61e28d7982650a72f901968f796cc707e73b2fc6bef4fd64587019",
+        "thresholds": { "flagAt": 0.7, "recreatableLow": 0.3, "podFit": 0.5, "twoNeeds": 0.5 }
+      },
+      "donor-screen": {
+        "$": "Phase 3a intake battery at pick time (plan Track B 'Screen', A5, W8). swipe-classify BATTERY_QUESTIONS retweet, reply_bait, quote_compilation and named_quote reused byte for byte, plus a new language choice in this decision's own hashed set (W8: five Spanish donors reached a shortlist; no language screen exists today). Safety decision: its policy flags when a noul reaches flagAt (run-jev FLAG_AT), when P(not English) reaches nonEnglishAt, OR when a pick-time regex rejects (retweet prefix, UNRECREATABLE hook, named-quote fabrication flag, adult/off-niche/banned/drug screens), so Jev can add a flag and never clear a regex reject. Shadow and report-only: nothing is excluded from the pool.",
+        "mode": "decide",
+        "model": "jev-1.13",
+        "questionSetHash": "d15e151010a07bb6437340ea77aa15481d94f72a83d324ad6f6de2fc3262fdb2",
+        "thresholds": { "flagAt": 0.7, "nonEnglishAt": 0.5 }
+      },
+      "reply-intent": {
+        "$": "/run reply intent (plan Track J, Track A3 'Reply parsing', Phase 7a): at a stop, one reading of the owner's reply over the waiting rows: an overall intent choice, a per-row reading choice and approval noul, and a noul for explicit consent to proceed. A GUARD THAT CAN ONLY WARN: scripts/reply-guard.mjs prints one line beside run-studio's approve commands (after the approval is recorded, verbatim, exactly as before) and the check-reply subcommand. It never records, alters or blocks an approval, never approves, and a failed read prints 'not read'. Rung cap is propose (a misread approval publishes): consent is never auto-recorded at any rung. Pass needs intent approve_all/approve_some, consent >= consentPass (0.9, the plan's bar), no row's approval noul in [bandLow, bandHigh] (the platform's 0.30-0.70 uncertain band) and every target row read as approves above bandHigh; anything else warns. deadlineMs is 8 s, not the default 20 s, so an approve command never waits long on a line that cannot change it.",
+        "mode": "shadow",
+        "questionSetHash": "ec1995c9e0d19a7b043d7fe73466f623f069e1c2700e76ea6cca4c8c7155b437",
+        "deadlineMs": 8000,
+        "thresholds": { "consentPass": 0.9, "bandLow": 0.3, "bandHigh": 0.7 }
+      }
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "what": "ROUTES: named, reusable sending policies for the RT ladder. A route says which vendors a post goes to, in what order, spread over how long, and whether it is paused. The buyer has his own RT bot and his own vendors; routes and capacity start empty and are filled when his vendors are onboarded.",
+    "defaultPerAccountPerDay": 4,
+    "sendingWindow": {
+      "confirmed": "07:00-12:00 America/New_York (operator, 2026-09-03) — the real window vendors act in, not an inherited client policy.",
+      "saigon": "18:00-23:00 Asia/Saigon",
+      "theTension": "The fleet publishes when ITS audience is awake (Saigon afternoon) and vendors retweet when THEY are awake (US morning). Eleven hours apart, so NO publish schedule satisfies both. Every thread slot in slots.mjs is 0% inside the window; only singles (13:00-22:00 SGN) overlaps, at 44%.",
+      "twoLevers": {
+        "expand": "Widening the window does NOT add capacity — a vendor's daily ceiling is unchanged. It adds SPACING at a given volume, which is what keeps that volume deliverable. 17 posts into 5 hours is one every 18 minutes; into 9 hours it is one every 32. Same posts, far less like a burst, to the vendor and to X.",
+        "decouple": "The RT ping does not have to fire at publish time. Publish at the audience-optimal Saigon hour, QUEUE the ping for the next vendor window. This costs nothing, needs no vendor to change anything, and it is the only lever that actually closes the 0% overlap. planRoute({respectWindows:true}) already holds an out-of-window send; it was inert only because the window was unconfirmed. It is confirmed now."
+      },
+      "options": [
+        {
+          "window": "07:00-12:00 ET",
+          "saigon": "18:00-23:00",
+          "hours": 5,
+          "slotsAt15min": 20,
+          "fleetAccounts": 15,
+          "spacingAt25PostsPerDay": "12.0m",
+          "note": "TODAY. At 12 accounts firing this is already down to ~3 accounts of headroom."
+        },
+        {
+          "window": "06:00-13:00 ET",
+          "saigon": "17:00-00:00",
+          "hours": 7,
+          "slotsAt15min": 28,
+          "fleetAccounts": 21,
+          "spacingAt25PostsPerDay": "16.8m"
+        },
+        {
+          "window": "05:00-14:00 ET",
+          "saigon": "16:00-01:00",
+          "hours": 9,
+          "slotsAt15min": 36,
+          "fleetAccounts": 27,
+          "spacingAt25PostsPerDay": "21.6m",
+          "recommended": true,
+          "why": "Nearly doubles the slots (20 -> 36) and takes headroom from 15 to 27 fleet accounts, while staying inside plausible US waking hours. The cheapest real gain on the table."
+        },
+        {
+          "window": "04:00-15:00 ET",
+          "saigon": "15:00-02:00",
+          "hours": 11,
+          "slotsAt15min": 44,
+          "fleetAccounts": 33
+        },
+        {
+          "window": "02:00-12:00 ET",
+          "saigon": "13:00-23:00",
+          "hours": 10,
+          "slotsAt15min": 40,
+          "fleetAccounts": 30,
+          "note": "The only option that COVERS the afternoon/viral thread slot (13:00-15:30 SGN), so threads could ping at publish time. But 02:00 ET is the middle of the night for a US vendor — likely not real. Decoupling gets the same result without asking anyone to work at 2am."
+        }
+      ],
+      "recommendation": "Do both, in this order. (1) DECOUPLE — hold out-of-window pings to the next window. Free, immediate, and it is what makes the confirmed window usable at all. (2) EXPAND to 05:00-14:00 ET if the vendors will take it: 36 slots against today's 20, and fleet headroom from 15 accounts to 27. Chasing an overlap by moving publish times is the option NOT to take — it trades the fleet's own audience timing, which is measured, for vendor convenience, which decoupling solves for nothing."
+    },
+    "defaultBlock": "A"
+  },
+  "routes": {},
+  "capacity": {
+    "overrides": {}
+  },
+  "tierTriggers": {
+    "condition": "earns = (views >= minViews AND risePerHr >= minRise) OR (riseAlone != null AND risePerHr >= riseAlone)",
+    "ladder": [
+      {
+        "tier": "T1",
+        "minViews": 10000,
+        "minRisePerHr": 7000,
+        "riseAlone": null
+      },
+      {
+        "tier": "T2",
+        "minViews": 20000,
+        "minRisePerHr": 14000,
+        "riseAlone": 40000
+      },
+      {
+        "tier": "T3",
+        "minViews": 40000,
+        "minRisePerHr": 28000,
+        "riseAlone": 56000
+      },
+      {
+        "tier": "T4",
+        "minViews": 80000,
+        "minRisePerHr": 56000,
+        "riseAlone": 100000
+      },
+      {
+        "tier": "T5",
+        "minViews": 160000,
+        "minRisePerHr": 90000,
+        "riseAlone": 120000
+      }
+    ],
+    "mechanics": {
+      "poll": "Every 30 minutes (scheduleTrigger).",
+      "rise": "Velocity over a FIXED ~1h window (riseWindowMin, default 60), measured against the sample ~1h old — deliberately cadence-independent, so polling faster cannot inflate velocity and fire a tier on a batched view-counter flush.",
+      "andVsOr": "T1-T2 are pure AND: big AND still climbing, so a plateaued post never burns the cheap early tiers. T3-T6 add a velocity-only escape so a genuine rocket escalates before it clears the view bar.",
+      "earnedVsQualified": "`earned` latches as a monotonic high-water mark for the timeline. SENDS gate on `qualified` — tiers met right now — so a decelerated post never fires a tier it no longer meets.",
+      "sendOnce": "Per vendor network per post (sd.sent). A vendor sees a given post at most once.",
+      "noHold": "Fires immediately on tier-earn; the business-hours hold was removed Jun 2026.",
+      "seeding": "On first run after deploy it marks qualifying networks as already-sent, so a redeploy never blasts a backlog.",
+      "gc": "State dropped for posts unseen in 72h.",
+      "t0": "T0 is NOT in this ladder by design. The RT Bridge's ping IS the T0 boost on the same vendor chat id, so a T0 row here would double-send and double-bill; T0 spend is recorded by the Bridge instead.",
+      "activeOnly": "`Get Vendor Config` returns Active rows only, and rows without a Chat ID are filtered out. A threshold with no active vendor mapped to it is unreachable — which is why T4-T6 cannot fire today."
+    }
+  }
+}

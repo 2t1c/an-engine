@@ -19,6 +19,8 @@
 | Buyer name, time zone, posting window, profit split, features | `config/engine.json` |
 | X pages (handle, Typefully set, subid prefix, RT lane) | `config/pages.json` |
 | Product shelf | `config/products.json` (built from the buyer's Levanta catalogue) |
+| Airtable table and record ids | `config/airtable.json` (written by the schema script) |
+| Telegram topic ids, staging page | `config/engine.json` `telegram`, `burner` |
 | Credentials | Railway variables on the buyer's cron service; names in `lib/secrets.mjs` |
 
 Nothing else may hold an id, handle or chat id. `npm run check:leftovers` enforces the patterns
@@ -27,9 +29,9 @@ list (its own handles, set ids, subids) before every release, so the list itself
 
 ## Build plan
 
-1. Skeleton: config layer, secrets contract, leftover-ID check (this PR)
-2. Daily run, with a short current guide
-3. Seed farm, 3 seeds, substance cards
+1. Skeleton: config layer, secrets contract, leftover-ID check
+2. Core code: the live modules ported and pointed at config; operator data blanked
+3. Skills: the daily run (short current guide) and the seed farm, 3 seeds, substance cards
 4. Money: Levanta shelf builder, minting, link sentinel, CTA templates
 5. Data: Airtable schema script, daily swipe copy, registry, facts, followers, weekly + profit-share report
 6. Reach: publish retry, RT ladder n8n templates per buyer, hook clips

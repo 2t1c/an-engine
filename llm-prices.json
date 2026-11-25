@@ -1,0 +1,109 @@
+{
+  "_comment": "USD per MILLION tokens, by model-id prefix (longest prefix wins). Used by lib.mjs priceUsage() to estimate spend for NATIVE Anthropic calls only \u2014 OpenRouter-routed calls return their exact cost in usage.cost and never touch this table. Anthropic cache pricing derives from the input rate: cache READ = 0.1x in, cache WRITE (5m) = 1.25x in. Prices drift \u2014 verify against the provider invoice when the dashboard's LLM Spend panel disagrees with the bill, and update here (data-only diff). Jev (TypeSafe) is priced from this table too: $0.042/Mtok input, output free \u2014 jev.mjs meters every call. 2026-11-10: added Fable 5.2, Opus 5.5, Sonnet 5.5, Haiku 5.5 (both spellings, because prefix match would otherwise price claude-opus-5-5 as Opus 5 and claude-opus-4-8 as the old $15/$75 Opus 4) and Opus 4.6-4.8 at $5/$25; `cacheRead` overrides the 0.1x read rate where the model prices it lower. Haiku 5.5's rate is for prompts up to 100K tokens ($0.50/$2.50 beyond).",
+  "claude-sonnet-4": {
+    "in": 3,
+    "out": 15
+  },
+  "claude-opus-4": {
+    "in": 15,
+    "out": 75
+  },
+  "claude-opus": {
+    "in": 15,
+    "out": 75
+  },
+  "claude-haiku-4": {
+    "in": 1,
+    "out": 5
+  },
+  "claude-3-5-haiku": {
+    "in": 0.8,
+    "out": 4
+  },
+  "claude-sonnet-5": {
+    "in": 2,
+    "out": 10
+  },
+  "claude-sonnet-4.6": {
+    "in": 3,
+    "out": 15
+  },
+  "claude-sonnet-4-6": {
+    "in": 3,
+    "out": 15
+  },
+  "claude-opus-5": {
+    "in": 5,
+    "out": 25
+  },
+  "claude-opus-5-fast": {
+    "in": 10,
+    "out": 50
+  },
+  "claude-haiku-4.5": {
+    "in": 1,
+    "out": 5
+  },
+  "jev": {
+    "in": 0.042,
+    "out": 0
+  },
+  "claude-fable-5-2": {
+    "in": 8,
+    "out": 40,
+    "cacheRead": 0.2
+  },
+  "claude-fable-5.2": {
+    "in": 8,
+    "out": 40,
+    "cacheRead": 0.2
+  },
+  "claude-opus-5-5": {
+    "in": 4,
+    "out": 20,
+    "cacheRead": 0.2
+  },
+  "claude-opus-5.5": {
+    "in": 4,
+    "out": 20,
+    "cacheRead": 0.2
+  },
+  "claude-opus-5-5-fast": {
+    "in": 8,
+    "out": 40
+  },
+  "claude-sonnet-5-5": {
+    "in": 2,
+    "out": 10,
+    "cacheRead": 0.1
+  },
+  "claude-sonnet-5.5": {
+    "in": 2,
+    "out": 10,
+    "cacheRead": 0.1
+  },
+  "claude-haiku-5-5": {
+    "in": 0.1,
+    "out": 0.5
+  },
+  "claude-haiku-5.5": {
+    "in": 0.1,
+    "out": 0.5
+  },
+  "claude-opus-4-8": {
+    "in": 5,
+    "out": 25
+  },
+  "claude-opus-4.8": {
+    "in": 5,
+    "out": 25
+  },
+  "claude-opus-4-7": {
+    "in": 5,
+    "out": 25
+  },
+  "claude-opus-4-6": {
+    "in": 5,
+    "out": 25
+  }
+}

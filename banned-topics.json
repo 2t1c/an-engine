@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "why": "Topics this fleet does not write about AT ALL — not carefully, not hedged, not with a disclaimer. Distinct from HEALTH_CLAIM_RE in checks.mjs, which only catches a curative CLAIM ('cures cancer'). A thread can be immaculately hedged and still be a cancer thread; this table blocks the TOPIC, whatever the wording.",
+    "operator": "2026-08-21 — 'Avoid any topic that is cancer-related. We do not write about cancer treatment or anything.' Then 2026-09-29 — 'We should fix the rule to block it if cancer is the main focus of the post. If it's an idea inside a body then it should be fine. We avoid making claims about curing cancers or any shit like that.'",
+    "modes": "A topic is 'always' by default: any term anywhere blocks the thread. A topic with \"mode\": \"focus\" blocks only when it is the post's SUBJECT: a `terms` word in the hook, or in at least max(focus.minTweets, focus.minShare of the tweets) tweets. Its `alwaysTerms` and `phrases` (treatment and patient-journey wording) still block anywhere, and \"claims\": true blocks any sentence that pairs a term with a claim to treat, cure, prevent, shrink, fight or lower the risk of it, wherever it sits. A string is read as a hook; a list is read as a thread, index 0 being the hook.",
+    "enforcement": "bannedTopicIssue() in checks.mjs. Hard error at generation (validateDraft), at QC (checkThread), in the hand lane (validate-thread.mjs), and at donor selection so a banned donor never enters the pool in the first place.",
+    "addingATopic": "Add a block below. Keep terms lowercase; they are matched case-insensitively on word boundaries. Prefer a term that is unambiguous on its own over a broad one that needs context — a false block costs one thread, a false pass costs the account."
+  },
+  "topics": [
+    {
+      "id": "cancer",
+      "label": "cancer and oncology",
+      "why": "Supplement content adjacent to cancer is the highest-liability copy we could write: it reaches people making treatment decisions, it is what platform health policies and the FTC police hardest, and no commission is worth implying a supplement bears on a cancer outcome. The ban is on the SUBJECT, so 'what I'd do if I had cancer' is blocked even though it claims nothing. Since 2026-09-29 that means the SUBJECT is cancer (the hook, or a thread that keeps returning to it): a passing mention inside a body is allowed, and any claim to treat, cure, prevent or lower the risk of it is blocked wherever it sits.",
+      "mode": "focus",
+      "focus": { "hook": true, "minTweets": 3, "minShare": 0.25 },
+      "claims": true,
+      "terms": [
+        "cancer", "cancerous", "oncology", "oncologist", "oncologists",
+        "tumor", "tumors", "tumour", "tumours",
+        "carcinogen", "carcinogens", "carcinogenic",
+        "malignant", "malignancy", "metastasis", "metastatic", "metastasize", "metastasise",
+        "leukemia", "leukaemia", "lymphoma", "melanoma", "carcinoma", "sarcoma", "myeloma",
+        "biopsy", "mammogram", "mammography"
+      ],
+      "alwaysTerms": ["chemo", "chemotherapy", "chemotherapeutic", "radiotherapy"],
+      "phrases": ["stage 4", "stage iv", "stage 3", "stage iii", "in remission"]
+    }
+  ]
+}

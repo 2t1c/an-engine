@@ -13,5 +13,12 @@
     "check:config": "node scripts/check-config.mjs",
     "check:leftovers": "node scripts/leftover-ids.mjs",
     "secrets:status": "node scripts/secrets-status.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "@typesafe-ai/sdk": "0.6.0",
+    "pg": "8.23.1",
+    "yaml": "2.9.1",
+    "zod": "4.6.7"
   }
 }

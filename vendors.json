@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "what": "The buyer's RT vendors, as his own RT bot knows them: name, tier, price, handles. Starts empty; filled when his vendors are onboarded."
+  },
+  "bundles": {},
+  "vendors": []
+}

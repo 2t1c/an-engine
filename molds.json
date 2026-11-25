@@ -1,0 +1,347 @@
+{
+  "meta": {
+    "what": "THE mold library — single machine-readable source of truth for thread formats. Merges what used to live in two places that did not know about each other: docs/thread-molds.md (prose, conversion-gated) and the skeleton library's view-gated notion of 'proven'. Loaded by checks.mjs (moldById / provenMolds); docs/thread-molds.md remains the human companion and cites these ids.",
+    "how_to_edit": "Operator edits directly, or the promotion pipeline (learn.mjs) flips status experimental -> proven when a mold's realized revenue per 1k views clears promote_rev_per_1k over min_posts. Status is DATA, never vibes: every proven entry carries the measurement that proved it.",
+    "promote_rev_per_1k": 0.15,
+    "demote_rev_per_1k": 0.03,
+    "min_posts": 3,
+    "note_thresholds": "promote at >= $0.15/1k realized (fleet substance-led average is $0.232, generic $0.040 — the bar sits between them, nearer the winner). demote a proven mold that decays below $0.03/1k (same floor product-audit uses). min_posts stops a single lucky thread promoting a shape.",
+    "updated": "2026-11-23"
+  },
+  "molds": [
+    {
+      "id": "M0",
+      "name": "The anchor listicle",
+      "status": "proven",
+      "hook": "The supplement industry is robbing you blind. Out of 50,000+ products on shelves, only 5 actually work:\n\n1. Magnesium glycinate.",
+      "job": "the anchor listicle — items ARE products, so every item tweet is already the bridge (LAW 13 free). Feed-eligible AND the natural pin (operator ruling 2026-08-17: no mold is pin-only); Clara ran the M0a variant as a feed post for $211.",
+      "requirements": [
+        "5 items max, at most 50% linked (proven original: 40%)",
+        "item 1 attached to tweet 1 and IS the first product",
+        "plugs at T3 and T6"
+      ],
+      "measured": {
+        "revenue": 351.34,
+        "orders": 305,
+        "note": "single highest-earning post ever; family: Clara $188 at 3.56M, Rafael $38 at 906k, a re-run $0 at 3.1M",
+        "decayRevPer1k": 0,
+        "demoted": "2026-08-20",
+        "posts": 10,
+        "views": 597814,
+        "clicks": 1612,
+        "revPer1k": 0.588,
+        "clicksPer100k": 269.6,
+        "scoredOn": "2026-11-23",
+        "scoredFrom": "registry (mold-promote.mjs)",
+        "promoted": "2026-08-27"
+      }
+    },
+    {
+      "id": "M1",
+      "name": "The negation",
+      "status": "proven",
+      "hook": "Heart disease doesn't start with age.\n\nIt starts with inflammation, insulin resistance, and low nitric oxide.\n\nHere are 7 science-backed ways to keep your heart young:\n\n1. Eat some ice cream.",
+      "job": "knock down a folk belief; the tricolon of causes IS the seed list for the plugs.",
+      "requirements": [
+        "line 1 flatly negates, one sentence",
+        "tricolon names substances you will plug (LAW 11)",
+        "item 1 must surprise",
+        "plugs T3 and ~T10"
+      ],
+      "measured": {
+        "cvr": 0.12,
+        "epc": 0.73,
+        "note": "Julian $91 at 304k; earned nothing below ~50k views on three cross-posts",
+        "decayRevPer1k": 0,
+        "demoted": "2026-08-20",
+        "revenue": 220.84,
+        "revPer1k": 0.257,
+        "posts": 14,
+        "promoted": "2026-08-23",
+        "views": 858445,
+        "clicks": 585,
+        "clicksPer100k": 68.1,
+        "scoredOn": "2026-11-23",
+        "scoredFrom": "registry (mold-promote.mjs)"
+      }
+    },
+    {
+      "id": "M2",
+      "name": "Authority warning + cliffhanger chain",
+      "status": "proven",
+      "hook": "A Harvard neuroscientist warns chronic cortisol is murdering your sleep, swelling your fear center, and trapping you in survival mode.\n\nIf I wanted to reverse it naturally, I'd do these 8 things every day:\n\n1. Hum at a low pitch for 2 minutes.",
+      "job": "maximum read depth: every item ends on a cliffhanger teasing the next without naming it.",
+      "requirements": [
+        "T2 is a system primer BEFORE any item — it earns the T3 plug",
+        "item 1 oddly specific and free",
+        "every item ends on a cliffhanger",
+        "TLDR groups items into 3 named buckets",
+        "compliance: soften the verb, no disease names"
+      ],
+      "measured": {
+        "cvr": 0.118,
+        "epc": 0.66,
+        "note": "the only mold where EVERY cross-post earned: Julian $126, Magnus $86, Lucas $26, Magnus $25, Julian $20",
+        "decayRevPer1k": 0,
+        "demoted": "2026-08-20",
+        "posts": 6,
+        "views": 124656,
+        "revenue": 80.51,
+        "clicks": 125,
+        "revPer1k": 0.646,
+        "clicksPer100k": 100.3,
+        "scoredOn": "2026-11-23",
+        "scoredFrom": "registry (mold-promote.mjs)",
+        "promoted": "2026-08-27"
+      }
+    },
+    {
+      "id": "M3",
+      "name": "The hidden cause (closed loop)",
+      "status": "proven",
+      "hook": "Insulin Resistance is the real reason your Cortisol is High.\n\nIf I wanted to lower high cortisol without medication, these are the 8 things I would do every day:\n\n1. Stop running (at night!)",
+      "job": "promise a reframe, deliver it in the final item — the last item closes the causal loop.",
+      "requirements": [
+        "hook names the UPSTREAM cause as the real target",
+        "item 1 is a contrarian STOP",
+        "lived detail over studies",
+        "last item closes the loop"
+      ],
+      "measured": {
+        "cvr": 0.094,
+        "epc": 0.52,
+        "revenue": 193.25,
+        "note": "Lorenzo, 517k views",
+        "decayRevPer1k": 0.025,
+        "demoted": "2026-08-20",
+        "revPer1k": 0.286,
+        "posts": 11,
+        "promoted": "2026-08-23",
+        "views": 676033,
+        "clicks": 533,
+        "clicksPer100k": 78.8,
+        "scoredOn": "2026-11-23",
+        "scoredFrom": "registry (mold-promote.mjs)"
+      }
+    },
+    {
+      "id": "M4",
+      "name": "The single-substance deep dive",
+      "status": "proven",
+      "hook": "TAKING MAGNESIUM CORRECTLY WILL TURN YOU INTO A TESTOSTERONE MONSTER..🧵\n\n(99% ARE TAKING IT WRONG)",
+      "job": "one substance taught properly; the forms comparison IS the buying guide. Hook is interchangeable with the whole S bank.",
+      "requirements": [
+        "caps voice is Magnus-only; sentence case elsewhere",
+        "6-8 facts that ESCALATE: prevalence -> study -> mechanism -> interactions -> depletors -> FORMS COMPARISON (mandatory)",
+        "close with personal protocol + dose"
+      ],
+      "measured": {
+        "cvr": 0.083,
+        "revenue": 211.78,
+        "note": "best non-anchor earner (Magnus, 744k); Julian $14 at 85k",
+        "decayRevPer1k": 0,
+        "demoted": "2026-08-20",
+        "revPer1k": 1.351,
+        "posts": 9,
+        "promoted": "2026-08-23",
+        "views": 156808,
+        "clicks": 330,
+        "clicksPer100k": 210.4,
+        "scoredOn": "2026-11-23",
+        "scoredFrom": "registry (mold-promote.mjs)"
+      }
+    },
+    {
+      "id": "M5",
+      "name": "The symptom checklist",
+      "status": "proven",
+      "hook": "If you want to avoid blood clots, strokes, and heart attacks (especially if you're over 40)\n\nHere are 16 things you must pay attention to:\n\n1. Waking at 3 AM with a pounding heart.",
+      "job": "recognition compounds — every item is a symptom, urgency is self-generated. Widest-reach mold; earns nothing below ~200k views.",
+      "requirements": [
+        "three escalating outcomes + audience filter in parentheses",
+        "every item is a SYMPTOM, not an action",
+        "item = symptom, mechanism, quiet cost (3 lines)",
+        "16-18 items is correct here (one per tweet lands at 21-23 with plugs, sign-off and disclaimer, inside the 23-tweet ceiling; 20 items does NOT fit)",
+        "compliance: outcomes only in the hook, no disease claims in items"
+      ],
+      "measured": {
+        "revenue": 78.68,
+        "family": 1091,
+        "note": "highest-earning family; distribution caveat measured across 8 posts: $603 at 7.4M, $0 at 58k — judge on revenue per 1k views only",
+        "decayRevPer1k": 0,
+        "demoted": "2026-08-20",
+        "posts": 11,
+        "views": 516162,
+        "clicks": 252,
+        "revPer1k": 0.152,
+        "clicksPer100k": 48.8,
+        "scoredOn": "2026-11-23",
+        "scoredFrom": "registry (mold-promote.mjs)",
+        "promoted": "2026-09-07"
+      }
+    },
+    {
+      "id": "U1",
+      "name": "The specificity gap",
+      "status": "experimental",
+      "hook": "They tell you to take probiotics.\n\nBut no one tells you which types to actually take.\n\nThis is your guide to the exact strains that fix your gut...",
+      "job": "the hook's entire promise is WHICH SPECIFIC ONE — the recommendation is the payload, not an interruption. The only mold structurally obligated to plug.",
+      "requirements": [
+        "name a category everyone already agrees on, then attack the vagueness",
+        "the forms/brands comparison is the body"
+      ],
+      "measured": {
+        "sourceViews": 1310000,
+        "sourceBpv": 0.0082,
+        "note": "other people's numbers — untested by us",
+        "posts": 2,
+        "views": 11926,
+        "revenue": 0,
+        "clicks": 1,
+        "revPer1k": 0,
+        "clicksPer100k": 8.4,
+        "scoredOn": "2026-11-23",
+        "scoredFrom": "registry (mold-promote.mjs)"
+      }
+    },
+    {
+      "id": "U2",
+      "name": "The 60-day protocol result",
+      "status": "proven",
+      "hook": "I started taking zinc in the morning, magnesium at night, and vitamin D with K2 at breakfast.\n\nThe doctor recommended it to me, so I kept it up for 60 days & after that…\n\nWithout exaggerating, my personality changed 180 degrees.\n\n1. Zinc. In the morning. You should take it too.",
+      "job": "operator-supplied hybrid: stack-with-timing hook seeds three substances; four-tweet bridge run before the money plug; non-physical outcome claim.",
+      "requirements": [
+        "hook names 3 substances WITH timing",
+        "item 1 = cheapest, least controversial substance",
+        "money substance gets item 2 plus a 3-4 tweet run: symptom list -> prevalence -> research -> only then the plug",
+        "forms comparison closes the thread"
+      ],
+      "measured": {
+        "sourceViews": 950000,
+        "sourceBookmarks": 4627,
+        "sourceLikes": 2725,
+        "note": "bookmarks 1.7x likes — filed as reference",
+        "posts": 3,
+        "views": 225462,
+        "revenue": 199.98,
+        "clicks": 341,
+        "revPer1k": 0.887,
+        "clicksPer100k": 151.2,
+        "scoredOn": "2026-11-23",
+        "scoredFrom": "registry (mold-promote.mjs)",
+        "promoted": "2026-08-27"
+      }
+    },
+    {
+      "id": "U3",
+      "name": "The shopping list",
+      "status": "proven",
+      "hook": "The best thing to do when you make good money:\n\nInvest in your health.\n\nWithout it, you are nothing.\n\nHere's the ultimate list of 20 premium purchases for elite health and longevity:",
+      "job": "a plug is the EXPECTED content; 20 items = 4-5 plugs inside the 50% ceiling — highest legal plug density after the anchor.",
+      "requirements": [
+        "items must span price tiers (a $12 bottle beside a $400 device) or it reads as an ad"
+      ],
+      "measured": {
+        "sourceViews": 1090000,
+        "sourceRetention": 0.48,
+        "sourceBpv": 0.0098,
+        "note": "untested by us",
+        "revenue": 76.78,
+        "revPer1k": 1.339,
+        "posts": 3,
+        "promoted": "2026-08-23",
+        "views": 57325,
+        "clicks": 37,
+        "clicksPer100k": 64.5,
+        "scoredOn": "2026-11-23",
+        "scoredFrom": "registry (mold-promote.mjs)"
+      }
+    },
+    {
+      "id": "U4",
+      "name": "Protocol by deficiency",
+      "status": "experimental",
+      "hook": "The vitamin that controls your energy, focus, and mood:\n\nVitamin B12.\n\nMost people are deficient & don't even know it.",
+      "job": "single nutrient framed as a deficiency TEST — the reader diagnoses themselves, then buys. Highest retention mined (68%).",
+      "requirements": [
+        "a 'signs you're low' checklist BEFORE any plug — that block IS the bridge"
+      ],
+      "measured": {
+        "sourceViews": 1030000,
+        "sourceRetention": 0.68,
+        "note": "untested by us",
+        "posts": 1,
+        "views": 0,
+        "revenue": 0,
+        "clicks": 0,
+        "revPer1k": 0,
+        "clicksPer100k": 0,
+        "scoredOn": "2026-11-23",
+        "scoredFrom": "registry (mold-promote.mjs)"
+      }
+    },
+    {
+      "id": "U5",
+      "name": "The podcast decode",
+      "status": "experimental",
+      "hook": "Joe Rogan just had the world's top human biologist on his podcast.\n\nHe revealed mind-blowing facts about health & longevity that 99% of people wouldn't know...",
+      "job": "borrowed authority — the account never claims expertise, ideal for pages that have none yet (Clara, Tina, Lucas, Marcos, Jasper).",
+      "requirements": [
+        "name a REAL episode — fabricating one is the fastest way to get ratio'd"
+      ],
+      "measured": {
+        "sourceViews": 10450000,
+        "sourceRetention": 0.65,
+        "note": "untested by us",
+        "posts": 3,
+        "views": 2582,
+        "revenue": 0,
+        "clicks": 0,
+        "revPer1k": 0,
+        "clicksPer100k": 0,
+        "scoredOn": "2026-11-23",
+        "scoredFrom": "registry (mold-promote.mjs)"
+      }
+    },
+    {
+      "id": "U6",
+      "name": "The timing table",
+      "status": "experimental",
+      "hook": "Take magnesium BEFORE bed, not morning.\nZinc at night away from calcium.\nB12 anytime but with food.\nVitamin D with fatty meals.\nIron never with coffee.",
+      "job": "a reference card — every line is substance + rule, the densest plug surface per word. Highest save rate in the swipe file (1.58% bpv).",
+      "requirements": [
+        "short BY DESIGN — never pad it to 15 tweets",
+        "two plugs maximum",
+        "leads with magnesium (our #1 earner)"
+      ],
+      "measured": {
+        "sourceViews": 580000,
+        "sourceBpv": 0.0158,
+        "note": "high save rate, unproven reach — test on a mid-tier account"
+      }
+    },
+    {
+      "id": "U7",
+      "name": "High blood pressure, naturally",
+      "status": "experimental",
+      "hook": "High Blood Pressure.\n\n50% of adults have it.\n\nMost don't know.\n\nBig pharma cashes in.\n\nBut here's the truth:\n\nYou can lower it naturally.",
+      "job": "the only high-retention mined mold that bridges to beet root at 50% commission — our best-paying allowlist product.",
+      "requirements": [
+        "compliance pass required: the source leans on disease framing our gates ban — keep the mechanic (prevalence -> causes -> levers), lose the claims"
+      ],
+      "measured": {
+        "sourceViews": 2130000,
+        "sourceRetention": 0.56,
+        "note": "untested by us",
+        "posts": 1,
+        "views": 0,
+        "revenue": 0,
+        "clicks": 0,
+        "revPer1k": 0,
+        "clicksPer100k": 0,
+        "scoredOn": "2026-11-23",
+        "scoredFrom": "registry (mold-promote.mjs)"
+      }
+    }
+  ]
+}
